@@ -70,3 +70,6 @@ void SceneManager::startGame()
     std::cout << "chargement du jeu\n";
     changeScene(GameScene::scene());
 }
+
+
+

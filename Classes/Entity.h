@@ -18,6 +18,7 @@ class Entity
 {
 public:
     
+    //enums the different types of entities
     enum ENTITY_TYPE {
         spaceship,
         asteroid,
@@ -27,35 +28,48 @@ public:
     
 private :
     
+    //Id of the entity
     int Id;
     
+    //position x
     int x;
     
+    //position y
     int y;
     
+    //size if the entity (ray)
     int size;
     
+    //velocity if the entity (in x and y)
     cocos2d::CCPoint* velocity;
     
+    //angle of the entity
     int angle; // int ?
     
+    //type of the entity
     ENTITY_TYPE type;
     
-    char* properties;//-> may be a dictionary (map)
+    //specific properties of an entity
+    // properties;
     
 public :
     
     Entity(int newId, ENTITY_TYPE newType);
     ~Entity();
     
+    //initialise the entity
     bool init();
     
+    //update the entity
     void update();
     
+    //set the position of the entity
     void setPos(int,int);
     
+    //set the angle of the entity
     void setAngle(int);
     
+    //get the id of the entity
     int getId();
 };
 

@@ -27,6 +27,8 @@ private:
     
     void init();
     
+
+    
 public:
    
     
@@ -37,7 +39,9 @@ public:
     void changeScene(cocos2d::CCScene *);
     
     void showMenu();
+    
     void startGame();
+    
 };
 
 #endif /* defined(__Reflex__SceneManager__) */

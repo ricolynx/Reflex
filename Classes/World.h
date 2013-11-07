@@ -31,6 +31,8 @@ public :
     bool addSpaceship();
     
     std::list<Entity> entities;
+    
+    void update();
 };
 
 #endif /* defined(__Reflex__World__) */

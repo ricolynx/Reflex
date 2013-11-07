@@ -64,11 +64,21 @@ bool GameScene::init()
     this->world = new World();
     this->world->addSpaceship();
     
+    
+    this->scheduleUpdate();
+    
     return true;
 }
 
 
 void GameScene::menuCallback(CCObject *pSender){
-    //SceneManager::Instance()->showMenu();
-    std::cout << this->world->entities.size() << std::endl;
+    SceneManager::Instance()->showMenu();
+    //std::cout << this->world->entities.size() << std::endl;
 }
+
+
+void GameScene::update(float dt)
+{
+    std::cout<<"update :"<<dt<<std::endl;
+}
+

@@ -27,7 +27,7 @@ class GameScene : public cocos2d::CCLayer
     
         CREATE_FUNC(GameScene);
     
-    
+        void update(float dt);
 };
 
 #endif /* defined(__Reflex__GameScene__) */
