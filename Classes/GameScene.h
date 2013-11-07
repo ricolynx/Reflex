@@ -11,11 +11,14 @@
 
 #include "cocos2d.h"
 #include "SceneManager.h"
-
+#include "World.h"
 
 class GameScene : public cocos2d::CCLayer
 {
     public :
+    
+        World *world;
+    
         virtual bool init();
     
         static cocos2d::CCScene* scene();
@@ -23,6 +26,8 @@ class GameScene : public cocos2d::CCLayer
         void menuCallback(CCObject* pSender);
     
         CREATE_FUNC(GameScene);
+    
+    
 };
 
 #endif /* defined(__Reflex__GameScene__) */

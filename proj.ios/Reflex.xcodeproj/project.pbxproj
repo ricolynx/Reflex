@@ -10,6 +10,7 @@
 		0705E95E18242D06000C8570 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E95C18242D06000C8570 /* GameScene.cpp */; };
 		0705E96118243681000C8570 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E95F18243681000C8570 /* SceneManager.cpp */; };
 		0705E96618283C1F000C8570 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E96418283C1F000C8570 /* Entity.cpp */; };
+		0705E96D182AE242000C8570 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E96B182AE242000C8570 /* World.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */; };
 		15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88D1682F7D5002FB0C5 /* b2CollideCircle.cpp */; };
@@ -276,6 +277,8 @@
 		0705E96018243681000C8570 /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneManager.h; path = ../Classes/SceneManager.h; sourceTree = "<group>"; };
 		0705E96418283C1F000C8570 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = ../Classes/Entity.cpp; sourceTree = "<group>"; };
 		0705E96518283C1F000C8570 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = ../Classes/Entity.h; sourceTree = "<group>"; };
+		0705E96B182AE242000C8570 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../Classes/World.cpp; sourceTree = "<group>"; };
+		0705E96C182AE242000C8570 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../Classes/World.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
@@ -790,6 +793,8 @@
 			children = (
 				0705E96418283C1F000C8570 /* Entity.cpp */,
 				0705E96518283C1F000C8570 /* Entity.h */,
+				0705E96B182AE242000C8570 /* World.cpp */,
+				0705E96C182AE242000C8570 /* World.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1923,6 +1928,7 @@
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
+				0705E96D182AE242000C8570 /* World.cpp in Sources */,
 				15A3D9B21682F7F9002FB0C5 /* cpVect.c in Sources */,
 				15A3DA311682F826002FB0C5 /* CCBAnimationManager.cpp in Sources */,
 				15A3DA321682F826002FB0C5 /* CCBFileLoader.cpp in Sources */,

@@ -60,10 +60,15 @@ bool GameScene::init()
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
 
+    //test world...
+    this->world = new World();
+    this->world->addSpaceship();
+    
     return true;
 }
 
 
 void GameScene::menuCallback(CCObject *pSender){
-    SceneManager::Instance()->showMenu();
+    //SceneManager::Instance()->showMenu();
+    std::cout << this->world->entities.size() << std::endl;
 }

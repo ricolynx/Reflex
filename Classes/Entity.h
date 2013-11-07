@@ -12,19 +12,22 @@
 #include <iostream>
 #include "cocos2d.h"
 
+
+
 class Entity
 {
-    
 public:
-    enum entity_type {
+    
+    enum ENTITY_TYPE {
         spaceship,
         asteroid,
         bullet
     };
     
+    
 private :
     
-    int id;
+    int Id;
     
     int x;
     
@@ -36,17 +39,24 @@ private :
     
     int angle; // int ?
     
-    entity_type type;
+    ENTITY_TYPE type;
     
     char* properties;//-> may be a dictionary (map)
     
 public :
     
-    Entity();
+    Entity(int newId, ENTITY_TYPE newType);
     ~Entity();
     
+    bool init();
+    
+    void update();
+    
     void setPos(int,int);
-
+    
+    void setAngle(int);
+    
+    int getId();
 };
 
 
