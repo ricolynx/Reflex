@@ -24,6 +24,18 @@ CCScene* GameScene::scene()
     return scene;
 }
 
+GameScene::GameScene()
+{
+    std::cout<<"GameScene Constructor"<<std::endl;
+}
+
+GameScene::~GameScene()
+{
+    std::cout<<"GameScene destructor"<<std::endl;
+    delete this->world;
+}
+
+
 
 bool GameScene::init()
 {
@@ -79,6 +91,6 @@ void GameScene::menuCallback(CCObject *pSender){
 
 void GameScene::update(float dt)
 {
-    std::cout<<"update :"<<dt<<std::endl;
+    //std::cout<<"update :"<<dt<<std::endl;
 }
 

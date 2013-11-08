@@ -17,6 +17,10 @@ class GameScene : public cocos2d::CCLayer
 {
     public :
     
+        GameScene();
+    
+        ~GameScene();
+    
         World *world;
     
         virtual bool init();

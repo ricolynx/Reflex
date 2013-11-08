@@ -12,6 +12,8 @@
 //Constructor
 Entity::Entity(int newId, ENTITY_TYPE newType)
 {
+    std::cout << "entity " << newId << " constructor" << std::endl;
+    
     this->Id = newId;
     
     this->type = newType;
@@ -21,6 +23,7 @@ Entity::Entity(int newId, ENTITY_TYPE newType)
 
 Entity::~Entity()
 {
+    std::cout << "entity " << this->Id << " destructor" << std::endl;
 }
 
 //get the id of the entity
