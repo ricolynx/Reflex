@@ -12,27 +12,41 @@
 #include <list>
 #include <iostream>
 
+#include "cocos2d.h"
 #include "Entity.h"
 
 class World
 {
 private :
     
+    //the next entity id
+    int _nextEntityId = 0;
     
-    bool addEntity(Entity*);
+    //the list of entities of the workd
+    std::list<Entity> entities;
+    
+    //add an entity to the world
+    void addEntity(Entity*);
+    
     
 public :
     
+    //constructor
     World();
+    //destructor
     ~World();
 
+    //init the world
     void init();
     
-    bool addSpaceship();
+    //add a spaceship
+    void addSpaceship();
     
-    std::list<Entity> entities;
+    //get the number of entities
+    int getNbEntities();
     
-    void update();
+    //update loop of the world
+    void update(float dt);
 };
 
 #endif /* defined(__Reflex__World__) */

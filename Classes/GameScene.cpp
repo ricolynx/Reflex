@@ -33,6 +33,7 @@ GameScene::~GameScene()
 {
     std::cout<<"GameScene destructor"<<std::endl;
     delete this->world;
+    delete this->worldView;
 }
 
 
@@ -44,9 +45,25 @@ bool GameScene::init()
         return false;
     }
     
+    initUI();
+
+    //test world...
+    this->world = new World();
+    
+    this->worldView = new WorldView( this ,this->world);
+    
+    this->scheduleUpdate();
+    
+    return true;
+}
+
+void GameScene::initUI()
+{
+ 
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
+    /*
     CCLabelTTF* pLabel = CCLabelTTF::create("GameScene", "Arial", 24);
     
     // position the label on the center of the screen
@@ -55,6 +72,7 @@ bool GameScene::init()
     
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
+     */
     
     
     // add a "close" icon to exit the progress. it's an autorelease object
@@ -67,30 +85,40 @@ bool GameScene::init()
 	pPlayItem->setPosition(ccp(origin.x + visibleSize.width - pPlayItem->getContentSize().width/2 ,
                                origin.y + pPlayItem->getContentSize().height/2));
     
+    
+    CCMenuItemImage *pTestItem = CCMenuItemImage::create(
+                                                         "TestNormal.png",
+                                                         "TestSelected.png",
+                                                         this,
+                                                         menu_selector(GameScene::testCallback));
+    
+	pTestItem->setPosition(ccp(origin.x + visibleSize.width - 2 * pTestItem->getContentSize().width  ,
+                               origin.y + pTestItem->getContentSize().height/2));
+
+    
     // create menu, it's an autorelease object
     CCMenu* pMenu = CCMenu::create(pPlayItem, NULL);
+    pMenu->addChild(pTestItem);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
-
-    //test world...
-    this->world = new World();
-    this->world->addSpaceship();
     
-    
-    this->scheduleUpdate();
-    
-    return true;
 }
 
+void GameScene::testCallback(CCObject *pSender)
+{
+    std::cout << this->world->getNbEntities() << std::endl;
+    
+    this->worldView->addEntity();
+}
 
-void GameScene::menuCallback(CCObject *pSender){
+void GameScene::menuCallback(CCObject *pSender)
+{
     SceneManager::Instance()->showMenu();
-    //std::cout << this->world->entities.size() << std::endl;
 }
-
 
 void GameScene::update(float dt)
 {
+    this->world->update(dt);
     //std::cout<<"update :"<<dt<<std::endl;
 }
 

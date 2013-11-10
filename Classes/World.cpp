@@ -20,19 +20,24 @@ World::~World()
     this->entities.clear();
 }
 
-
-bool World::addSpaceship()
+int World::getNbEntities()
 {
-    Entity *spaceship = new Entity(0, Entity::spaceship);
-    this->entities.push_back(*spaceship);
-    
-    spaceship = new Entity(1, Entity::spaceship);
-    this->entities.push_back(*spaceship);
-    
-    return true;
+    return this->entities.size();
 }
 
-bool World::addEntity(Entity* entity)
+void World::addEntity(Entity* entity)
 {
-    return true;
+    this->_nextEntityId ++;
+    this->entities.push_back(*entity);
+}
+
+void World::addSpaceship()
+{
+    Entity *spaceship = new Entity(this->_nextEntityId, Entity::spaceship);
+    this->addEntity(spaceship);
+}
+
+void World::update(float dt)
+{
+    
 }

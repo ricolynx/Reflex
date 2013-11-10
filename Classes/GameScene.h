@@ -12,26 +12,43 @@
 #include "cocos2d.h"
 #include "SceneManager.h"
 #include "World.h"
+#include "WorldView.h"
 
-class GameScene : public cocos2d::CCLayer
-{
-    public :
+class GameScene : public cocos2d::CCLayer {
     
-        GameScene();
+public :
     
-        ~GameScene();
+    GameScene();
     
-        World *world;
+    ~GameScene();
     
-        virtual bool init();
+    virtual bool init();
     
-        static cocos2d::CCScene* scene();
+    static cocos2d::CCScene* scene();
     
-        void menuCallback(CCObject* pSender);
     
-        CREATE_FUNC(GameScene);
+    CREATE_FUNC(GameScene);
     
-        void update(float dt);
+    
+private:
+    
+    //the world model of the game (containing the different entities
+    World *world;
+    
+    //represent the world view of the game
+    WorldView *worldView;
+    
+    //initialisation of the menu
+    void initUI();
+    
+    //callback for the test button
+    void testCallback(CCObject* pSender);
+    
+    //menu callback
+    void menuCallback(CCObject* pSender);
+    
+    //update loop
+    void update(float dt);
 };
 
 #endif /* defined(__Reflex__GameScene__) */
