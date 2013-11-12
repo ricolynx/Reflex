@@ -12,6 +12,7 @@
 #include <list>
 #include <iostream>
 
+
 #include "cocos2d.h"
 #include "Entity.h"
 
@@ -19,31 +20,32 @@ class World
 {
 private :
     
+    cocos2d::CCLayer* scene;
+    
+    cocos2d::CCSpriteBatchNode* batchNode;
+    
     //the next entity id
-    int _nextEntityId = 0;
+    int nextEntityId = 0;
     
     //the list of entities of the workd
-    std::list<Entity> entities;
+    Entity* canon;
     
-    //add an entity to the world
-    void addEntity(Entity*);
+    std::list<Entity> enemies;
     
+    std::list<Entity> bullets;
+    
+    cocos2d::CCPoint getRandomPoint();
     
 public :
     
     //constructor
-    World();
+    World(cocos2d::CCLayer* s);
     //destructor
     ~World();
+    
+    //add an enemy entity to the world
+    void addEnemy();
 
-    //init the world
-    void init();
-    
-    //add a spaceship
-    void addSpaceship();
-    
-    //get the number of entities
-    int getNbEntities();
     
     //update loop of the world
     void update(float dt);

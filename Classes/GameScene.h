@@ -12,7 +12,7 @@
 #include "cocos2d.h"
 #include "SceneManager.h"
 #include "World.h"
-#include "WorldView.h"
+
 
 class GameScene : public cocos2d::CCLayer {
     
@@ -36,7 +36,7 @@ private:
     World *world;
     
     //represent the world view of the game
-    WorldView *worldView;
+    //WorldView *worldView;
     
     //initialisation of the menu
     void initUI();

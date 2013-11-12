@@ -33,7 +33,6 @@ GameScene::~GameScene()
 {
     std::cout<<"GameScene destructor"<<std::endl;
     delete this->world;
-    delete this->worldView;
 }
 
 
@@ -48,9 +47,7 @@ bool GameScene::init()
     initUI();
 
     //test world...
-    this->world = new World();
-    
-    this->worldView = new WorldView( this ,this->world);
+    this->world = new World(this);
     
     this->scheduleUpdate();
     
@@ -106,9 +103,9 @@ void GameScene::initUI()
 
 void GameScene::testCallback(CCObject *pSender)
 {
-    std::cout << this->world->getNbEntities() << std::endl;
-    
-    this->worldView->addEntity();
+    //std::cout << this->world->getNbEntities() << std::endl;
+    //this->worldView->addEntity();
+    this->world->addEnemy();
 }
 
 void GameScene::menuCallback(CCObject *pSender)

@@ -13,8 +13,6 @@
 		0705E96D182AE242000C8570 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E96B182AE242000C8570 /* World.cpp */; };
 		070DC727182E14FD00592C1E /* TestNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC725182E14FD00592C1E /* TestNormal.png */; };
 		070DC728182E14FD00592C1E /* TestSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC726182E14FD00592C1E /* TestSelected.png */; };
-		0798437D182F7ED900749280 /* WorldController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0798437B182F7ED900749280 /* WorldController.cpp */; };
-		07984380182F7EEE00749280 /* WorldView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0798437E182F7EEE00749280 /* WorldView.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B79DDF182FADBA004EB918 /* Sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDD182FADBA004EB918 /* Sprites.plist */; };
 		07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */; };
@@ -287,10 +285,6 @@
 		0705E96C182AE242000C8570 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../Classes/World.h; sourceTree = "<group>"; };
 		070DC725182E14FD00592C1E /* TestNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestNormal.png; sourceTree = "<group>"; };
 		070DC726182E14FD00592C1E /* TestSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestSelected.png; sourceTree = "<group>"; };
-		0798437B182F7ED900749280 /* WorldController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldController.cpp; path = ../Classes/WorldController.cpp; sourceTree = "<group>"; };
-		0798437C182F7ED900749280 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldController.h; path = ../Classes/WorldController.h; sourceTree = "<group>"; };
-		0798437E182F7EEE00749280 /* WorldView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldView.cpp; path = ../Classes/WorldView.cpp; sourceTree = "<group>"; };
-		0798437F182F7EEE00749280 /* WorldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldView.h; path = ../Classes/WorldView.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B79DDD182FADBA004EB918 /* Sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sprites.plist; sourceTree = "<group>"; };
@@ -813,22 +807,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		07984379182F7D4000749280 /* View */ = {
+		07834213183255EB0039B9DE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0798437E182F7EEE00749280 /* WorldView.cpp */,
-				0798437F182F7EEE00749280 /* WorldView.h */,
+				07AD95591823E79B00D4F0AF /* MainMenu.cpp */,
+				07AD955A1823E79B00D4F0AF /* MainMenu.h */,
+				0705E95C18242D06000C8570 /* GameScene.cpp */,
+				0705E95D18242D06000C8570 /* GameScene.h */,
 			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		0798437A182F7D4B00749280 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0798437B182F7ED900749280 /* WorldController.cpp */,
-				0798437C182F7ED900749280 /* WorldController.h */,
-			);
-			name = Controller;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* ios */ = {
@@ -1323,16 +1310,11 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0798437A182F7D4B00749280 /* Controller */,
-				07984379182F7D4000749280 /* View */,
+				07834213183255EB0039B9DE /* Scenes */,
 				0705E96318283B6A000C8570 /* Model */,
 				0705E96218283B54000C8570 /* Components */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				07AD95591823E79B00D4F0AF /* MainMenu.cpp */,
-				07AD955A1823E79B00D4F0AF /* MainMenu.h */,
-				0705E95C18242D06000C8570 /* GameScene.cpp */,
-				0705E95D18242D06000C8570 /* GameScene.h */,
 				0705E95F18243681000C8570 /* SceneManager.cpp */,
 				0705E96018243681000C8570 /* SceneManager.h */,
 			);
@@ -2021,7 +2003,6 @@
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
 				15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */,
 				15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */,
-				07984380182F7EEE00749280 /* WorldView.cpp in Sources */,
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,
 				15A3DAEF1682F8A6002FB0C5 /* SimpleAudioEngine_objc.m in Sources */,
 				1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */,
@@ -2106,7 +2087,6 @@
 				379BB9C717F03F3700829B88 /* UISlider.cpp in Sources */,
 				379BB9C817F03F3700829B88 /* UISwitch.cpp in Sources */,
 				379BB9C917F03F3700829B88 /* UITextField.cpp in Sources */,
-				0798437D182F7ED900749280 /* WorldController.cpp in Sources */,
 				379BB9CA17F03F3700829B88 /* CSContentJsonDictionary.cpp in Sources */,
 				379BB9CB17F03F3700829B88 /* DictionaryHelper.cpp in Sources */,
 				379BB9CE17F03F3700829B88 /* json_reader.cpp in Sources */,
@@ -2132,6 +2112,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2182,6 +2164,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
