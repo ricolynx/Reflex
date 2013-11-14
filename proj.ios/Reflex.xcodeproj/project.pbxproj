@@ -16,6 +16,7 @@
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B79DDF182FADBA004EB918 /* Sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDD182FADBA004EB918 /* Sprites.plist */; };
 		07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */; };
+		07E4D06818342C99001176D7 /* MoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E4D06618342C99001176D7 /* MoveSystem.cpp */; };
 		15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */; };
 		15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88D1682F7D5002FB0C5 /* b2CollideCircle.cpp */; };
 		15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88E1682F7D5002FB0C5 /* b2CollideEdge.cpp */; };
@@ -289,6 +290,8 @@
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B79DDD182FADBA004EB918 /* Sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sprites.plist; sourceTree = "<group>"; };
 		07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sprites.pvr.ccz; sourceTree = "<group>"; };
+		07E4D06618342C99001176D7 /* MoveSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MoveSystem.cpp; path = ../Classes/MoveSystem.cpp; sourceTree = "<group>"; };
+		07E4D06718342C99001176D7 /* MoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveSystem.h; path = ../Classes/MoveSystem.h; sourceTree = "<group>"; };
 		15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		15A3D8891682F7D5002FB0C5 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
@@ -789,22 +792,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0705E96218283B54000C8570 /* Components */ = {
+		0705E96318283B6A000C8570 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Components;
-			sourceTree = "<group>";
-		};
-		0705E96318283B6A000C8570 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0705E96418283C1F000C8570 /* Entity.cpp */,
-				0705E96518283C1F000C8570 /* Entity.h */,
+				07E4D06518342C68001176D7 /* Systems */,
+				07E4D0691834A98C001176D7 /* GameObjects */,
 				0705E96B182AE242000C8570 /* World.cpp */,
 				0705E96C182AE242000C8570 /* World.h */,
 			);
-			name = Model;
+			name = Game;
 			sourceTree = "<group>";
 		};
 		07834213183255EB0039B9DE /* Scenes */ = {
@@ -816,6 +812,24 @@
 				0705E95D18242D06000C8570 /* GameScene.h */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		07E4D06518342C68001176D7 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				07E4D06618342C99001176D7 /* MoveSystem.cpp */,
+				07E4D06718342C99001176D7 /* MoveSystem.h */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
+		07E4D0691834A98C001176D7 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0705E96418283C1F000C8570 /* Entity.cpp */,
+				0705E96518283C1F000C8570 /* Entity.h */,
+			);
+			name = GameObjects;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* ios */ = {
@@ -1311,8 +1325,7 @@
 			isa = PBXGroup;
 			children = (
 				07834213183255EB0039B9DE /* Scenes */,
-				0705E96318283B6A000C8570 /* Model */,
-				0705E96218283B54000C8570 /* Components */,
+				0705E96318283B6A000C8570 /* Game */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				0705E95F18243681000C8570 /* SceneManager.cpp */,
@@ -1950,6 +1963,7 @@
 				15A3D9AD1682F7F9002FB0C5 /* cpSpaceHash.c in Sources */,
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
+				07E4D06818342C99001176D7 /* MoveSystem.cpp in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
 				0705E96D182AE242000C8570 /* World.cpp in Sources */,

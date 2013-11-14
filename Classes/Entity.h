@@ -62,7 +62,6 @@ public :
     //set the position of the entity
     void setPos(int,int);
     
-    
     //get the id of the entity
     int getId();
     

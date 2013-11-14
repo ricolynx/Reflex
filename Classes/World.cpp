@@ -49,7 +49,6 @@ void World::addEnemy()
     cocos2d::CCPoint p = this->getRandomPoint();
     std::cout << p.x << "-" << p.y << std::endl;
     
-    
     enemy->setPos(p.x, p.y);
     this->enemies.push_back(*enemy);
     this->scene->addChild(enemy->sprite);
