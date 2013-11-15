@@ -16,6 +16,8 @@ World::World(cocos2d::CCLayer* s)
     
     scene = s;
     
+    this->moveSys = new MoveSystem();
+    
     cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
     //initialise batchnode and sharesprite
@@ -37,6 +39,8 @@ World::~World()
     
     delete this->canon;
     
+    delete moveSys;
+    
     this->enemies.clear();
     
     this->bullets.clear();
@@ -51,6 +55,7 @@ void World::addEnemy()
     
     enemy->setPos(p.x, p.y);
     this->enemies.push_back(*enemy);
+    this->moveSys->addEntity(enemy);
     this->scene->addChild(enemy->sprite);
 }
 

@@ -27,7 +27,7 @@ public:
     
     void addEntity(Entity* entity);
     
-    void removeEntity(int entityId);
+    void removeEntity(Entity* entity);
     
     void update(float dt);
 };

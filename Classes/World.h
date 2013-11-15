@@ -15,6 +15,8 @@
 
 #include "cocos2d.h"
 #include "Entity.h"
+#include "MoveSystem.h"
+
 
 class World
 {
@@ -35,6 +37,8 @@ private :
     std::list<Entity> bullets;
     
     cocos2d::CCPoint getRandomPoint();
+    
+    MoveSystem *moveSys;
     
 public :
     

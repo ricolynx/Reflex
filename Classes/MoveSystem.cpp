@@ -17,26 +17,18 @@ MoveSystem::MoveSystem()
 MoveSystem::~MoveSystem()
 {
     std::cout << "MoveSystem - destructor - " << std::endl;
+    this->movingEntities.clear();
 }
 
 
-void MoveSystem::addEntity(Entity* entity)
+void MoveSystem::addEntity(Entity *entity)
 {
     this->movingEntities.push_back(*entity);
 }
 
-void MoveSystem::removeEntity(int entityId)
+void MoveSystem::removeEntity(Entity* entity)
 {
-    /*std::list<Entity>::iterator it;
-    int i = 0;
-    for (it = this->movingEntities.begin(); it!= this->movingEntities.end(); it ++)
-    {
-        if (it->getId() == entityId)
-            break;
-        i++;
-    }
-    if (it->getId() == entityId)
-        this->movingEntities.*/
+    this->movingEntities.remove(*entity);
 }
 
 void MoveSystem::update(float dt)

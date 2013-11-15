@@ -65,6 +65,11 @@ public :
     //get the id of the entity
     int getId();
     
+    
+    bool operator ==(Entity ent)
+    {
+        return ent.getId() == this->Id;
+    }
 };
 
 

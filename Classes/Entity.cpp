@@ -43,3 +43,4 @@ void Entity::setPos(int x, int y)
     
     this->sprite->setPosition(ccp(x,y));
 }
+
