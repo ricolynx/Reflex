@@ -51,9 +51,16 @@ void World::addEnemy()
 {
     Entity* enemy = new Entity(this->nextEntityId++, Entity::enemy, "asteroid.png");
     cocos2d::CCPoint p = this->getRandomPoint();
-    std::cout << p.x << "-" << p.y << std::endl;
+    //std::cout << p.x << "-" << p.y << std::endl;
     
     enemy->setPos(p.x, p.y);
+    
+    enemy->addComponentToEntity(new component::TargetComponent(this->canon));
+    //std::cout<< enemy->getComponent<component::TargetComponent>()->getTarget()->getId() <<std::endl;
+    
+    enemy->addComponentToEntity(new component::VelocityComponent());
+    //std::cout<< enemy->getComponent<component::VelocityComponent>()->speedX <<std::endl;
+    
     this->enemies.push_back(*enemy);
     this->moveSys->addEntity(enemy);
     this->scene->addChild(enemy->sprite);
@@ -63,8 +70,15 @@ void World::addEnemy()
 cocos2d::CCPoint World::getRandomPoint()
 {
     cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    srand(time(NULL));
-    return ccp(rand() % (int) worldSize.width + 1, rand() % (int) worldSize.height);
+    
+    std::uniform_int_distribution<unsigned> u1(0,(int)worldSize.width);
+    std::uniform_int_distribution<unsigned> u2(0,(int)worldSize.height);
+    
+    std::default_random_engine e;
+    e.seed(time(0));
+    
+    return ccp(u1(e),u2(e));
+    
 }
 
 //update function of the world

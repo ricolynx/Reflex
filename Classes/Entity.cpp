@@ -44,3 +44,30 @@ void Entity::setPos(int x, int y)
     this->sprite->setPosition(ccp(x,y));
 }
 
+
+// add a component
+void Entity::addComponentToEntity(component::Component * component)
+{
+    this->components[&typeid(*component)] = component;
+}
+
+//get a component
+template <typename T>
+T* Entity::getComponent(){
+    if(components.count(&typeid(T)) != 0)
+    {
+        return static_cast<T*>(components[&typeid(T)]);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+//explicits instantiations of get component
+template component::VelocityComponent* Entity::getComponent<component::VelocityComponent>();
+template component::TargetComponent* Entity::getComponent<component::TargetComponent>();
+
+
+
+

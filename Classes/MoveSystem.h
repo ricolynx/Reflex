@@ -18,6 +18,8 @@ private:
     //reference to the related entity
     std::list<Entity> movingEntities;
     
+    void move(std::list<Entity>::iterator *entity);
+    
 public:
     //Constructor
     MoveSystem();

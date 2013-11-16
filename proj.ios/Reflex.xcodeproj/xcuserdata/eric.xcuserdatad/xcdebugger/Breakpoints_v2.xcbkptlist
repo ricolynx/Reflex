@@ -75,9 +75,25 @@
             timestampString = "406191493.168302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "MoveSystem::addEntity(Entity *entity)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "MoveSystem::removeEntity(Entity* entity)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/World.cpp"
+            timestampString = "406298606.520572"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "World::addEnemy()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -87,14 +103,86 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/MoveSystem.cpp"
-            timestampString = "406191493.168302"
+            filePath = "../Classes/TargetComponent.cpp"
+            timestampString = "406302609.881239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "MoveSystem::removeEntity(Entity* entity)"
+            startingLineNumber = "25"
+            endingLineNumber = "25">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/VelocityComponent.cpp"
+            timestampString = "406308258.144899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "component::VelocityComponent::~VelocityComponent()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "component::VelocityComponent::~VelocityComponent()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/VelocityComponent.cpp"
+                  timestampString = "406308297.404527"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "9">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "component::VelocityComponent::~VelocityComponent()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/VelocityComponent.cpp"
+                  timestampString = "406308297.447398"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "component::VelocityComponent::~VelocityComponent()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/VelocityComponent.cpp"
+                  timestampString = "406308297.449374"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "3">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "component::VelocityComponent::~VelocityComponent()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/VelocityComponent.cpp"
+                  timestampString = "406308297.449726"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "3">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

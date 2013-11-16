@@ -31,7 +31,17 @@ void MoveSystem::removeEntity(Entity* entity)
     this->movingEntities.remove(*entity);
 }
 
-void MoveSystem::update(float dt)
+void MoveSystem::move(std::list<Entity>::iterator *entity)
 {
     
 }
+
+
+void MoveSystem::update(float dt)
+{
+    for (std::list<Entity>::iterator it = this->movingEntities.begin();it != this->movingEntities.end(); it++)
+    {
+        this->move(&it);
+    }
+}
+

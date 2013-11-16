@@ -10,6 +10,12 @@
 #define __Reflex__Entity__
 
 #include <iostream>
+#include <unordered_map>
+
+#include "component.h"
+#include "VelocityComponent.h"
+#include "TargetComponent.h"
+
 #include "cocos2d.h"
 
 
@@ -41,6 +47,11 @@ private :
     
     //type of the entity
     ENTITY_TYPE type;
+
+    //components of the entity
+    std::unordered_map<const std::type_info*, component::Component*> components;
+    
+
     
 public :
     
@@ -62,10 +73,26 @@ public :
     //set the position of the entity
     void setPos(int,int);
     
+    //set the velocity of the entity
+    void setVelocity(int velX, int velY);
+    
+    //set the initial velocity of the entity
+    void setInitialVelocity(int coef);
+    
+    //set the target 
+    void setTarget(Entity *entity);
+    
     //get the id of the entity
     int getId();
     
+    // add a component
+    void addComponentToEntity(component::Component *component);
     
+    //template function to get a component
+    template <typename T>
+    T* getComponent();
+    
+    //operator override
     bool operator ==(Entity ent)
     {
         return ent.getId() == this->Id;

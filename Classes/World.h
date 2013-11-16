@@ -11,12 +11,17 @@
 
 #include <list>
 #include <iostream>
-
+#include <random>
 
 #include "cocos2d.h"
+
 #include "Entity.h"
+
 #include "MoveSystem.h"
 
+#include "Component.h"
+#include "VelocityComponent.h"
+#include "TargetComponent.h"
 
 class World
 {
