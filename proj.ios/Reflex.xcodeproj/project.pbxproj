@@ -13,6 +13,8 @@
 		0705E96D182AE242000C8570 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E96B182AE242000C8570 /* World.cpp */; };
 		070DC727182E14FD00592C1E /* TestNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC725182E14FD00592C1E /* TestNormal.png */; };
 		070DC728182E14FD00592C1E /* TestSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC726182E14FD00592C1E /* TestSelected.png */; };
+		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
+		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B79DDF182FADBA004EB918 /* Sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDD182FADBA004EB918 /* Sprites.plist */; };
 		07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */; };
@@ -289,6 +291,10 @@
 		0705E96C182AE242000C8570 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../Classes/World.h; sourceTree = "<group>"; };
 		070DC725182E14FD00592C1E /* TestNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestNormal.png; sourceTree = "<group>"; };
 		070DC726182E14FD00592C1E /* TestSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestSelected.png; sourceTree = "<group>"; };
+		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
+		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
+		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
+		076349AB18392CB100180D07 /* LifeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeComponent.h; path = ../Classes/LifeComponent.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B79DDD182FADBA004EB918 /* Sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sprites.plist; sourceTree = "<group>"; };
@@ -829,6 +835,8 @@
 			children = (
 				07E4D06618342C99001176D7 /* MoveSystem.cpp */,
 				07E4D06718342C99001176D7 /* MoveSystem.h */,
+				076349A718380CE100180D07 /* CollisionSystem.cpp */,
+				076349A818380CE100180D07 /* CollisionSystem.h */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -851,6 +859,8 @@
 				07E4D07918377AF7001176D7 /* VelocityComponent.h */,
 				07E4D07B18377B24001176D7 /* TargetComponent.cpp */,
 				07E4D07C18377B24001176D7 /* TargetComponent.h */,
+				076349AA18392CB100180D07 /* LifeComponent.cpp */,
+				076349AB18392CB100180D07 /* LifeComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1917,6 +1927,7 @@
 				15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */,
 				15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */,
 				15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */,
+				076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */,
 				15A3D9021682F7D5002FB0C5 /* b2CollidePolygon.cpp in Sources */,
 				15A3D9031682F7D5002FB0C5 /* b2Collision.cpp in Sources */,
 				15A3D9041682F7D5002FB0C5 /* b2Distance.cpp in Sources */,
@@ -1957,6 +1968,7 @@
 				15A3D9261682F7D5002FB0C5 /* b2PulleyJoint.cpp in Sources */,
 				15A3D9271682F7D5002FB0C5 /* b2RevoluteJoint.cpp in Sources */,
 				15A3D9281682F7D5002FB0C5 /* b2RopeJoint.cpp in Sources */,
+				076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */,
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,

@@ -11,10 +11,14 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <map>
+#include <typeindex>
+//#include <memory>
 
 #include "component.h"
 #include "VelocityComponent.h"
 #include "TargetComponent.h"
+#include "LifeComponent.h"
 
 #include "cocos2d.h"
 
@@ -37,10 +41,12 @@ private :
     int Id;
     
     //position x of the entity
-    int posX;
+    float _posX;
     
     //position y of the entity
-    int posY;
+    float _posY;
+    
+    int _angle = 0;
     
     //size if the entity (ray)
     int size;
@@ -49,10 +55,8 @@ private :
     ENTITY_TYPE type;
 
     //components of the entity
-    std::unordered_map<const std::type_info*, component::Component*> components;
-    
+    std::map<std::type_index, component::Component *> components;
 
-    
 public :
     
     //sprite of the entity
@@ -70,23 +74,26 @@ public :
     //update the entity
     void update();
     
+    //getter for posX
+    float posX (){return _posX;};
+    
+    //getter for posY
+    float posY (){return _posY;};
+    
     //set the position of the entity
-    void setPos(int,int);
+    void setPos(float x, float y);
     
-    //set the velocity of the entity
-    void setVelocity(int velX, int velY);
-    
-    //set the initial velocity of the entity
-    void setInitialVelocity(int coef);
-    
-    //set the target 
-    void setTarget(Entity *entity);
+    //get the angle
+    int angle(){ return _angle;};
+
+    //set the angle of the entity
+    void setRotation(int a);
     
     //get the id of the entity
     int getId();
     
     // add a component
-    void addComponentToEntity(component::Component *component);
+    void addComponentToEntity(component::Component* component);
     
     //template function to get a component
     template <typename T>

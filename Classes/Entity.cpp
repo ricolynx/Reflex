@@ -26,7 +26,14 @@ Entity::~Entity()
 {
     std::cout << "entity " << this->Id << "-" << this->type << "- destructor -" << std::endl;
     
-    //delete this->sprite;
+    this->sprite = 0;
+    
+    for (auto it  = this->components.begin(); it != this->components.end() ; it++)
+    {
+        delete it->second;
+    }
+    
+    this->components.clear();
 }
 
 //get the id of the entity
@@ -36,27 +43,37 @@ int Entity::getId()
 }
 
 //set the position of the entity (and its sprite)
-void Entity::setPos(int x, int y)
+void Entity::setPos(float x, float y)
 {
-    this->posX = x;
-    this->posY = y;
+    //std::cout<<x <<" "<<y<< std::endl;
+    
+    this->_posX = x;
+    this->_posY = y;
     
     this->sprite->setPosition(ccp(x,y));
 }
 
 
-// add a component
-void Entity::addComponentToEntity(component::Component * component)
+void Entity::setRotation(int a)
 {
-    this->components[&typeid(*component)] = component;
+    this->_angle = a % 360;
+    this->sprite->setRotation(this->_angle);
+}
+
+// add a component
+void Entity::addComponentToEntity(component::Component* component)
+{
+    //this->components[&typeid(*component)] = component;
+    this->components[std::type_index(typeid(*component))] = component;
 }
 
 //get a component
 template <typename T>
 T* Entity::getComponent(){
-    if(components.count(&typeid(T)) != 0)
+    std::type_index index(typeid(T));
+    if(components.count(index) != 0)
     {
-        return static_cast<T*>(components[&typeid(T)]);
+        return static_cast<T*>(components[index]);
     }
     else
     {
@@ -67,6 +84,7 @@ T* Entity::getComponent(){
 //explicits instantiations of get component
 template component::VelocityComponent* Entity::getComponent<component::VelocityComponent>();
 template component::TargetComponent* Entity::getComponent<component::TargetComponent>();
+template component::LifeComponent* Entity::getComponent<component::LifeComponent>();
 
 
 

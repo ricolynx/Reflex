@@ -10,26 +10,32 @@
 #define __Reflex__MoveSystem__
 
 #include <iostream>
+#include <memory>
 #include "Entity.h"
+
 
 class MoveSystem
 {
 private:
     //reference to the related entity
-    std::list<Entity> movingEntities;
+    std::list<std::shared_ptr<Entity>> movingEntities;
     
-    void move(std::list<Entity>::iterator *entity);
+    void move(std::shared_ptr<Entity> entity, float dt);
+    
+    int worldWidth = 0;
+    int worldHeight = 0;
+    
     
 public:
     //Constructor
-    MoveSystem();
+    MoveSystem(float ww, float wh);
     
     //destructor
     ~MoveSystem();
     
-    void addEntity(Entity* entity);
+    void addEntity(std::shared_ptr<Entity> entity);
     
-    void removeEntity(Entity* entity);
+    void removeEntity(std::shared_ptr<Entity> entity);
     
     void update(float dt);
 };

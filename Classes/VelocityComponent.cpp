@@ -11,9 +11,11 @@
 //constructor
 component::VelocityComponent::VelocityComponent()
 {
+    std::cout<<"velocity component constructor"<< std::endl;
 }
 
 //destructor
 component::VelocityComponent::~VelocityComponent()
 {
+    std::cout<<"velocity component destructor"<< std::endl;
 }

@@ -9,26 +9,28 @@
 #include "TargetComponent.h"
 
 
-    //Constructor
-    component::TargetComponent::TargetComponent(Entity *t)
-    {
-        this->setNewTarget(t);
-    }
+//Constructor
+component::TargetComponent::TargetComponent(Entity *t)
+{
+    std::cout<<"target component constructor"<< std::endl;
+    this->setNewTarget(t);
+}
 
-    //Destructor
-    component::TargetComponent::~TargetComponent()
-    {
-        this->myTarget = 0;
-    }
+//Destructor
+component::TargetComponent::~TargetComponent()
+{
+    std::cout<<"target component destructor"<< std::endl;
+    this->myTarget = 0;
+}
 
-    //get the target
-    Entity* component::TargetComponent::getTarget()
-    {
-        return this->myTarget;
-    }
+//get the target
+Entity* component::TargetComponent::getTarget()
+{
+    return this->myTarget;
+}
 
-    //set a new target
-    void component::TargetComponent::setNewTarget(Entity *t)
-    {
-        this->myTarget = t;
-    }
+//set a new target
+void component::TargetComponent::setNewTarget(Entity *t)
+{
+    this->myTarget = t;
+}
