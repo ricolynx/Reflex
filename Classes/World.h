@@ -64,6 +64,8 @@ private :
     //removeDeadBullets
     void removeDeadBullets();
     
+    void removeDeadEnemies();
+    
     int count = 0;
     
 public :

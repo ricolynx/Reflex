@@ -106,8 +106,6 @@ void GameScene::testCallback(CCObject *pSender)
     //std::cout << this->world->getNbEntities() << std::endl;
     //this->worldView->addEntity();
     
-    //this->world->addEnemy();
-    
     this->world->fireSingleBullet(this->world->canon, this->world->canon->angle(), 500);
     this->world->fireSingleBullet(this->world->canon, this->world->canon->angle() + 90, 500);
     this->world->fireSingleBullet(this->world->canon, this->world->canon->angle() + 180, 500);

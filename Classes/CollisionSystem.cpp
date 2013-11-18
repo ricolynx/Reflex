@@ -66,5 +66,21 @@ void CollisionSystem::removeEntity(std::shared_ptr<Entity> entity)
 //update the collision system
 void CollisionSystem::update(float dt)
 {
-    
+    for (std::list<std::shared_ptr<Entity>>::iterator it = this->enemies.begin();it != this->enemies.end(); it++)
+    {
+        std::shared_ptr<Entity> enemy = *it;
+        if (enemy->getComponent<component::LifeComponent>()->life< 1)
+            continue;
+        for (std::list<std::shared_ptr<Entity>>::iterator itb = this->bullets.begin();itb != this->bullets.end(); itb++)
+        {
+            std::shared_ptr<Entity> bullet = *itb;
+            if (bullet->getComponent<component::LifeComponent>()->life<1)
+                continue;
+            if (bullet->sprite->boundingBox().intersectsRect(enemy->sprite->boundingBox()))
+            {
+                enemy->getComponent<component::LifeComponent>()->life--;
+                bullet->getComponent<component::LifeComponent>()->life--;
+            }
+        }
+    }
 }

@@ -185,13 +185,37 @@ void World::removeDeadBullets()
     }
 }
 
-
+//remove bullets that are "dead"
+void World::removeDeadEnemies()
+{
+    for (std::list<std::shared_ptr<Entity>>::iterator it = this->enemies.begin();it != this->enemies.end(); it++)
+    {
+        std::shared_ptr<Entity> entity = *it;
+        //std::cout<< &entity << std::endl;
+        component::LifeComponent* lc = entity->getComponent<component::LifeComponent>();
+        //std::cout<< lc << std::endl;
+        if (!lc || lc->life < 1)
+        {
+            this->scene->removeChild(entity->sprite);
+            this->moveSys->removeEntity(entity);
+            this->collisionSys->removeEntity(entity);
+            this->enemies.remove(entity);
+            //we remove only one enemiy per frame to avoid conflict in list iteration
+            break;
+        }
+    }
+}
 
 //update function of the world
 void World::update(float dt)
 {
     count = (count + 1 ) % 360;
+    if (count % 60 == 0)
+        this->addEnemy();
+        
     this->canon->setRotation(count);
     this->moveSys->update(dt);
+    this->collisionSys->update(dt);
     this->removeDeadBullets();
+    this->removeDeadEnemies();
 }
