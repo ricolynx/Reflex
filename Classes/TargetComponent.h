@@ -20,20 +20,20 @@ namespace component{
     {
         private:
             //the target
-            Entity *myTarget;
+            std::shared_ptr<Entity> myTarget;
 
         public:
             //Constructor
-            TargetComponent(Entity *t);
+            TargetComponent(std::shared_ptr<Entity>t);
         
             //Destructor
             virtual ~TargetComponent();
         
             //get the target
-            Entity* getTarget();
+            std::shared_ptr<Entity> getTarget();
         
             //set a new target
-            void setNewTarget(Entity *t);
+            void setNewTarget(std::shared_ptr<Entity> t);
     };
 }
 

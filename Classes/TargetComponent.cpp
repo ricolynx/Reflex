@@ -10,7 +10,7 @@
 
 
 //Constructor
-component::TargetComponent::TargetComponent(Entity *t)
+component::TargetComponent::TargetComponent(std::shared_ptr<Entity> t)
 {
     std::cout<<"target component constructor"<< std::endl;
     this->setNewTarget(t);
@@ -24,13 +24,13 @@ component::TargetComponent::~TargetComponent()
 }
 
 //get the target
-Entity* component::TargetComponent::getTarget()
+std::shared_ptr<Entity> component::TargetComponent::getTarget()
 {
     return this->myTarget;
 }
 
 //set a new target
-void component::TargetComponent::setNewTarget(Entity *t)
+void component::TargetComponent::setNewTarget(std::shared_ptr<Entity> t)
 {
     this->myTarget = t;
 }

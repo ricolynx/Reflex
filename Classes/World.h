@@ -21,6 +21,7 @@
 #include "Entity.h"
 
 #include "MoveSystem.h"
+#include "CollisionSystem.h"
 
 #include "Component.h"
 #include "VelocityComponent.h"
@@ -36,6 +37,8 @@ private :
     cocos2d::CCSpriteBatchNode* batchNode;
     
     MoveSystem *moveSys;
+    
+    CollisionSystem *collisionSys;
     
     //the next entity id
     int nextEntityId = 0;
@@ -71,13 +74,13 @@ public :
     ~World();
     
     //canon entity
-    Entity* canon;
+    std::shared_ptr<Entity> canon;
     
     //add an enemy entity to the world
     void addEnemy();
 
     //fire a single bullet
-    void fireSingleBullet(Entity* from, int angle, float speed);
+    void fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed);
     
     //update loop of the world
     void update(float dt);

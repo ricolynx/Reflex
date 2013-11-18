@@ -92,6 +92,8 @@ public :
     //get the id of the entity
     int getId();
     
+    ENTITY_TYPE getType(){return type;};
+    
     // add a component
     void addComponentToEntity(component::Component* component);
     

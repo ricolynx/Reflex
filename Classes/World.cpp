@@ -23,6 +23,7 @@ World::World(cocos2d::CCLayer* s)
     
     this->moveSys = new MoveSystem(worldSize.width, worldSize.height);
     
+    this->collisionSys = new CollisionSystem();
     
     //initialise batchnode and sharesprite
     batchNode = cocos2d::CCSpriteBatchNode::create("Sprites.pvr.ccz");
@@ -32,22 +33,26 @@ World::World(cocos2d::CCLayer* s)
     cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Sprites.plist");
     
     //create the canon
-    canon = new Entity(this->nextEntityId ++, Entity::canon, "SpaceFlier_sm_1.png");
+    canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "SpaceFlier_sm_1.png"));
     
     canon->setPos(worldSize.width * 0.5, worldSize.height * 0.5);
     
     canon->addComponentToEntity(new component::LifeComponent(1));
     
     this->scene->addChild(canon->sprite);
+    
+    this->collisionSys->addEntity(canon);
 }
 
 World::~World()
 {
     std::cout<< "World destructor"<<std::endl;
     
-    delete this->canon;
+    this->canon = 0;
     
     delete moveSys;
+    
+    delete collisionSys;
     
     this->enemies.clear();
     
@@ -73,10 +78,11 @@ void World::addEnemy()
     
     this->enemies.push_back(enemy);
     this->moveSys->addEntity(enemy);
+    this->collisionSys->addEntity(enemy);
     this->scene->addChild(enemy->sprite);
 }
 
-void World::fireSingleBullet(Entity* from, int angle, float speed)
+void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed)
 {
     std::shared_ptr<Entity> bullet = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bullet, "laserbeam_blue.png"));
     
@@ -95,6 +101,7 @@ void World::fireSingleBullet(Entity* from, int angle, float speed)
     this->bullets.push_back(bullet);
     
     this->moveSys->addEntity(bullet);
+    this->collisionSys->addEntity(bullet);
 
 }
 
@@ -157,6 +164,7 @@ void World::setInitialBulletVelocity(std::shared_ptr<Entity> bullet, float angle
     }
 }
 
+//remove bullets that are "dead"
 void World::removeDeadBullets()
 {
     for (std::list<std::shared_ptr<Entity>>::iterator it = this->bullets.begin();it != this->bullets.end(); it++)
@@ -169,6 +177,7 @@ void World::removeDeadBullets()
         {
             this->scene->removeChild(entity->sprite);
             this->moveSys->removeEntity(entity);
+            this->collisionSys->removeEntity(entity);
             this->bullets.remove(entity);
             //we remove only one bullet per frame to avoid conflict in list iteration
             break;
