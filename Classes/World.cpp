@@ -110,11 +110,40 @@ void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float spee
 cocos2d::CCPoint World::getRandomPoint()
 {
     cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    std::uniform_int_distribution<unsigned> u(0,3);
+    int a, b, c, d;
     
-    std::uniform_int_distribution<unsigned> u1(0,(int)worldSize.width);
-    std::uniform_int_distribution<unsigned> u2(0,(int)worldSize.height);
-    
-    return ccp(u1(randomEngine),u2(randomEngine));
+    switch(u(randomEngine))
+    {
+        case 0:
+            a = - 200;
+            b = - 100;
+            c = - 50;
+            d = (int)worldSize.height + 50;
+            break;
+        case 1:
+            a = - 50;
+            b = (int)worldSize.width + 50;
+            c = - 200;
+            d = - 100;
+            break;
+        case 2:
+            a = - 50;
+            b = (int)worldSize.width + 50;
+            c = (int)worldSize.height + 100;
+            d = (int)worldSize.height + 200;
+            break;
+        default:
+            a = (int)worldSize.width + 100;
+            b = (int)worldSize.width + 200;
+            c = - 50;
+            d = (int)worldSize.height + 50;
+            break;
+    }
+    std::uniform_int_distribution<int> u1(a,b);
+    std::uniform_int_distribution<int> u2(c,d);
+    cocos2d::CCPoint p = ccp(u1(randomEngine) , u2(randomEngine));
+    return p;
     
 }
 

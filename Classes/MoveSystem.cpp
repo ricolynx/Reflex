@@ -64,7 +64,7 @@ void MoveSystem::move(std::shared_ptr<Entity> entity, float dt)
             targetY = worldSize.height / 2;
         }
         
-        if (entity->posX() < 0 || entity->posY() < 0 || entity->posX() > this->worldWidth || entity->posY() > this->worldHeight)
+        if (entity->posX() < - 210 || entity->posY() < - 210 || entity->posX() > this->worldWidth + 210 || entity->posY() > this->worldHeight + 210)
         {
             component::LifeComponent *lc = entity->getComponent<component::LifeComponent>();
             if (lc){
