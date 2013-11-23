@@ -20,8 +20,8 @@ namespace component{
         public :
             VelocityComponent();
             virtual ~VelocityComponent();
-            float speedX = 0;
-            float speedY = 0;
+            float speedX ;
+            float speedY ;
             bool isMoving = true;
     };
 }

@@ -12,6 +12,8 @@
 component::VelocityComponent::VelocityComponent()
 {
     std::cout<<"velocity component constructor"<< std::endl;
+    this->speedX = 0;
+    this->speedY = 0;
 }
 
 //destructor

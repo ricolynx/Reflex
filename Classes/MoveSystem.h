@@ -22,8 +22,8 @@ private:
     
     void move(std::shared_ptr<Entity> entity, float dt);
     
-    int worldWidth = 0;
-    int worldHeight = 0;
+    int worldWidth ;
+    int worldHeight ;
     
     
 public:

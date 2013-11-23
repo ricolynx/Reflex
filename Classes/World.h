@@ -41,7 +41,10 @@ private :
     CollisionSystem *collisionSys;
     
     //the next entity id
-    int nextEntityId = 0;
+    int nextEntityId;
+    
+    //a counter 
+    int count;
     
     //the list of entities of the workd
     
@@ -66,7 +69,7 @@ private :
     
     void removeDeadEnemies();
     
-    int count = 0;
+
     
 public :
     

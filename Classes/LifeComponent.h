@@ -17,7 +17,7 @@ namespace component
     class LifeComponent : public Component
     {
         public:
-            int life = 1;
+            int life;
             LifeComponent(int l);
             ~LifeComponent();
     };

@@ -31,14 +31,6 @@ void MoveSystem::addEntity(std::shared_ptr<Entity> entity)
 void MoveSystem::removeEntity(std::shared_ptr<Entity> entity)
 {
     this->movingEntities.remove(entity);
-    /*for(std::list<Entity*>::iterator it = this->movingEntities.begin();it != this->movingEntities.end(); it++){
-        if (entity == **it)
-        {
-            Entity *p = *it;
-            this->movingEntities.remove(p);
-            return;
-        }
-    }*/
 }
 
 void MoveSystem::move(std::shared_ptr<Entity> entity, float dt)

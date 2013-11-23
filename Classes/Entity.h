@@ -46,10 +46,10 @@ private :
     //position y of the entity
     float _posY;
     
-    int _angle = 0;
+    int _angle ;
     
     //size if the entity (ray)
-    int size;
+    float size;
     
     //type of the entity
     ENTITY_TYPE type;

@@ -18,6 +18,8 @@ Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName)
     
     this->type = newType;
     
+    this->_angle = 0;
+    
     this->sprite = cocos2d::CCSprite::createWithSpriteFrameName(imageName);
 }
 

@@ -14,6 +14,10 @@ World::World(cocos2d::CCLayer* s)
 {
     std::cout<< "World constructor"<<std::endl;
     
+    this->nextEntityId = 0;
+    
+    this->count = 0;
+    
     //init the seed of the 
     this->randomEngine.seed(time(0));
     
