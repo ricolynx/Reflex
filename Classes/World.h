@@ -40,6 +40,9 @@ private :
     
     CollisionSystem *collisionSys;
     
+    //show or not collision zones
+    bool showCollisionZones;
+    
     //the next entity id
     int nextEntityId;
     

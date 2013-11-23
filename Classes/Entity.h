@@ -19,6 +19,7 @@
 #include "VelocityComponent.h"
 #include "TargetComponent.h"
 #include "LifeComponent.h"
+#include "BoundingSprite.h"
 
 #include "cocos2d.h"
 
@@ -48,22 +49,34 @@ private :
     
     int _angle ;
     
-    //size if the entity (ray)
-    float size;
+    //radius of the object
+    float _size;
+    
+    //bool showCollisionZone
+    
     
     //type of the entity
     ENTITY_TYPE type;
 
     //components of the entity
     std::map<std::type_index, component::Component *> components;
-
+    
+    //collisioonZone of the sprite
+    cocos2d::CCSprite *collisionZone;
+    
 public :
     
     //sprite of the entity
-    cocos2d::CCSprite* sprite;
+    cocos2d::CCSprite *sprite;
+    
+    //size if the entity (radius)
+    float size()
+    {
+        return _size;
+    }
     
     //constructor
-    Entity(int newId, ENTITY_TYPE newType, const char* imageName);
+    Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r);
     
     //destructor
     ~Entity();
@@ -92,6 +105,7 @@ public :
     //get the id of the entity
     int getId();
     
+    //get the type of the entity
     ENTITY_TYPE getType(){return type;};
     
     // add a component
@@ -100,6 +114,9 @@ public :
     //template function to get a component
     template <typename T>
     T* getComponent();
+    
+    //show or hide collision zone
+    void showCollisionZones(bool showZone);
     
     //operator override
     bool operator ==(Entity ent)

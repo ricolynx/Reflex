@@ -13,6 +13,7 @@
 		0705E96D182AE242000C8570 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0705E96B182AE242000C8570 /* World.cpp */; };
 		070DC727182E14FD00592C1E /* TestNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC725182E14FD00592C1E /* TestNormal.png */; };
 		070DC728182E14FD00592C1E /* TestSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC726182E14FD00592C1E /* TestSelected.png */; };
+		071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
@@ -291,6 +292,8 @@
 		0705E96C182AE242000C8570 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../Classes/World.h; sourceTree = "<group>"; };
 		070DC725182E14FD00592C1E /* TestNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestNormal.png; sourceTree = "<group>"; };
 		070DC726182E14FD00592C1E /* TestSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestSelected.png; sourceTree = "<group>"; };
+		071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoundingSprite.cpp; path = ../Classes/BoundingSprite.cpp; sourceTree = "<group>"; };
+		071A6EEC1840BED400B32B8E /* BoundingSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoundingSprite.h; path = ../Classes/BoundingSprite.h; sourceTree = "<group>"; };
 		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
@@ -817,6 +820,15 @@
 				0705E96C182AE242000C8570 /* World.h */,
 			);
 			name = Game;
+			sourceTree = "<group>";
+		};
+		071A6EEA1840BEA500B32B8E /* cocosCustom */ = {
+			isa = PBXGroup;
+			children = (
+				071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */,
+				071A6EEC1840BED400B32B8E /* BoundingSprite.h */,
+			);
+			name = cocosCustom;
 			sourceTree = "<group>";
 		};
 		07834213183255EB0039B9DE /* Scenes */ = {
@@ -1357,6 +1369,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				071A6EEA1840BEA500B32B8E /* cocosCustom */,
 				07834213183255EB0039B9DE /* Scenes */,
 				0705E96318283B6A000C8570 /* Game */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
@@ -2031,6 +2044,7 @@
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
+				071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,

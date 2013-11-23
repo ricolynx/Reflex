@@ -36,6 +36,14 @@ class CollisionSystem{
     
     void removeEntity(std::shared_ptr<Entity> entity);
     
+    bool checkCollision(std::shared_ptr<Entity> entity1, std::shared_ptr<Entity> entity2)
+    {
+        float distX =  entity1->posX() - entity2->posX()  ;
+        float distY =  entity1->posY() - entity2->posY()  ;
+        float dist = sqrt(pow(distX,2) + pow(distY,2));
+        return dist < entity1->size() + entity2->size();
+    }
+    
     void update(float dt);
     
 };

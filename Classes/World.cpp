@@ -14,6 +14,8 @@ World::World(cocos2d::CCLayer* s)
 {
     std::cout<< "World constructor"<<std::endl;
     
+    this->showCollisionZones = false;
+    
     this->nextEntityId = 0;
     
     this->count = 0;
@@ -37,7 +39,7 @@ World::World(cocos2d::CCLayer* s)
     cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Sprites.plist");
     
     //create the canon
-    canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "SpaceFlier_sm_1.png"));
+    canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "SpaceFlier_sm_1.png",40));
     
     canon->setPos(worldSize.width * 0.5, worldSize.height * 0.5);
     
@@ -46,6 +48,9 @@ World::World(cocos2d::CCLayer* s)
     this->scene->addChild(canon->sprite);
     
     this->collisionSys->addEntity(canon);
+    
+    if (this->showCollisionZones)
+        canon->showCollisionZones(true);
 }
 
 World::~World()
@@ -66,7 +71,7 @@ World::~World()
 //add an enemy in the world
 void World::addEnemy()
 {
-    std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "asteroid.png"));
+    std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "asteroid.png", 50));
     cocos2d::CCPoint p = this->getRandomPoint();
     //std::cout << p.x << "-" << p.y << std::endl;
     
@@ -84,11 +89,13 @@ void World::addEnemy()
     this->moveSys->addEntity(enemy);
     this->collisionSys->addEntity(enemy);
     this->scene->addChild(enemy->sprite);
+    if (this->showCollisionZones)
+        enemy->showCollisionZones(true);
 }
 
 void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed)
 {
-    std::shared_ptr<Entity> bullet = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bullet, "laserbeam_blue.png"));
+    std::shared_ptr<Entity> bullet = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bullet, "laserbeam_blue.png",5));
     
     bullet->setPos(from->posX(), from->posY());
     
@@ -107,6 +114,8 @@ void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float spee
     this->moveSys->addEntity(bullet);
     this->collisionSys->addEntity(bullet);
 
+    if (this->showCollisionZones)
+        bullet->showCollisionZones(true);
 }
 
 
@@ -208,7 +217,9 @@ void World::removeDeadBullets()
         //std::cout<< lc << std::endl;
         if (!lc || lc->life < 1)
         {
-            this->scene->removeChild(entity->sprite);
+            if (showCollisionZones)
+                entity->showCollisionZones(false);
+            this->scene->removeChild(entity->sprite,true);
             this->moveSys->removeEntity(entity);
             this->collisionSys->removeEntity(entity);
             this->bullets.remove(entity);
@@ -229,6 +240,8 @@ void World::removeDeadEnemies()
         //std::cout<< lc << std::endl;
         if (!lc || lc->life < 1)
         {
+            if (showCollisionZones)
+                entity->showCollisionZones(false);
             this->scene->removeChild(entity->sprite);
             this->moveSys->removeEntity(entity);
             this->collisionSys->removeEntity(entity);

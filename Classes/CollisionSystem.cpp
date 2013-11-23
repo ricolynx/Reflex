@@ -63,6 +63,7 @@ void CollisionSystem::removeEntity(std::shared_ptr<Entity> entity)
 }
 
 
+
 //update the collision system
 void CollisionSystem::update(float dt)
 {
@@ -76,7 +77,7 @@ void CollisionSystem::update(float dt)
             std::shared_ptr<Entity> bullet = *itb;
             if (bullet->getComponent<component::LifeComponent>()->life<1)
                 continue;
-            if (bullet->sprite->boundingBox().intersectsRect(enemy->sprite->boundingBox()))
+            if (this->checkCollision(bullet,enemy))
             {
                 enemy->getComponent<component::LifeComponent>()->life--;
                 bullet->getComponent<component::LifeComponent>()->life--;
@@ -84,3 +85,4 @@ void CollisionSystem::update(float dt)
         }
     }
 }
+

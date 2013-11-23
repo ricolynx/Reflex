@@ -10,7 +10,7 @@
 
 
 //Constructor
-Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName)
+Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r)
 {
     std::cout << "entity " << newId << "-" << newType << "- constructor - " << std::endl;
     
@@ -20,7 +20,11 @@ Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName)
     
     this->_angle = 0;
     
+    this->_size = r;
+    
     this->sprite = cocos2d::CCSprite::createWithSpriteFrameName(imageName);
+    
+    this->collisionZone = 0;
 }
 
 
@@ -61,6 +65,30 @@ void Entity::setRotation(int a)
     this->_angle = a % 360;
     this->sprite->setRotation(this->_angle);
 }
+
+
+void Entity::showCollisionZones(bool showZone){
+    std::cout << showZone << std::endl;
+    if (showZone)
+    {
+        if (this->collisionZone == 0)
+        {
+            this->collisionZone = new BoundingSprite(this->size(),this->sprite->getContentSize().width /2,this->sprite->getContentSize().height /2);
+            this->sprite->addChild(this->collisionZone);
+        }
+    }
+    else
+    {
+        //std::cout << false << std::endl;
+        if (this->collisionZone != 0)
+        {
+            this->sprite->removeChild(this->collisionZone,true);
+            delete this->collisionZone;
+            this->collisionZone = 0;
+        }
+    }
+}
+
 
 // add a component
 void Entity::addComponentToEntity(component::Component* component)
