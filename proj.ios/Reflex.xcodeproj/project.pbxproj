@@ -14,6 +14,24 @@
 		070DC727182E14FD00592C1E /* TestNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC725182E14FD00592C1E /* TestNormal.png */; };
 		070DC728182E14FD00592C1E /* TestSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 070DC726182E14FD00592C1E /* TestSelected.png */; };
 		071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */; };
+		071AA3441842742B00B32B8E /* AnalyticsFlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AA0C61842742800B32B8E /* AnalyticsFlurry.m */; };
+		071AA3451842742B00B32B8E /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA0C81842742800B32B8E /* libFlurry_4.3.0.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		071AA4FF1842742D00B32B8E /* jsb_protocols.ini in Resources */ = {isa = PBXBuildFile; fileRef = 071AA2E11842742B00B32B8E /* jsb_protocols.ini */; };
+		071AA5081842742D00B32B8E /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2F51842742B00B32B8E /* PluginFactory.mm */; };
+		071AA5091842742D00B32B8E /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2F71842742B00B32B8E /* PluginProtocol.mm */; };
+		071AA50A1842742D00B32B8E /* PluginUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2F91842742B00B32B8E /* PluginUtilsIOS.mm */; };
+		071AA50B1842742D00B32B8E /* ProtocolAds.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2FA1842742B00B32B8E /* ProtocolAds.mm */; };
+		071AA50C1842742D00B32B8E /* ProtocolAnalytics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2FB1842742B00B32B8E /* ProtocolAnalytics.mm */; };
+		071AA50D1842742D00B32B8E /* ProtocolIAP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2FC1842742B00B32B8E /* ProtocolIAP.mm */; };
+		071AA50E1842742D00B32B8E /* ProtocolSocial.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2FD1842742B00B32B8E /* ProtocolSocial.mm */; };
+		071AA50F1842742D00B32B8E /* SocialWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2FF1842742B00B32B8E /* SocialWrapper.mm */; };
+		071AA5101842742D00B32B8E /* PluginManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 071AA3001842742B00B32B8E /* PluginManager.cpp */; };
+		071AA5111842742D00B32B8E /* PluginParam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 071AA3011842742B00B32B8E /* PluginParam.cpp */; };
+		071AA533184274D200B32B8E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA532184274D200B32B8E /* Security.framework */; };
+		071AA538184276E200B32B8E /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA536184276E200B32B8E /* libwebp.a */; };
+		071AA53C184277CF00B32B8E /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53A184276FD00B32B8E /* libwebsockets.a */; };
+		071AA53D184277E100B32B8E /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA535184276E200B32B8E /* libcurl.a */; };
+		071AA53F1842798C00B32B8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53E1842798C00B32B8E /* SystemConfiguration.framework */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
@@ -173,10 +191,8 @@
 		1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F3B6B175E05DA00049216 /* spine-cocos2dx.cpp */; };
 		1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CE8221765A12C000E3062 /* AssetsManager.cpp */; };
 		1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87033175E0A84005D39BF /* WebSocket.cpp */; };
-		1AB8703C175E0A92005D39BF /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB8703B175E0A92005D39BF /* libwebsockets.a */; };
 		1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624316D4A1E8000847F2 /* AppController.mm */; };
 		1AC3624B16D4A1E8000847F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624516D4A1E8000847F2 /* main.m */; };
-		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
 		1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B916D35E4900DB1158 /* CloseNormal.png */; };
 		1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
@@ -294,6 +310,44 @@
 		070DC726182E14FD00592C1E /* TestSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestSelected.png; sourceTree = "<group>"; };
 		071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoundingSprite.cpp; path = ../Classes/BoundingSprite.cpp; sourceTree = "<group>"; };
 		071A6EEC1840BED400B32B8E /* BoundingSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoundingSprite.h; path = ../Classes/BoundingSprite.h; sourceTree = "<group>"; };
+		071AA0821842734500B32B8E /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+		071AA0C51842742800B32B8E /* AnalyticsFlurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsFlurry.h; sourceTree = "<group>"; };
+		071AA0C61842742800B32B8E /* AnalyticsFlurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsFlurry.m; sourceTree = "<group>"; };
+		071AA0C71842742800B32B8E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		071AA0C81842742800B32B8E /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
+		071AA0C91842742800B32B8E /* PluginFlurry-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PluginFlurry-Prefix.pch"; sourceTree = "<group>"; };
+		071AA2D91842742B00B32B8E /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
+		071AA2DA1842742B00B32B8E /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
+		071AA2DB1842742B00B32B8E /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
+		071AA2DC1842742B00B32B8E /* PluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginProtocol.h; sourceTree = "<group>"; };
+		071AA2DD1842742B00B32B8E /* ProtocolAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolAds.h; sourceTree = "<group>"; };
+		071AA2DE1842742B00B32B8E /* ProtocolAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolAnalytics.h; sourceTree = "<group>"; };
+		071AA2DF1842742B00B32B8E /* ProtocolIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolIAP.h; sourceTree = "<group>"; };
+		071AA2E01842742B00B32B8E /* ProtocolSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSocial.h; sourceTree = "<group>"; };
+		071AA2E11842742B00B32B8E /* jsb_protocols.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsb_protocols.ini; sourceTree = "<group>"; };
+		071AA2F11842742B00B32B8E /* InterfaceAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceAds.h; sourceTree = "<group>"; };
+		071AA2F21842742B00B32B8E /* InterfaceAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceAnalytics.h; sourceTree = "<group>"; };
+		071AA2F31842742B00B32B8E /* InterfaceIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceIAP.h; sourceTree = "<group>"; };
+		071AA2F41842742B00B32B8E /* InterfaceSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceSocial.h; sourceTree = "<group>"; };
+		071AA2F51842742B00B32B8E /* PluginFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginFactory.mm; sourceTree = "<group>"; };
+		071AA2F61842742B00B32B8E /* PluginOCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginOCMacros.h; sourceTree = "<group>"; };
+		071AA2F71842742B00B32B8E /* PluginProtocol.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginProtocol.mm; sourceTree = "<group>"; };
+		071AA2F81842742B00B32B8E /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
+		071AA2F91842742B00B32B8E /* PluginUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginUtilsIOS.mm; sourceTree = "<group>"; };
+		071AA2FA1842742B00B32B8E /* ProtocolAds.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAds.mm; sourceTree = "<group>"; };
+		071AA2FB1842742B00B32B8E /* ProtocolAnalytics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAnalytics.mm; sourceTree = "<group>"; };
+		071AA2FC1842742B00B32B8E /* ProtocolIAP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolIAP.mm; sourceTree = "<group>"; };
+		071AA2FD1842742B00B32B8E /* ProtocolSocial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolSocial.mm; sourceTree = "<group>"; };
+		071AA2FE1842742B00B32B8E /* SocialWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialWrapper.h; sourceTree = "<group>"; };
+		071AA2FF1842742B00B32B8E /* SocialWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SocialWrapper.mm; sourceTree = "<group>"; };
+		071AA3001842742B00B32B8E /* PluginManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginManager.cpp; sourceTree = "<group>"; };
+		071AA3011842742B00B32B8E /* PluginParam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginParam.cpp; sourceTree = "<group>"; };
+		071AA31B1842742B00B32B8E /* PluginProtocol-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PluginProtocol-Prefix.pch"; sourceTree = "<group>"; };
+		071AA532184274D200B32B8E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		071AA535184276E200B32B8E /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcurl.a; sourceTree = "<group>"; };
+		071AA536184276E200B32B8E /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
+		071AA53A184276FD00B32B8E /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
+		071AA53E1842798C00B32B8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
@@ -625,7 +679,6 @@
 		1AC3624316D4A1E8000847F2 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = SOURCE_ROOT; };
 		1AC3624516D4A1E8000847F2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		1AC3624616D4A1E8000847F2 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
-		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
 		1AFAF8B916D35E4900DB1158 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -791,8 +844,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071AA53F1842798C00B32B8E /* SystemConfiguration.framework in Frameworks */,
+				071AA53C184277CF00B32B8E /* libwebsockets.a in Frameworks */,
+				071AA53D184277E100B32B8E /* libcurl.a in Frameworks */,
+				071AA538184276E200B32B8E /* libwebp.a in Frameworks */,
 				15A3DA6A1682F886002FB0C5 /* libcocos2dx.a in Frameworks */,
-				1ACB3244164770DE00914215 /* libcurl.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -803,7 +859,8 @@
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
-				1AB8703C175E0A92005D39BF /* libwebsockets.a in Frameworks */,
+				071AA533184274D200B32B8E /* Security.framework in Frameworks */,
+				071AA3451842742B00B32B8E /* libFlurry_4.3.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +886,132 @@
 				071A6EEC1840BED400B32B8E /* BoundingSprite.h */,
 			);
 			name = cocosCustom;
+			sourceTree = "<group>";
+		};
+		071AA084184273F100B32B8E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				071AA539184276FD00B32B8E /* lib */,
+				071AA534184276E200B32B8E /* libraries */,
+				071AA0851842742800B32B8E /* plugins */,
+				071AA2D71842742B00B32B8E /* protocols */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		071AA0851842742800B32B8E /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				071AA0B31842742800B32B8E /* flurry */,
+			);
+			name = plugins;
+			path = ../../../plugin/plugins;
+			sourceTree = "<group>";
+		};
+		071AA0B31842742800B32B8E /* flurry */ = {
+			isa = PBXGroup;
+			children = (
+				071AA0C41842742800B32B8E /* proj.ios */,
+			);
+			path = flurry;
+			sourceTree = "<group>";
+		};
+		071AA0C41842742800B32B8E /* proj.ios */ = {
+			isa = PBXGroup;
+			children = (
+				071AA0C51842742800B32B8E /* AnalyticsFlurry.h */,
+				071AA0C61842742800B32B8E /* AnalyticsFlurry.m */,
+				071AA0C71842742800B32B8E /* Flurry.h */,
+				071AA0C81842742800B32B8E /* libFlurry_4.3.0.a */,
+				071AA0C91842742800B32B8E /* PluginFlurry-Prefix.pch */,
+			);
+			path = proj.ios;
+			sourceTree = "<group>";
+		};
+		071AA2D71842742B00B32B8E /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				071AA2D81842742B00B32B8E /* include */,
+				071AA2E11842742B00B32B8E /* jsb_protocols.ini */,
+				071AA2E21842742B00B32B8E /* platform */,
+				071AA3001842742B00B32B8E /* PluginManager.cpp */,
+				071AA3011842742B00B32B8E /* PluginParam.cpp */,
+				071AA31A1842742B00B32B8E /* proj.ios */,
+			);
+			name = protocols;
+			path = ../../../plugin/protocols;
+			sourceTree = "<group>";
+		};
+		071AA2D81842742B00B32B8E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				071AA2D91842742B00B32B8E /* PluginFactory.h */,
+				071AA2DA1842742B00B32B8E /* PluginManager.h */,
+				071AA2DB1842742B00B32B8E /* PluginParam.h */,
+				071AA2DC1842742B00B32B8E /* PluginProtocol.h */,
+				071AA2DD1842742B00B32B8E /* ProtocolAds.h */,
+				071AA2DE1842742B00B32B8E /* ProtocolAnalytics.h */,
+				071AA2DF1842742B00B32B8E /* ProtocolIAP.h */,
+				071AA2E01842742B00B32B8E /* ProtocolSocial.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		071AA2E21842742B00B32B8E /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				071AA2F01842742B00B32B8E /* ios */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		071AA2F01842742B00B32B8E /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				071AA2F11842742B00B32B8E /* InterfaceAds.h */,
+				071AA2F21842742B00B32B8E /* InterfaceAnalytics.h */,
+				071AA2F31842742B00B32B8E /* InterfaceIAP.h */,
+				071AA2F41842742B00B32B8E /* InterfaceSocial.h */,
+				071AA2F51842742B00B32B8E /* PluginFactory.mm */,
+				071AA2F61842742B00B32B8E /* PluginOCMacros.h */,
+				071AA2F71842742B00B32B8E /* PluginProtocol.mm */,
+				071AA2F81842742B00B32B8E /* PluginUtilsIOS.h */,
+				071AA2F91842742B00B32B8E /* PluginUtilsIOS.mm */,
+				071AA2FA1842742B00B32B8E /* ProtocolAds.mm */,
+				071AA2FB1842742B00B32B8E /* ProtocolAnalytics.mm */,
+				071AA2FC1842742B00B32B8E /* ProtocolIAP.mm */,
+				071AA2FD1842742B00B32B8E /* ProtocolSocial.mm */,
+				071AA2FE1842742B00B32B8E /* SocialWrapper.h */,
+				071AA2FF1842742B00B32B8E /* SocialWrapper.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		071AA31A1842742B00B32B8E /* proj.ios */ = {
+			isa = PBXGroup;
+			children = (
+				071AA31B1842742B00B32B8E /* PluginProtocol-Prefix.pch */,
+			);
+			path = proj.ios;
+			sourceTree = "<group>";
+		};
+		071AA534184276E200B32B8E /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				071AA535184276E200B32B8E /* libcurl.a */,
+				071AA536184276E200B32B8E /* libwebp.a */,
+			);
+			name = libraries;
+			path = ../../../cocos2dx/platform/third_party/ios/libraries;
+			sourceTree = "<group>";
+		};
+		071AA539184276FD00B32B8E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				071AA53A184276FD00B32B8E /* libwebsockets.a */,
+			);
+			name = lib;
+			path = ../../../external/libwebsockets/ios/lib;
 			sourceTree = "<group>";
 		};
 		07834213183255EB0039B9DE /* Scenes */ = {
@@ -1485,6 +1668,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				071AA084184273F100B32B8E /* libs */,
 				15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */,
 				15A3D8871682F7D5002FB0C5 /* Box2D */,
 				15A3D93A1682F7F9002FB0C5 /* chipmunk */,
@@ -1503,7 +1687,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1ACB3243164770DE00914215 /* libcurl.a */,
+				071AA53E1842798C00B32B8E /* SystemConfiguration.framework */,
+				071AA532184274D200B32B8E /* Security.framework */,
+				071AA0821842734500B32B8E /* libcurl.a */,
 				BF170DB212928DE900B8313A /* libxml2.dylib */,
 				BF170DB412928DE900B8313A /* libz.dylib */,
 				D44C620F132DFF4E0009C878 /* AudioToolbox.framework */,
@@ -1912,6 +2098,7 @@
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */,
+				071AA4FF1842742D00B32B8E /* jsb_protocols.ini in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
@@ -1959,6 +2146,7 @@
 				15A3D9111682F7D5002FB0C5 /* b2Body.cpp in Sources */,
 				15A3D9121682F7D5002FB0C5 /* b2ContactManager.cpp in Sources */,
 				15A3D9131682F7D5002FB0C5 /* b2Fixture.cpp in Sources */,
+				071AA5081842742D00B32B8E /* PluginFactory.mm in Sources */,
 				15A3D9141682F7D5002FB0C5 /* b2Island.cpp in Sources */,
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
@@ -1969,6 +2157,7 @@
 				15A3D91B1682F7D5002FB0C5 /* b2ContactSolver.cpp in Sources */,
 				15A3D91C1682F7D5002FB0C5 /* b2EdgeAndCircleContact.cpp in Sources */,
 				15A3D91D1682F7D5002FB0C5 /* b2EdgeAndPolygonContact.cpp in Sources */,
+				071AA50E1842742D00B32B8E /* ProtocolSocial.mm in Sources */,
 				15A3D91E1682F7D5002FB0C5 /* b2PolygonAndCircleContact.cpp in Sources */,
 				15A3D91F1682F7D5002FB0C5 /* b2PolygonContact.cpp in Sources */,
 				0705E96618283C1F000C8570 /* Entity.cpp in Sources */,
@@ -2000,6 +2189,7 @@
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
 				15A3D9A31682F7F9002FB0C5 /* cpArray.c in Sources */,
 				15A3D9A41682F7F9002FB0C5 /* cpBB.c in Sources */,
+				071AA50C1842742D00B32B8E /* ProtocolAnalytics.mm in Sources */,
 				15A3D9A51682F7F9002FB0C5 /* cpBBTree.c in Sources */,
 				15A3D9A61682F7F9002FB0C5 /* cpBody.c in Sources */,
 				15A3D9A71682F7F9002FB0C5 /* cpCollision.c in Sources */,
@@ -2012,6 +2202,8 @@
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				07E4D06818342C99001176D7 /* MoveSystem.cpp in Sources */,
+				071AA50F1842742D00B32B8E /* SocialWrapper.mm in Sources */,
+				071AA50D1842742D00B32B8E /* ProtocolIAP.mm in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
 				0705E96D182AE242000C8570 /* World.cpp in Sources */,
@@ -2042,6 +2234,7 @@
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
+				071AA50A1842742D00B32B8E /* PluginUtilsIOS.mm in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
 				071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */,
@@ -2076,6 +2269,7 @@
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
+				071AA5091842742D00B32B8E /* PluginProtocol.mm in Sources */,
 				1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */,
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,
@@ -2086,8 +2280,10 @@
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
+				071AA50B1842742D00B32B8E /* ProtocolAds.mm in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
+				071AA5111842742D00B32B8E /* PluginParam.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
 				1A8F3B7B175E05DA00049216 /* RegionAttachment.cpp in Sources */,
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
@@ -2114,6 +2310,7 @@
 				379BB9A117F03F3700829B88 /* CCDecorativeDisplay.cpp in Sources */,
 				0705E95E18242D06000C8570 /* GameScene.cpp in Sources */,
 				379BB9A217F03F3700829B88 /* CCDisplayFactory.cpp in Sources */,
+				071AA5101842742D00B32B8E /* PluginManager.cpp in Sources */,
 				0705E96118243681000C8570 /* SceneManager.cpp in Sources */,
 				379BB9A317F03F3700829B88 /* CCDisplayManager.cpp in Sources */,
 				379BB9A417F03F3700829B88 /* CCSkin.cpp in Sources */,
@@ -2129,6 +2326,7 @@
 				379BB9AE17F03F3700829B88 /* CCComAudio.cpp in Sources */,
 				379BB9AF17F03F3700829B88 /* CCComController.cpp in Sources */,
 				379BB9B017F03F3700829B88 /* CCComRender.cpp in Sources */,
+				071AA3441842742B00B32B8E /* AnalyticsFlurry.m in Sources */,
 				379BB9B117F03F3700829B88 /* CCInputDelegate.cpp in Sources */,
 				379BB9B217F03F3700829B88 /* UIRootWidget.cpp in Sources */,
 				379BB9B317F03F3700829B88 /* UIWidget.cpp in Sources */,
@@ -2212,8 +2410,12 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+					"\\\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\\\"",
+					"\\\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\\\"",
+					"/Users/eric/Projects/cocos2d-x-2.2/cocos2dx/platform/third_party/ios/libraries",
+					"/Users/eric/Projects/cocos2d-x-2.2/external/libwebsockets/ios/lib",
+					"/Users/eric/Projects/cocos2d-x-2.2/plugin/plugins/flurry/proj.ios",
+					"/Users/eric/Projects/cocos2d-x-2.2/plugin/plugins/umeng/proj.ios",
 				);
 				OTHER_CFLAGS = "-O2";
 				PRODUCT_NAME = Reflex;
@@ -2262,8 +2464,12 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+					"\\\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\\\"",
+					"\\\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\\\"",
+					"/Users/eric/Projects/cocos2d-x-2.2/cocos2dx/platform/third_party/ios/libraries",
+					"/Users/eric/Projects/cocos2d-x-2.2/external/libwebsockets/ios/lib",
+					"/Users/eric/Projects/cocos2d-x-2.2/plugin/plugins/flurry/proj.ios",
+					"/Users/eric/Projects/cocos2d-x-2.2/plugin/plugins/umeng/proj.ios",
 				);
 				PRODUCT_NAME = Reflex;
 				PROVISIONING_PROFILE = "";
