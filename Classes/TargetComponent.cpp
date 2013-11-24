@@ -12,14 +12,17 @@
 //Constructor
 component::TargetComponent::TargetComponent(std::shared_ptr<Entity> t)
 {
-    std::cout<<"target component constructor"<< std::endl;
+    showLogs = false;
+    if (showLogs)
+        std::cout<<"target component constructor"<< std::endl;
     this->setNewTarget(t);
 }
 
 //Destructor
 component::TargetComponent::~TargetComponent()
 {
-    std::cout<<"target component destructor"<< std::endl;
+    if (showLogs)
+        std::cout<<"target component destructor"<< std::endl;
     this->myTarget = 0;
 }
 

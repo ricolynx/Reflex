@@ -14,6 +14,9 @@
 
 class MainMenu : public cocos2d::CCLayer
 {
+    private :
+        bool showLogs;
+    
     public :
         virtual bool init();
     

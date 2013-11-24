@@ -38,6 +38,8 @@ public:
     
 private :
     
+    bool showLogs;
+    
     //Id of the entity
     int Id;
     

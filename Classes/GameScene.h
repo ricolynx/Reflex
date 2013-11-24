@@ -29,8 +29,18 @@ public :
     
     CREATE_FUNC(GameScene);
     
+    //virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    
+    virtual void registerWithTouchDispatcher();
+    
+    virtual void ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
+    
+    virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
+    
     
 private:
+    
+    bool showLogs;
     
     //the world model of the game (containing the different entities
     World *world;

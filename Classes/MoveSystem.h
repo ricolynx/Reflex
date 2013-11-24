@@ -17,6 +17,9 @@
 class MoveSystem
 {
 private:
+    
+    bool showLogs;
+    
     //reference to the related entity
     std::list<std::shared_ptr<Entity>> movingEntities;
     

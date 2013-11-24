@@ -19,6 +19,8 @@ class CollisionSystem{
     
     private :
     
+    bool showLogs;
+    
     std::list<std::shared_ptr<Entity>> enemies;
     
     std::list<std::shared_ptr<Entity>> bullets;

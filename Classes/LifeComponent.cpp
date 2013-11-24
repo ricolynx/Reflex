@@ -11,12 +11,17 @@
 //Constructor
 component::LifeComponent::LifeComponent(int l)
 {
-    std::cout<<"life component constructor"<< std::endl;
+    showLogs = false;
+    
+    if (showLogs)
+        std::cout<<"life component constructor"<< std::endl;
+    
     life = l;
 }
 
 //Destructor
 component::LifeComponent::~LifeComponent()
 {
-    std::cout<<"life component destructor"<< std::endl;
+    if (showLogs)
+        std::cout<<"life component destructor"<< std::endl;
 }

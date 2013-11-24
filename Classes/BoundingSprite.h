@@ -15,6 +15,7 @@
 class BoundingSprite : public cocos2d::CCSprite
 {
     private:
+        bool showLogs;
         int _radius;
         int _x;
         int _y;

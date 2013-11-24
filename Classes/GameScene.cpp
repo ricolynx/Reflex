@@ -26,12 +26,16 @@ CCScene* GameScene::scene()
 
 GameScene::GameScene()
 {
-    std::cout<<"GameScene Constructor"<<std::endl;
+    showLogs = false;
+    if (showLogs)
+        std::cout<<"GameScene Constructor"<<std::endl;
 }
 
 GameScene::~GameScene()
 {
-    std::cout<<"GameScene destructor"<<std::endl;
+    if (showLogs)
+        std::cout<<"GameScene destructor"<<std::endl;
+    
     delete this->world;
 }
 
@@ -45,11 +49,13 @@ bool GameScene::init()
     }
     
     initUI();
-
+    
     //test world...
     this->world = new World(this);
     
     this->scheduleUpdate();
+    
+    this->setTouchEnabled(true);
     
     return true;
 }
@@ -105,11 +111,6 @@ void GameScene::testCallback(CCObject *pSender)
 {
     //std::cout << this->world->getNbEntities() << std::endl;
     //this->worldView->addEntity();
-    
-    this->world->fireSingleBullet(this->world->canon, this->world->canon->angle(), 500);
-    this->world->fireSingleBullet(this->world->canon, this->world->canon->angle() + 90, 500);
-    this->world->fireSingleBullet(this->world->canon, this->world->canon->angle() + 180, 500);
-    this->world->fireSingleBullet(this->world->canon, this->world->canon->angle() + 270, 500);
 }
 
 void GameScene::menuCallback(CCObject *pSender)
@@ -120,6 +121,27 @@ void GameScene::menuCallback(CCObject *pSender)
 void GameScene::update(float dt)
 {
     this->world->update(dt);
-    //std::cout<<"update :"<<dt<<std::endl;
+}
+
+void GameScene::ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event)
+{
+    if (showLogs)
+        std::cout << "TOUCH began" << std::endl;
+    
+    this->world->onTouchesBegan(touches);
+}
+
+void GameScene::ccTouchesEnded(CCSet* touches, CCEvent* event)
+{
+    if (showLogs)
+        std::cout << "TOUCH Ended" << std::endl;
+    
+    this->world->onTouchesEnded(touches);
+}
+
+
+void GameScene::registerWithTouchDispatcher()
+{
+    CCDirector::sharedDirector()->getTouchDispatcher()->addStandardDelegate(this, 0);
 }
 

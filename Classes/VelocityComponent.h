@@ -17,6 +17,9 @@ namespace component{
 
     class VelocityComponent : public Component
     {
+        private:
+            bool showLogs;
+        
         public :
             VelocityComponent();
             virtual ~VelocityComponent();

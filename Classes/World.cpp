@@ -12,13 +12,20 @@
 
 World::World(cocos2d::CCLayer* s)
 {
-    std::cout<< "World constructor"<<std::endl;
+    showLogs = false;
+    
+    if (showLogs)
+        std::cout<< "World constructor"<<std::endl;
     
     this->showCollisionZones = false;
     
     this->nextEntityId = 0;
     
     this->count = 0;
+    
+    this->canonAngle = 0;
+    
+    this->rotateCanon = false;
     
     //init the seed of the 
     this->randomEngine.seed(time(0));
@@ -55,7 +62,8 @@ World::World(cocos2d::CCLayer* s)
 
 World::~World()
 {
-    std::cout<< "World destructor"<<std::endl;
+    if (showLogs)
+        std::cout<< "World destructor"<<std::endl;
     
     this->canon = 0;
     
@@ -73,7 +81,6 @@ void World::addEnemy()
 {
     std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "asteroid.png", 50));
     cocos2d::CCPoint p = this->getRandomPoint();
-    //std::cout << p.x << "-" << p.y << std::endl;
     
     enemy->setPos(p.x, p.y);
     
@@ -118,6 +125,16 @@ void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float spee
         bullet->showCollisionZones(true);
 }
 
+//fire 4 bullets at same time
+void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed){
+    
+    float angleDelta = 360 / nbBullets;
+    
+    for (int i = 0 ; i< nbBullets ; i++)
+    {
+        this->fireSingleBullet(this->canon, this->canon->angle() + i * angleDelta, 500);
+    }
+}
 
 //get a random point in the world
 cocos2d::CCPoint World::getRandomPoint()
@@ -179,15 +196,10 @@ void World::setInitialVelocity(std::shared_ptr<Entity> entity, int coef)
             targetX = worldSize.width / 2;
             targetY = worldSize.height / 2;
         }
-        std::cout << entity->posX() <<" " << entity->posY()<< std::endl;
-        std::cout << targetX <<" " << targetY<< std::endl;
         
         float distX =  targetX - entity->posX()  ;
         float distY =  targetY - entity->posY()  ;
         float dist = sqrt(pow(distX,2) + pow(distY,2));
-        
-        std::cout << (distX/dist) * coef << std::endl;
-        std::cout << (distY/dist) * coef << std::endl;
         
         vc->speedX = (distX/dist) * coef;
         vc->speedY = (distY/dist) * coef;
@@ -235,9 +247,9 @@ void World::removeDeadEnemies()
     for (std::list<std::shared_ptr<Entity>>::iterator it = this->enemies.begin();it != this->enemies.end(); it++)
     {
         std::shared_ptr<Entity> entity = *it;
-        //std::cout<< &entity << std::endl;
+
         component::LifeComponent* lc = entity->getComponent<component::LifeComponent>();
-        //std::cout<< lc << std::endl;
+
         if (!lc || lc->life < 1)
         {
             if (showCollisionZones)
@@ -255,13 +267,34 @@ void World::removeDeadEnemies()
 //update function of the world
 void World::update(float dt)
 {
-    count = (count + 1 ) % 360;
-    if (count % 60 == 0)
+    count = (count + 1 ) % 60;
+
+    if (count == 0)
         this->addEnemy();
-        
-    this->canon->setRotation(count);
+    
+    if (this->rotateCanon)
+    {
+        this->canonAngle = (this->canonAngle + 1) % 360;
+        this->canon->setRotation(this->canonAngle);
+    }
+    
     this->moveSys->update(dt);
     this->collisionSys->update(dt);
     this->removeDeadBullets();
     this->removeDeadEnemies();
+}
+
+
+
+//when touch starts
+void World::onTouchesBegan(cocos2d::CCSet* touches)
+{
+    this->rotateCanon = true;
+}
+
+//when touch stops
+void World::onTouchesEnded(cocos2d::CCSet* touches)
+{
+    this->rotateCanon = false;
+    this->fireBullets(this->canon, 4 , 500);
 }

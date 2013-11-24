@@ -16,6 +16,8 @@ namespace component
 {
     class LifeComponent : public Component
     {
+        private:
+            bool showLogs;
         public:
             int life;
             LifeComponent(int l);

@@ -32,6 +32,8 @@ class World
 {
 private :
     
+    bool showLogs;
+    
     cocos2d::CCLayer* scene;
     
     cocos2d::CCSpriteBatchNode* batchNode;
@@ -48,6 +50,11 @@ private :
     
     //a counter 
     int count;
+    
+    //canon angle
+    int canonAngle;
+    
+    bool rotateCanon;
     
     //the list of entities of the workd
     
@@ -72,7 +79,11 @@ private :
     
     void removeDeadEnemies();
     
-
+    //fire a single bullet
+    void fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed);
+    
+    // fire n bullets
+    void fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed);
     
 public :
     
@@ -86,12 +97,15 @@ public :
     
     //add an enemy entity to the world
     void addEnemy();
-
-    //fire a single bullet
-    void fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed);
     
     //update loop of the world
     void update(float dt);
+    
+    //when touch starts
+    void onTouchesBegan(cocos2d::CCSet* touches);
+    
+    //when touch stops
+    void onTouchesEnded(cocos2d::CCSet* touches);
 };
 
 #endif /* defined(__Reflex__World__) */

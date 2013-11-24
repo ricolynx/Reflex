@@ -12,13 +12,17 @@
 
 CollisionSystem::CollisionSystem()
 {
-    std::cout << "CollisionSystem - constructor - " << std::endl;
+    showLogs = false;
+    
+    if (showLogs)
+        std::cout << "CollisionSystem - constructor - " << std::endl;
 
 }
 
 CollisionSystem::~CollisionSystem()
 {
-    std::cout << "CollisionSystem - destructor - " << std::endl;
+    if (showLogs)
+        std::cout << "CollisionSystem - destructor - " << std::endl;
 
 }
 

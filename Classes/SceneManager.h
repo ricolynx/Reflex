@@ -17,6 +17,8 @@ class SceneManager
 {
 private:
     
+    bool showLogs;
+    
     static SceneManager* m_instance;
     
     cocos2d::CCDirector* pDirector;

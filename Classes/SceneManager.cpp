@@ -13,6 +13,7 @@ SceneManager* SceneManager::m_instance = NULL;
 
 SceneManager::SceneManager()
 {
+    showLogs = false;
 }
 
 SceneManager::~SceneManager()
@@ -61,13 +62,15 @@ void SceneManager::changeScene(CCScene * pScene)
 
 void SceneManager::showMenu()
 {
-    std::cout << "chargement du menu\n";
+    if (showLogs)
+        std::cout << "chargement du menu\n";
     changeScene(MainMenu::scene());
 }
 
 void SceneManager::startGame()
 {
-    std::cout << "chargement du jeu\n";
+    if (showLogs)
+        std::cout << "chargement du jeu\n";
     changeScene(GameScene::scene());
 }
 

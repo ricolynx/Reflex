@@ -12,7 +12,9 @@
 
 BoundingSprite::BoundingSprite(float r, float x , float y)
 {
-    std::cout<< "BoundingSprite - Constructor - radius :" << r << std::endl;
+    showLogs = false;
+    if (showLogs)
+        std::cout<< "BoundingSprite - Constructor - radius :" << r << std::endl;
     this->_radius = r;
     this->_x = x;
     this->_y = y;
@@ -20,7 +22,8 @@ BoundingSprite::BoundingSprite(float r, float x , float y)
 
 BoundingSprite::~BoundingSprite()
 {
-    std::cout<< "BoundingSprite - Destructor "<< std::endl;
+    if (showLogs)
+        std::cout<< "BoundingSprite - Destructor "<< std::endl;
 }
 
 void BoundingSprite::draw(void)

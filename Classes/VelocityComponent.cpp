@@ -11,7 +11,10 @@
 //constructor
 component::VelocityComponent::VelocityComponent()
 {
-    std::cout<<"velocity component constructor"<< std::endl;
+    showLogs = false;
+    if (showLogs)
+        std::cout<<"velocity component constructor"<< std::endl;
+    
     this->speedX = 0;
     this->speedY = 0;
 }
@@ -19,5 +22,6 @@ component::VelocityComponent::VelocityComponent()
 //destructor
 component::VelocityComponent::~VelocityComponent()
 {
-    std::cout<<"velocity component destructor"<< std::endl;
+    if (showLogs)
+        std::cout<<"velocity component destructor"<< std::endl;
 }

@@ -12,7 +12,11 @@
 //Constructor
 Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r)
 {
-    std::cout << "entity " << newId << "-" << newType << "- constructor - " << std::endl;
+    showLogs = false;
+    
+    
+    if (showLogs)
+        std::cout << "entity " << newId << "-" << newType << "- constructor - " << std::endl;
     
     this->Id = newId;
     
@@ -30,7 +34,8 @@ Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r)
 
 Entity::~Entity()
 {
-    std::cout << "entity " << this->Id << "-" << this->type << "- destructor -" << std::endl;
+    if (showLogs)
+        std::cout << "entity " << this->Id << "-" << this->type << "- destructor -" << std::endl;
     
     this->sprite = 0;
     
@@ -68,7 +73,6 @@ void Entity::setRotation(int a)
 
 
 void Entity::showCollisionZones(bool showZone){
-    std::cout << showZone << std::endl;
     if (showZone)
     {
         if (this->collisionZone == 0)

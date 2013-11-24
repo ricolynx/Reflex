@@ -19,6 +19,9 @@ namespace component{
     class TargetComponent : public Component
     {
         private:
+        
+            bool showLogs;
+        
             //the target
             std::shared_ptr<Entity> myTarget;
 

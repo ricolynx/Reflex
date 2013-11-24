@@ -10,7 +10,10 @@
 
 MoveSystem::MoveSystem(float ww,float wh)
 {
-    std::cout << "MoveSystem - constructor - " << std::endl;
+    showLogs = false;
+    
+    if (showLogs)
+        std::cout << "MoveSystem - constructor - " << std::endl;
     this->worldWidth = ww;
     this->worldHeight = wh;
 }
@@ -18,7 +21,8 @@ MoveSystem::MoveSystem(float ww,float wh)
 
 MoveSystem::~MoveSystem()
 {
-    std::cout << "MoveSystem - destructor - " << std::endl;
+    if (showLogs)
+        std::cout << "MoveSystem - destructor - " << std::endl;
     //this->movingEntities.clear();
 }
 
@@ -61,7 +65,8 @@ void MoveSystem::move(std::shared_ptr<Entity> entity, float dt)
             component::LifeComponent *lc = entity->getComponent<component::LifeComponent>();
             if (lc){
                 lc->life--;
-                std::cout<<"remove life of entity "<<entity->getId() << std::endl;
+                if (showLogs)
+                    std::cout<<"remove life of entity "<<entity->getId() << std::endl;
             }
             
         }
