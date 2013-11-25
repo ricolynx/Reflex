@@ -8,7 +8,6 @@
 
 #include "Entity.h"
 
-
 //Constructor
 Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r)
 {
@@ -101,24 +100,6 @@ void Entity::addComponentToEntity(component::Component* component)
     this->components[std::type_index(typeid(*component))] = component;
 }
 
-//get a component
-template <typename T>
-T* Entity::getComponent(){
-    std::type_index index(typeid(T));
-    if(components.count(index) != 0)
-    {
-        return static_cast<T*>(components[index]);
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-//explicits instantiations of get component
-template component::VelocityComponent* Entity::getComponent<component::VelocityComponent>();
-template component::TargetComponent* Entity::getComponent<component::TargetComponent>();
-template component::LifeComponent* Entity::getComponent<component::LifeComponent>();
 
 
 

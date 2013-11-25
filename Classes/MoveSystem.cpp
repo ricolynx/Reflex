@@ -7,6 +7,7 @@
 //
 
 #include "MoveSystem.h"
+#include "VelocityComponent.h"
 
 MoveSystem::MoveSystem(float ww,float wh)
 {

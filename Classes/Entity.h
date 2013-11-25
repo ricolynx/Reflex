@@ -16,14 +16,11 @@
 //#include <memory>
 
 #include "component.h"
-#include "VelocityComponent.h"
 #include "TargetComponent.h"
 #include "LifeComponent.h"
 #include "BoundingSprite.h"
 
 #include "cocos2d.h"
-
-
 
 class Entity
 {
@@ -61,7 +58,7 @@ private :
     ENTITY_TYPE type;
 
     //components of the entity
-    std::map<std::type_index, component::Component *> components;
+    std::map<std::type_index, component::Component*> components;
     
     //collisioonZone of the sprite
     cocos2d::CCSprite *collisionZone;
@@ -115,7 +112,17 @@ public :
     
     //template function to get a component
     template <typename T>
-    T* getComponent();
+    T* getComponent(){
+        std::type_index index(typeid(T));
+        if(components.count(index) != 0)
+        {
+            return static_cast<T*>(components[index]);
+        }
+        else
+        {
+            return 0;
+        }
+    }
     
     //show or hide collision zone
     void showCollisionZones(bool showZone);
