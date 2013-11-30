@@ -35,6 +35,7 @@
 		0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0740752C184A03E100FFB920 /* FlurryController.cpp */; };
 		07407531184A167000FFB920 /* gameAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0740752F184A167000FFB920 /* gameAtlas.plist */; };
 		07407532184A167000FFB920 /* gameAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07407530184A167000FFB920 /* gameAtlas.png */; };
+		07407537184A74CC00FFB920 /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07407535184A74CC00FFB920 /* UILayer.cpp */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
@@ -353,6 +354,8 @@
 		0740752D184A03E100FFB920 /* FlurryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryController.h; path = ../Classes/FlurryController.h; sourceTree = "<group>"; };
 		0740752F184A167000FFB920 /* gameAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameAtlas.plist; sourceTree = "<group>"; };
 		07407530184A167000FFB920 /* gameAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameAtlas.png; sourceTree = "<group>"; };
+		07407535184A74CC00FFB920 /* UILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UILayer.cpp; path = ../Classes/UILayer.cpp; sourceTree = "<group>"; };
+		07407536184A74CC00FFB920 /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UILayer.h; path = ../Classes/UILayer.h; sourceTree = "<group>"; };
 		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
@@ -1026,6 +1029,23 @@
 			name = utils;
 			sourceTree = "<group>";
 		};
+		07407533184A74A200FFB920 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				07407534184A74B100FFB920 /* GameUI */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		07407534184A74B100FFB920 /* GameUI */ = {
+			isa = PBXGroup;
+			children = (
+				07407535184A74CC00FFB920 /* UILayer.cpp */,
+				07407536184A74CC00FFB920 /* UILayer.h */,
+			);
+			name = GameUI;
+			sourceTree = "<group>";
+		};
 		07834213183255EB0039B9DE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1564,6 +1584,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				07407533184A74A200FFB920 /* UI */,
 				0740752B184A03C200FFB920 /* utils */,
 				071A6EEA1840BEA500B32B8E /* cocosCustom */,
 				07834213183255EB0039B9DE /* Scenes */,
@@ -2373,6 +2394,7 @@
 				379BB9CA17F03F3700829B88 /* CSContentJsonDictionary.cpp in Sources */,
 				379BB9CB17F03F3700829B88 /* DictionaryHelper.cpp in Sources */,
 				379BB9CE17F03F3700829B88 /* json_reader.cpp in Sources */,
+				07407537184A74CC00FFB920 /* UILayer.cpp in Sources */,
 				379BB9CF17F03F3700829B88 /* json_value.cpp in Sources */,
 				379BB9D117F03F3700829B88 /* json_writer.cpp in Sources */,
 				379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */,

@@ -74,6 +74,8 @@ World::~World()
     this->enemies.clear();
     
     this->bullets.clear();
+    
+    this->batchNode = 0;
 }
 
 //add an enemy in the world

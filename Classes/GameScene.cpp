@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "UILayer.h"
 USING_NS_CC;
 
 CCScene* GameScene::scene()
@@ -14,11 +15,18 @@ CCScene* GameScene::scene()
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
-    // 'layer' is an autorelease object
+    // main layer
     GameScene *layer = GameScene::create();
+    
+    UILayer *uiLayer = UILayer::create();
     
     // add layer as a child to scene
     scene->addChild(layer);
+    scene->addChild(uiLayer);
+    
+    layer->uilayer = uiLayer;
+    
+    layer->uilayer->initUI(layer->world);
     
     // return the scene
     return scene;
@@ -36,6 +44,8 @@ GameScene::~GameScene()
     if (showLogs)
         std::cout<<"GameScene destructor"<<std::endl;
     
+    this->uilayer = 0;
+    
     delete this->world;
 }
 
@@ -49,6 +59,8 @@ bool GameScene::init()
     }
     
     initUI();
+    
+   
     
     //test world...
     this->world = new World(this);
@@ -76,7 +88,6 @@ void GameScene::initUI()
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
      */
-    
     
     // add a "close" icon to exit the progress. it's an autorelease object
     CCMenuItemImage *pPlayItem = CCMenuItemImage::create(

@@ -13,7 +13,7 @@
 #include "SceneManager.h"
 #include "World.h"
 
-
+class UILayer;
 class GameScene : public cocos2d::CCLayer {
     
 public :
@@ -37,16 +37,16 @@ public :
     
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     
+    UILayer * uilayer;
+    
+    //the world model of the game (containing the different entities
+    World *world;
     
 private:
     
     bool showLogs;
     
-    //the world model of the game (containing the different entities
-    World *world;
-    
-    //represent the world view of the game
-    //WorldView *worldView;
+
     
     //initialisation of the menu
     void initUI();
