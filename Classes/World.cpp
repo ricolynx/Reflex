@@ -39,14 +39,14 @@ World::World(cocos2d::CCLayer* s)
     this->collisionSys = new CollisionSystem();
     
     //initialise batchnode and sharesprite
-    batchNode = cocos2d::CCSpriteBatchNode::create("Sprites.pvr.ccz");
+    batchNode = cocos2d::CCSpriteBatchNode::create("gameAtlas.png");
     
     scene->addChild(batchNode);
     
-    cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Sprites.plist");
+    cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("gameAtlas.plist");
     
     //create the canon
-    canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "SpaceFlier_sm_1.png",40));
+    canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "canon.png",40));
     
     canon->setPos(worldSize.width * 0.5, worldSize.height * 0.5);
     
@@ -79,7 +79,7 @@ World::~World()
 //add an enemy in the world
 void World::addEnemy()
 {
-    std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "asteroid.png", 50));
+    std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi1.png", 43));
     cocos2d::CCPoint p = this->getRandomPoint();
     
     enemy->setPos(p.x, p.y);
@@ -102,7 +102,7 @@ void World::addEnemy()
 
 void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed)
 {
-    std::shared_ptr<Entity> bullet = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bullet, "laserbeam_blue.png",5));
+    std::shared_ptr<Entity> bullet = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bullet, "bullet.png",5));
     
     bullet->setPos(from->posX(), from->posY());
     

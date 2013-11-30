@@ -33,11 +33,11 @@
 		071AA53D184277E100B32B8E /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA535184276E200B32B8E /* libcurl.a */; };
 		071AA53F1842798C00B32B8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53E1842798C00B32B8E /* SystemConfiguration.framework */; };
 		0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0740752C184A03E100FFB920 /* FlurryController.cpp */; };
+		07407531184A167000FFB920 /* gameAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0740752F184A167000FFB920 /* gameAtlas.plist */; };
+		07407532184A167000FFB920 /* gameAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07407530184A167000FFB920 /* gameAtlas.png */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
-		07B79DDF182FADBA004EB918 /* Sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDD182FADBA004EB918 /* Sprites.plist */; };
-		07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */; };
 		07E4D06818342C99001176D7 /* MoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E4D06618342C99001176D7 /* MoveSystem.cpp */; };
 		07E4D07718377AB5001176D7 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E4D07518377AB5001176D7 /* Component.cpp */; };
 		07E4D07A18377AF7001176D7 /* VelocityComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E4D07818377AF7001176D7 /* VelocityComponent.cpp */; };
@@ -351,14 +351,14 @@
 		071AA53E1842798C00B32B8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0740752C184A03E100FFB920 /* FlurryController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlurryController.cpp; path = ../Classes/FlurryController.cpp; sourceTree = "<group>"; };
 		0740752D184A03E100FFB920 /* FlurryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryController.h; path = ../Classes/FlurryController.h; sourceTree = "<group>"; };
+		0740752F184A167000FFB920 /* gameAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameAtlas.plist; sourceTree = "<group>"; };
+		07407530184A167000FFB920 /* gameAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameAtlas.png; sourceTree = "<group>"; };
 		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
 		076349AB18392CB100180D07 /* LifeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeComponent.h; path = ../Classes/LifeComponent.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
-		07B79DDD182FADBA004EB918 /* Sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sprites.plist; sourceTree = "<group>"; };
-		07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sprites.pvr.ccz; sourceTree = "<group>"; };
 		07E4D06618342C99001176D7 /* MoveSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MoveSystem.cpp; path = ../Classes/MoveSystem.cpp; sourceTree = "<group>"; };
 		07E4D06718342C99001176D7 /* MoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveSystem.h; path = ../Classes/MoveSystem.h; sourceTree = "<group>"; };
 		07E4D07518377AB5001176D7 /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Component.cpp; path = ../Classes/Component.cpp; sourceTree = "<group>"; };
@@ -2019,8 +2019,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07B79DDD182FADBA004EB918 /* Sprites.plist */,
-				07B79DDE182FADBA004EB918 /* Sprites.pvr.ccz */,
+				0740752F184A167000FFB920 /* gameAtlas.plist */,
+				07407530184A167000FFB920 /* gameAtlas.png */,
 				070DC725182E14FD00592C1E /* TestNormal.png */,
 				070DC726182E14FD00592C1E /* TestSelected.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -2066,6 +2066,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = PR6475M9ZV;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Reflex" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2110,7 +2115,6 @@
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
-				07B79DE0182FADBA004EB918 /* Sprites.pvr.ccz in Resources */,
 				071AA4FF1842742D00B32B8E /* jsb_protocols.ini in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
@@ -2122,9 +2126,10 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				070DC727182E14FD00592C1E /* TestNormal.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				07407532184A167000FFB920 /* gameAtlas.png in Resources */,
 				379BB9CC17F03F3700829B88 /* json_internalarray.inl in Resources */,
 				379BB9CD17F03F3700829B88 /* json_internalmap.inl in Resources */,
-				07B79DDF182FADBA004EB918 /* Sprites.plist in Resources */,
+				07407531184A167000FFB920 /* gameAtlas.plist in Resources */,
 				379BB9D017F03F3700829B88 /* json_valueiterator.inl in Resources */,
 				379BB9D217F03F3700829B88 /* sconscript in Resources */,
 			);
@@ -2434,7 +2439,7 @@
 				OTHER_CFLAGS = "-O2";
 				PRODUCT_NAME = Reflex;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25F31E03-3CFA-4207-B14B-088C43BA653C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -2487,7 +2492,7 @@
 				);
 				PRODUCT_NAME = Reflex;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25F31E03-3CFA-4207-B14B-088C43BA653C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
