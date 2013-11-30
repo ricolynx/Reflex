@@ -7,6 +7,8 @@
 //
 
 #include "SceneManager.h"
+#include "FlurryController.h"
+
 USING_NS_CC;
 
 SceneManager* SceneManager::m_instance = NULL;
@@ -64,6 +66,9 @@ void SceneManager::showMenu()
 {
     if (showLogs)
         std::cout << "chargement du menu\n";
+    
+    FlurryController::Instance()->logSimpleEvent("Menu");
+    
     changeScene(MainMenu::scene());
 }
 
@@ -71,6 +76,9 @@ void SceneManager::startGame()
 {
     if (showLogs)
         std::cout << "chargement du jeu\n";
+    
+    FlurryController::Instance()->logSimpleEvent("Game");
+    
     changeScene(GameScene::scene());
 }
 

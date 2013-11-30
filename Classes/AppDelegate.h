@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 #include "PluginManager.h"
 #include "ProtocolAnalytics.h"
-
+#include "FlurryController.h"
 /**
 @brief    The cocos2d Application.
 

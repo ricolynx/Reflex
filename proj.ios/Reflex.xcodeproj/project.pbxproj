@@ -32,6 +32,7 @@
 		071AA53C184277CF00B32B8E /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53A184276FD00B32B8E /* libwebsockets.a */; };
 		071AA53D184277E100B32B8E /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA535184276E200B32B8E /* libcurl.a */; };
 		071AA53F1842798C00B32B8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53E1842798C00B32B8E /* SystemConfiguration.framework */; };
+		0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0740752C184A03E100FFB920 /* FlurryController.cpp */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
@@ -348,6 +349,8 @@
 		071AA536184276E200B32B8E /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		071AA53A184276FD00B32B8E /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
 		071AA53E1842798C00B32B8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0740752C184A03E100FFB920 /* FlurryController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlurryController.cpp; path = ../Classes/FlurryController.cpp; sourceTree = "<group>"; };
+		0740752D184A03E100FFB920 /* FlurryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryController.h; path = ../Classes/FlurryController.h; sourceTree = "<group>"; };
 		076349A718380CE100180D07 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollisionSystem.cpp; path = ../Classes/CollisionSystem.cpp; sourceTree = "<group>"; };
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
@@ -1014,6 +1017,15 @@
 			path = ../../../external/libwebsockets/ios/lib;
 			sourceTree = "<group>";
 		};
+		0740752B184A03C200FFB920 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				0740752C184A03E100FFB920 /* FlurryController.cpp */,
+				0740752D184A03E100FFB920 /* FlurryController.h */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		07834213183255EB0039B9DE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1552,6 +1564,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0740752B184A03C200FFB920 /* utils */,
 				071A6EEA1840BEA500B32B8E /* cocosCustom */,
 				07834213183255EB0039B9DE /* Scenes */,
 				0705E96318283B6A000C8570 /* Game */,
@@ -2313,6 +2326,7 @@
 				071AA5101842742D00B32B8E /* PluginManager.cpp in Sources */,
 				0705E96118243681000C8570 /* SceneManager.cpp in Sources */,
 				379BB9A317F03F3700829B88 /* CCDisplayManager.cpp in Sources */,
+				0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */,
 				379BB9A417F03F3700829B88 /* CCSkin.cpp in Sources */,
 				379BB9A517F03F3700829B88 /* CCColliderDetector.cpp in Sources */,
 				379BB9A617F03F3700829B88 /* CCArmatureDataManager.cpp in Sources */,
