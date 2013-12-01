@@ -59,9 +59,7 @@ bool GameScene::init()
     }
     
     initUI();
-    
    
-    
     //test world...
     this->world = new World(this);
     

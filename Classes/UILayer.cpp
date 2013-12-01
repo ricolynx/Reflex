@@ -26,6 +26,14 @@ UILayer::~UILayer()
     
     if (this->world !=0)
         this->world = 0;
+    
+    this->batchNode = 0;
+    
+    this->removeChild(this->lifeGage,true);
+    this->lifeGage = 0;
+    
+    this->removeChild(this->ammoGage,true);
+    this->ammoGage = 0;
 }
 
 void UILayer::initUI(World *w)
@@ -35,16 +43,26 @@ void UILayer::initUI(World *w)
     
     this->world = w;
     
-    //initialise batchnode and sharesprite
-    batchNode = cocos2d::CCSpriteBatchNode::create("gameAtlas.png");
+    cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
+    //initialise batchnode and sharesprite
+    this->batchNode = cocos2d::CCSpriteBatchNode::create("gameUIAtlas.png");
     this->addChild(batchNode);
     
-    cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("gameAtlas.plist");
+    cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("gameUIAtlas.plist");
     
-    cocos2d::CCSprite *sprite = cocos2d::CCSprite::createWithSpriteFrameName("life_empty.png");
+    this->lifeGage = UIGage::create();
+    this->addChild(lifeGage);
     
-    sprite->setPosition(ccp(100,100));
+    this->ammoGage = UIGage::create();
+    this->addChild(ammoGage);
+    
+    this->lifeGage->setPosition(ccp( 50, worldSize.height - 50));
+    this->lifeGage->initGage(3,3,"life_empty.png","life.png");
+    
 
-    this->addChild(sprite);
+    this->ammoGage->initGage(3,3,"ammo_empty.png","ammo.png");
+    this->ammoGage->setPosition(ccp( worldSize.width - 50 - 90 , worldSize.height - 50));
 }
+
+

@@ -11,6 +11,8 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#include "UIGage.h"
+
 
 class World;
 
@@ -22,6 +24,9 @@ class UILayer : public cocos2d::CCLayer
         World *world;
     
         cocos2d::CCSpriteBatchNode* batchNode;
+    
+        UIGage *lifeGage;
+        UIGage *ammoGage;
     
     public:
         CREATE_FUNC(UILayer);
