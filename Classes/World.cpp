@@ -25,16 +25,16 @@ World::World(cocos2d::CCLayer* s)
     
     this->canonAngle = 0;
     
-    this->rotateCanon = false;
+    this->rotateCanon = 0;
     
     //init the seed of the 
     this->randomEngine.seed(time(0));
     
     scene = s;
     
-    cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    this->worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
-    this->moveSys = new MoveSystem(worldSize.width, worldSize.height);
+    this->moveSys = new MoveSystem(this->worldSize.width, this->worldSize.height);
     
     this->collisionSys = new CollisionSystem();
     
@@ -48,7 +48,7 @@ World::World(cocos2d::CCLayer* s)
     //create the canon
     canon = std::shared_ptr<Entity>(new Entity(this->nextEntityId ++, Entity::canon, "canon.png",40));
     
-    canon->setPos(worldSize.width * 0.5, worldSize.height * 0.5);
+    canon->setPos(this->worldSize.width * 0.5, this->worldSize.height * 0.5);
     
     canon->addComponentToEntity(new component::LifeComponent(1));
     
@@ -141,7 +141,7 @@ void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed
 //get a random point in the world
 cocos2d::CCPoint World::getRandomPoint()
 {
-    cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    
     std::uniform_int_distribution<unsigned> u(0,3);
     int a, b, c, d;
     
@@ -151,25 +151,25 @@ cocos2d::CCPoint World::getRandomPoint()
             a = - 200;
             b = - 100;
             c = - 50;
-            d = (int)worldSize.height + 50;
+            d = (int)this->worldSize.height + 50;
             break;
         case 1:
             a = - 50;
-            b = (int)worldSize.width + 50;
+            b = (int)this->worldSize.width + 50;
             c = - 200;
             d = - 100;
             break;
         case 2:
             a = - 50;
-            b = (int)worldSize.width + 50;
-            c = (int)worldSize.height + 100;
-            d = (int)worldSize.height + 200;
+            b = (int)this->worldSize.width + 50;
+            c = (int)this->worldSize.height + 100;
+            d = (int)this->worldSize.height + 200;
             break;
         default:
-            a = (int)worldSize.width + 100;
-            b = (int)worldSize.width + 200;
+            a = (int)this->worldSize.width + 100;
+            b = (int)this->worldSize.width + 200;
             c = - 50;
-            d = (int)worldSize.height + 50;
+            d = (int)this->worldSize.height + 50;
             break;
     }
     std::uniform_int_distribution<int> u1(a,b);
@@ -194,9 +194,8 @@ void World::setInitialVelocity(std::shared_ptr<Entity> entity, int coef)
         }
         else
         {
-            cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-            targetX = worldSize.width / 2;
-            targetY = worldSize.height / 2;
+            targetX = this->worldSize.width / 2;
+            targetY = this->worldSize.height / 2;
         }
         
         float distX =  targetX - entity->posX()  ;
@@ -274,9 +273,9 @@ void World::update(float dt)
     if (count == 0)
         this->addEnemy();
     
-    if (this->rotateCanon)
+    if (this->rotateCanon!=0)
     {
-        this->canonAngle = (this->canonAngle + 1) % 360;
+        this->canonAngle = (this->canonAngle + this->rotateCanon) % 360;
         this->canon->setRotation(this->canonAngle);
     }
     
@@ -291,12 +290,16 @@ void World::update(float dt)
 //when touch starts
 void World::onTouchesBegan(cocos2d::CCSet* touches)
 {
-    this->rotateCanon = true;
+    cocos2d::CCTouch *touch = (cocos2d::CCTouch*) (touches->anyObject());
+    if (touch->getLocationInView().x > this->worldSize.width /2)
+        this->rotateCanon = -1;
+    else
+        this->rotateCanon = 1;
 }
 
 //when touch stops
 void World::onTouchesEnded(cocos2d::CCSet* touches)
 {
-    this->rotateCanon = false;
+    this->rotateCanon = 0;
     this->fireBullets(this->canon, 4 , 500);
 }

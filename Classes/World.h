@@ -54,7 +54,7 @@ private :
     //canon angle
     int canonAngle;
     
-    bool rotateCanon;
+    int rotateCanon;
     
     //the list of entities of the workd
     
@@ -91,6 +91,8 @@ public :
     World(cocos2d::CCLayer* s);
     //destructor
     ~World();
+    
+    cocos2d::CCSize worldSize;
     
     //canon entity
     std::shared_ptr<Entity> canon;
