@@ -76,8 +76,8 @@ UIGage& UIGage::operator-- ()
 {
     if (this->_currentValue > 0)
     {
-        this->_currentValue --;
         this->graphicDecrement();
+        this->_currentValue --;
     }
     return *this;
 }
@@ -104,7 +104,7 @@ void UIGage::graphicIncrement()
 //graphicaly decrement the gage
 void UIGage::graphicDecrement()
 {
-    if (this->_currentValue <= 0)
+    if (this->_currentValue == 0)
         return;
     
     this->removeChild( this->_frontSprites.back(), true);
@@ -121,4 +121,10 @@ cocos2d::CCSprite* UIGage::addSprite(const char* name , int index)
     this->addChild(sprite);
 
     return sprite;
+}
+
+//get the current value of the gage
+unsigned int UIGage::getValue()
+{
+    return this->_currentValue;
 }

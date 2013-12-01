@@ -46,6 +46,8 @@ class UIGage : public cocos2d::CCSprite
     
         virtual ~UIGage();
     
+        unsigned int getValue();
+    
         void initGage(int max, int current, const char* bgName, const char* frontName);
     
         UIGage& operator++ ();

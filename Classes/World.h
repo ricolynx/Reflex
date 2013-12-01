@@ -54,7 +54,11 @@ private :
     //canon angle
     int canonAngle;
     
+    //rotation of the canon
     int rotateCanon;
+    
+    //get the number of lives
+    int life;
     
     //the list of entities of the workd
     
@@ -79,6 +83,8 @@ private :
     
     void removeDeadEnemies();
     
+    //void removeDeadEntities(std::list<std::shared_ptr<Entity>> entities);
+    
     //fire a single bullet
     void fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed);
     
@@ -92,6 +98,7 @@ public :
     //destructor
     ~World();
     
+    //the worl size
     cocos2d::CCSize worldSize;
     
     //canon entity
@@ -108,6 +115,9 @@ public :
     
     //when touch stops
     void onTouchesEnded(cocos2d::CCSet* touches);
+    
+    //get the number of remaining lives
+    int getLives();
 };
 
 #endif /* defined(__Reflex__World__) */

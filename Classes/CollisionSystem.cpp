@@ -85,7 +85,15 @@ void CollisionSystem::update(float dt)
             {
                 enemy->getComponent<component::LifeComponent>()->life--;
                 bullet->getComponent<component::LifeComponent>()->life--;
+                continue;
             }
+        }
+        if (this->checkCollision(enemy, this->canon))
+        {
+            enemy->getComponent<component::LifeComponent>()->life--;
+            if (this->canon->getComponent<component::LifeComponent>()->life >0)
+                this->canon->getComponent<component::LifeComponent>()->life--;
+            continue;
         }
     }
 }

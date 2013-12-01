@@ -36,6 +36,19 @@ UILayer::~UILayer()
     this->ammoGage = 0;
 }
 
+bool UILayer::init()
+{
+    if ( !CCLayer::init() )
+    {
+        return false;
+    }
+    
+    this->scheduleUpdate();
+    
+    return true;
+}
+
+
 void UILayer::initUI(World *w)
 {
     if (showLogs)
@@ -65,4 +78,21 @@ void UILayer::initUI(World *w)
     this->ammoGage->setPosition(ccp( worldSize.width - 50 - 90 , worldSize.height - 50));
 }
 
+//update loop
+void UILayer::update(float dt)
+{
+    if (this->world!=0 && this->lifeGage!=0)
+    {
+        if (this->lifeGage->getValue() > this->world->getLives())
+        {
+            std::cout << "decrease life " << std::endl;
+            --(*(this->lifeGage));
+        }
+        else if (this->lifeGage->getValue() < this->world->getLives())
+        {
+            std::cout << "decrease life " << std::endl;
+            ++(*(this->lifeGage));
+        }
+    }
+}
 

@@ -27,6 +27,8 @@ World::World(cocos2d::CCLayer* s)
     
     this->rotateCanon = 0;
     
+    this->life = 3;
+    
     //init the seed of the 
     this->randomEngine.seed(time(0));
     
@@ -50,7 +52,7 @@ World::World(cocos2d::CCLayer* s)
     
     canon->setPos(this->worldSize.width * 0.5, this->worldSize.height * 0.5);
     
-    canon->addComponentToEntity(new component::LifeComponent(1));
+    canon->addComponentToEntity(new component::LifeComponent(this->life));
     
     this->scene->addChild(canon->sprite);
     
@@ -76,6 +78,12 @@ World::~World()
     this->bullets.clear();
     
     this->batchNode = 0;
+}
+
+//get the number of lives
+int World::getLives()
+{
+    return this->life;
 }
 
 //add an enemy in the world
@@ -283,6 +291,14 @@ void World::update(float dt)
     this->collisionSys->update(dt);
     this->removeDeadBullets();
     this->removeDeadEnemies();
+    
+    int nbLife = this->canon->getComponent<component::LifeComponent>()->life;
+    if (this->life != nbLife)
+    {
+        std::cout << "update life" << std::endl;
+        this->life = nbLife;
+    }
+    
 }
 
 

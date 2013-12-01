@@ -12,9 +12,8 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "UIGage.h"
+#include "World.h"
 
-
-class World;
 
 class UILayer : public cocos2d::CCLayer
 {
@@ -28,11 +27,17 @@ class UILayer : public cocos2d::CCLayer
         UIGage *lifeGage;
         UIGage *ammoGage;
     
+    
+        //update loop
+        void update(float dt);
+    
     public:
         CREATE_FUNC(UILayer);
         UILayer();
         virtual ~UILayer();
         void initUI(World *w);
+    
+        virtual bool init();
 };
 
 #endif /* defined(__Reflex__UILayer__) */
