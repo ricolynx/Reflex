@@ -83,7 +83,15 @@ private :
     //removeDeadBullets
     void removeDeadBullets();
     
+    //remove DeadEnemies
     void removeDeadEnemies();
+    
+    //clean the world of all bullets
+    void cleanBullets();
+    
+    //clean the world of all enemies
+    void cleanEnemies();
+    
     
     //void removeDeadEntities(std::list<std::shared_ptr<Entity>> entities);
     
@@ -121,9 +129,14 @@ public :
     //get the number of remaining lives
     int getLives();
     
+    //pause/unpause the game
     void pauseGame();
     
+    //check if the game is paused
     bool isPaused();
+    
+    //reset the game
+    void resetGame();
 };
 
 #endif /* defined(__Reflex__World__) */

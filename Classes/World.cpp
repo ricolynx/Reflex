@@ -77,10 +77,38 @@ World::~World()
     
     this->enemies.clear();
     
-    this->bullets.clear();
+    this->enemies.clear();
     
     this->batchNode = 0;
 }
+
+//reset the game
+void World::resetGame()
+{
+    //pause game
+    this->pause = true;
+    
+    //reset game variables
+    this->count = 0;
+    this->rotateCanon = 0;
+    this->canonAngle = 0;
+    
+    //reset canon position
+    this->canon->setRotation(0);
+    
+    //reset number of lifes
+    this->canon->getComponent<component::LifeComponent>()->life = 3;
+    
+    //clean bullets
+    this->cleanBullets();
+    
+    //clean enemies
+    this->cleanEnemies();
+    
+    //unpause the game
+    this->pause = false;
+}
+
 
 //get the number of lives
 int World::getLives()
@@ -238,7 +266,7 @@ void World::removeDeadBullets()
         //std::cout<< &entity << std::endl;
         component::LifeComponent* lc = entity->getComponent<component::LifeComponent>();
         //std::cout<< lc << std::endl;
-        if (!lc || lc->life < 1)
+        if (!lc || lc->life < 1 )
         {
             if (showCollisionZones)
                 entity->showCollisionZones(false);
@@ -261,7 +289,7 @@ void World::removeDeadEnemies()
 
         component::LifeComponent* lc = entity->getComponent<component::LifeComponent>();
 
-        if (!lc || lc->life < 1)
+        if (!lc || lc->life < 1 )
         {
             if (showCollisionZones)
                 entity->showCollisionZones(false);
@@ -274,6 +302,43 @@ void World::removeDeadEnemies()
         }
     }
 }
+
+// clean all bullets
+void World::cleanBullets()
+{
+    std::shared_ptr<Entity> entity;
+    while (this->bullets.size() > 0)
+    {
+        entity = this->bullets.back();
+        if (showCollisionZones)
+            entity->showCollisionZones(false);
+        this->scene->removeChild(entity->sprite);
+        this->moveSys->removeEntity(entity);
+        this->collisionSys->removeEntity(entity);
+        this->bullets.pop_back();
+        entity = 0;
+    }
+    this->bullets.clear();
+}
+
+//clean all enemies
+void World::cleanEnemies()
+{
+    std::shared_ptr<Entity> entity;
+    while (this->enemies.size() > 0)
+    {
+        entity = this->enemies.back();
+        if (showCollisionZones)
+            entity->showCollisionZones(false);
+        this->scene->removeChild(entity->sprite);
+        this->moveSys->removeEntity(entity);
+        this->collisionSys->removeEntity(entity);
+        this->enemies.pop_back();
+        entity = 0;
+    }
+    this->enemies.clear();
+}
+
 
 //pause the game
 void World::pauseGame()
@@ -293,7 +358,7 @@ void World::update(float dt)
 {
     if (this->pause)
         return;
-    
+
     count = (count + 1 ) % 60;
 
     if (count == 0)
@@ -316,10 +381,7 @@ void World::update(float dt)
         std::cout << "update life" << std::endl;
         this->life = nbLife;
     }
-    
 }
-
-
 
 //when touch starts
 void World::onTouchesBegan(cocos2d::CCSet* touches)

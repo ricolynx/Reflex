@@ -35,7 +35,8 @@ void MoveSystem::addEntity(std::shared_ptr<Entity> entity)
 
 void MoveSystem::removeEntity(std::shared_ptr<Entity> entity)
 {
-    this->movingEntities.remove(entity);
+    if (entity!=0)
+        this->movingEntities.remove(entity);
 }
 
 void MoveSystem::move(std::shared_ptr<Entity> entity, float dt)

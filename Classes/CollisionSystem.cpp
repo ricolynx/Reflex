@@ -49,6 +49,9 @@ void CollisionSystem::addEntity(std::shared_ptr<Entity> entity)
 //remove an entity in the collision system
 void CollisionSystem::removeEntity(std::shared_ptr<Entity> entity)
 {
+    if (entity==0)
+        return;
+    
     switch (entity->getType()) {
             
         case Entity::bullet:

@@ -11,7 +11,7 @@
 //constructor
 UIGage::UIGage()
 {
-    this->showLogs = true;
+    this->showLogs = false;
     if (this->showLogs)
         std::cout << "UIGage Constructor " << this << std::endl;
     

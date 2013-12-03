@@ -11,7 +11,7 @@
 //Constructor
 Entity::Entity(int newId, ENTITY_TYPE newType, const char* imageName, float r)
 {
-    showLogs = false;
+    showLogs = true;
     
     
     if (showLogs)
