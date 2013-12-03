@@ -39,6 +39,8 @@
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
+		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
+		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
 		07DD11B1184B41E00027F710 /* gameUIAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11AF184B41E00027F710 /* gameUIAtlas.plist */; };
 		07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11B0184B41E00027F710 /* gameUIAtlas.png */; };
 		07DD11B5184B43030027F710 /* UIGage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07DD11B3184B43030027F710 /* UIGage.cpp */; };
@@ -365,6 +367,8 @@
 		076349AB18392CB100180D07 /* LifeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeComponent.h; path = ../Classes/LifeComponent.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
+		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
+		07B41272184DC00B00453B72 /* mainMenuAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuAtlas.png; sourceTree = "<group>"; };
 		07DD11AF184B41E00027F710 /* gameUIAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameUIAtlas.plist; sourceTree = "<group>"; };
 		07DD11B0184B41E00027F710 /* gameUIAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameUIAtlas.png; sourceTree = "<group>"; };
 		07DD11B3184B43030027F710 /* UIGage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIGage.cpp; path = ../Classes/UIGage.cpp; sourceTree = "<group>"; };
@@ -2057,6 +2061,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07B41271184DC00B00453B72 /* mainMenuAtlas.plist */,
+				07B41272184DC00B00453B72 /* mainMenuAtlas.png */,
 				07DD11AF184B41E00027F710 /* gameUIAtlas.plist */,
 				07DD11B0184B41E00027F710 /* gameUIAtlas.png */,
 				0740752F184A167000FFB920 /* gameAtlas.plist */,
@@ -2155,6 +2161,8 @@
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */,
+				07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */,
 				07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */,
 				071AA4FF1842742D00B32B8E /* jsb_protocols.ini in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,

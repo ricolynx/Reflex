@@ -4,10 +4,23 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>9-grid.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{81,81}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{81,81}}</string>
+                <key>sourceSize</key>
+                <string>{81,81}</string>
+            </dict>
             <key>ammo.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{36,36}}</string>
+                <string>{{85,2},{36,36}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +33,7 @@
             <key>ammo_empty.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,2},{36,36}}</string>
+                <string>{{2,85},{36,36}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +46,7 @@
             <key>life.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,2},{34,32}}</string>
+                <string>{{40,85},{34,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +59,7 @@
             <key>life_empty.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,40},{34,32}}</string>
+                <string>{{76,85},{34,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -56,6 +69,58 @@
                 <key>sourceSize</key>
                 <string>{34,32}</string>
             </dict>
+            <key>pause.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,123},{27,27}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{27,27}}</string>
+                <key>sourceSize</key>
+                <string>{27,27}</string>
+            </dict>
+            <key>pause_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{31,123},{27,27}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{27,27}}</string>
+                <key>sourceSize</key>
+                <string>{27,27}</string>
+            </dict>
+            <key>quit.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{60,123},{27,27}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{27,27}}</string>
+                <key>sourceSize</key>
+                <string>{27,27}</string>
+            </dict>
+            <key>quit_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{89,123},{27,27}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{27,27}}</string>
+                <key>sourceSize</key>
+                <string>{27,27}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -64,9 +129,9 @@
             <key>realTextureFileName</key>
             <string>gameUIAtlas.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3b07cb1f0faed66948214f138b4df5a3:8c49a4f56e2b2d6d858d9527f197a161:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
+            <string>$TexturePacker:SmartUpdate:6de06a8a81bbba6997d19eb11e3851af:8d47dc69c4037dff55b357b39271a2b2:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
             <key>textureFileName</key>
             <string>gameUIAtlas.png</string>
         </dict>

@@ -16,6 +16,7 @@ class MainMenu : public cocos2d::CCLayer
 {
     private :
         bool showLogs;
+        cocos2d::CCSpriteBatchNode* batchNode;
     
     public :
         virtual bool init();

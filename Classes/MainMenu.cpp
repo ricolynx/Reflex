@@ -43,19 +43,6 @@ bool MainMenu::init()
     //    you may modify it.
     
     // add a "close" icon to exit the progress. it's an autorelease object
-    CCMenuItemImage *pPlayItem = CCMenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                          this,
-                                                        menu_selector(MainMenu::playCallback));
-    
-	pPlayItem->setPosition(ccp(origin.x + visibleSize.width - pPlayItem->getContentSize().width/2 ,
-                                origin.y + pPlayItem->getContentSize().height/2));
-    
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pPlayItem, NULL);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, 1);
     
     
     /////////////////////////////
@@ -63,7 +50,7 @@ bool MainMenu::init()
     
     // add a label shows "Hello World"
     // create and initialize a label
-    
+    /*
     CCLabelTTF* pLabel = CCLabelTTF::create("MainMenu", "Arial", 24);
     
     // position the label on the center of the screen
@@ -71,7 +58,7 @@ bool MainMenu::init()
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
     
     // add the label as a child to this layer
-    this->addChild(pLabel, 1);
+    this->addChild(pLabel, 1);*/
     
     /*
     // add "HelloWorld" splash screen"
@@ -82,6 +69,29 @@ bool MainMenu::init()
     
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);*/
+    
+    
+    
+    this->batchNode = cocos2d::CCSpriteBatchNode::create("mainMenuAtlas.png");
+    this->addChild(batchNode);
+    
+    cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("mainMenuAtlas.plist");
+    
+    
+    CCMenuItemSprite *pPlayItem = CCMenuItemSprite::create(
+                                                         cocos2d::CCSprite::createWithSpriteFrameName("play.png"),
+                                                         cocos2d::CCSprite::createWithSpriteFrameName("play_selected.png"),
+                                                         this,
+                                                         menu_selector(MainMenu::playCallback));
+    
+	pPlayItem->setPosition(ccp(origin.x + visibleSize.width / 2 ,
+                               origin.y + visibleSize.height / 2 ));
+    
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pPlayItem, NULL);
+    pMenu->setPosition(CCPointZero);
+    this->addChild(pMenu, 1);
+
     
     return true;
 }
