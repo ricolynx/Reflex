@@ -45,6 +45,8 @@ private :
     //show or not collision zones
     bool showCollisionZones;
     
+    bool pause;
+    
     //the next entity id
     int nextEntityId;
     
@@ -118,6 +120,10 @@ public :
     
     //get the number of remaining lives
     int getLives();
+    
+    void pauseGame();
+    
+    bool isPaused();
 };
 
 #endif /* defined(__Reflex__World__) */

@@ -120,6 +120,7 @@ void GameScene::testCallback(CCObject *pSender)
 {
     //std::cout << this->world->getNbEntities() << std::endl;
     //this->worldView->addEntity();
+    this->world->pauseGame();
 }
 
 void GameScene::menuCallback(CCObject *pSender)

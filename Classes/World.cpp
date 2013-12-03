@@ -19,6 +19,8 @@ World::World(cocos2d::CCLayer* s)
     
     this->showCollisionZones = false;
     
+    this->pause = false;
+    
     this->nextEntityId = 0;
     
     this->count = 0;
@@ -273,9 +275,25 @@ void World::removeDeadEnemies()
     }
 }
 
+//pause the game
+void World::pauseGame()
+{
+    this->rotateCanon = 0;
+    this->pause = !this->pause;
+}
+
+//return if the game is paused or not
+bool World::isPaused()
+{
+    return this->pause;
+}
+
 //update function of the world
 void World::update(float dt)
 {
+    if (this->pause)
+        return;
+    
     count = (count + 1 ) % 60;
 
     if (count == 0)
@@ -306,6 +324,9 @@ void World::update(float dt)
 //when touch starts
 void World::onTouchesBegan(cocos2d::CCSet* touches)
 {
+    if (this->pause)
+        return;
+    
     cocos2d::CCTouch *touch = (cocos2d::CCTouch*) (touches->anyObject());
     if (touch->getLocationInView().x > this->worldSize.width /2)
         this->rotateCanon = -1;
@@ -316,6 +337,8 @@ void World::onTouchesBegan(cocos2d::CCSet* touches)
 //when touch stops
 void World::onTouchesEnded(cocos2d::CCSet* touches)
 {
+    if (this->pause)
+        return;
     this->rotateCanon = 0;
     this->fireBullets(this->canon, 4 , 500);
 }
