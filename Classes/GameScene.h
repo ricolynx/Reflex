@@ -46,17 +46,6 @@ private:
     
     bool showLogs;
     
-
-    
-    //initialisation of the menu
-    void initUI();
-    
-    //callback for the test button
-    void testCallback(CCObject* pSender);
-    
-    //menu callback
-    void menuCallback(CCObject* pSender);
-    
     //update loop
     void update(float dt);
 };

@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "UIGage.h"
 #include "World.h"
+#include "SceneManager.h"
 
 
 class UILayer : public cocos2d::CCLayer
@@ -24,17 +25,32 @@ class UILayer : public cocos2d::CCLayer
     
         cocos2d::CCSpriteBatchNode* batchNode;
     
+        // life gage
         UIGage *lifeGage;
+    
+        //ammo gage
         UIGage *ammoGage;
     
+        //create the menu buttons
+        void createMenuButton();
+    
+        //handler for click on pause button
+        void pauseHandler(CCObject *pSender);
+    
+        //handler for click on quit button
+        void quitHandler(CCObject *pSender);
     
         //update loop
         void update(float dt);
     
     public:
+    
         CREATE_FUNC(UILayer);
+    
         UILayer();
+    
         virtual ~UILayer();
+    
         void initUI(World *w);
     
         virtual bool init();

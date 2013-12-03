@@ -7,7 +7,7 @@
 //
 
 #include "UILayer.h"
-
+USING_NS_CC;
 
 UILayer::UILayer()
 {
@@ -76,6 +76,54 @@ void UILayer::initUI(World *w)
 
     this->ammoGage->initGage(3,3,"ammo_empty.png","ammo.png");
     this->ammoGage->setPosition(ccp( worldSize.width - 50 - 90 , worldSize.height - 50));
+    
+    this->createMenuButton();
+    
+}
+
+// create the menu buttons
+void UILayer::createMenuButton()
+{
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+    
+    CCMenuItemSprite *pQuitItem= CCMenuItemSprite::create(
+                                                       CCSprite::createWithSpriteFrameName("quit.png"),
+                                                       CCSprite::createWithSpriteFrameName("quit_selected.png"),
+                                                       this,
+                                                       menu_selector(UILayer::quitHandler)
+                                                          );
+    
+    pQuitItem->setPosition(ccp(origin.x + visibleSize.width - pQuitItem->getContentSize().width/2 - 10,
+                               origin.y + pQuitItem->getContentSize().height/2 + 10) );
+    
+    
+    CCMenuItemSprite *pPauseItem= CCMenuItemSprite::create(
+                                                          CCSprite::createWithSpriteFrameName("pause.png"),
+                                                          CCSprite::createWithSpriteFrameName("pause_selected.png"),
+                                                          this,
+                                                          menu_selector(UILayer::pauseHandler)
+                                                          );
+    
+    pPauseItem->setPosition(ccp(pQuitItem->getPosition().x - pPauseItem->getContentSize().width -10,
+                               origin.y + pPauseItem->getContentSize().height/2 + 10) );
+    
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pQuitItem, NULL);
+    pMenu->addChild(pPauseItem);
+    
+    pMenu->setPosition(CCPointZero);
+    this->addChild(pMenu);
+}
+
+void UILayer::pauseHandler(CCObject *pSender)
+{
+    this->world->pauseGame();
+}
+
+void UILayer::quitHandler(CCObject *pSender)
+{
+    SceneManager::Instance()->showMenu();
 }
 
 //update loop
