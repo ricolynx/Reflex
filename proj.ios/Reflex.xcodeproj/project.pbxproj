@@ -41,6 +41,7 @@
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
+		07D2B7CE1851B2A900E1C947 /* AmmoComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */; };
 		07DD11B1184B41E00027F710 /* gameUIAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11AF184B41E00027F710 /* gameUIAtlas.plist */; };
 		07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11B0184B41E00027F710 /* gameUIAtlas.png */; };
 		07DD11B5184B43030027F710 /* UIGage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07DD11B3184B43030027F710 /* UIGage.cpp */; };
@@ -369,6 +370,8 @@
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
 		07B41272184DC00B00453B72 /* mainMenuAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuAtlas.png; sourceTree = "<group>"; };
+		07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AmmoComponent.cpp; path = ../Classes/AmmoComponent.cpp; sourceTree = "<group>"; };
+		07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmmoComponent.h; path = ../Classes/AmmoComponent.h; sourceTree = "<group>"; };
 		07DD11AF184B41E00027F710 /* gameUIAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameUIAtlas.plist; sourceTree = "<group>"; };
 		07DD11B0184B41E00027F710 /* gameUIAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameUIAtlas.png; sourceTree = "<group>"; };
 		07DD11B3184B43030027F710 /* UIGage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIGage.cpp; path = ../Classes/UIGage.cpp; sourceTree = "<group>"; };
@@ -1109,6 +1112,8 @@
 				07E4D07C18377B24001176D7 /* TargetComponent.h */,
 				076349AA18392CB100180D07 /* LifeComponent.cpp */,
 				076349AB18392CB100180D07 /* LifeComponent.h */,
+				07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */,
+				07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2275,6 +2280,7 @@
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
 				0705E96D182AE242000C8570 /* World.cpp in Sources */,
+				07D2B7CE1851B2A900E1C947 /* AmmoComponent.cpp in Sources */,
 				07E4D07718377AB5001176D7 /* Component.cpp in Sources */,
 				07E4D07A18377AF7001176D7 /* VelocityComponent.cpp in Sources */,
 				07E4D07D18377B24001176D7 /* TargetComponent.cpp in Sources */,
