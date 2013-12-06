@@ -129,7 +129,7 @@ void UILayer::quitHandler(CCObject *pSender)
 //update loop
 void UILayer::update(float dt)
 {
-    if (this->world!=0 && this->lifeGage!=0)
+    if (this->world!=0 && this->lifeGage!=0 && this->world->canon!=0)
     {
         if (this->lifeGage->getValue() > this->world->getLives())
         {
@@ -141,6 +141,15 @@ void UILayer::update(float dt)
             std::cout << "decrease life " << std::endl;
             ++(*(this->lifeGage));
         }
+        
+        if (this->ammoGage->getValue() > this->world->canon->getComponent<component::AmmoComponent>()->getAmmo())
+        {
+            --(*(this->ammoGage));
+        }else if (this->ammoGage->getValue() < this->world->canon->getComponent<component::AmmoComponent>()->getAmmo())
+        {
+            ++(*(this->ammoGage));
+        }
+        
     }
 }
 

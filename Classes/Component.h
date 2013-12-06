@@ -12,6 +12,8 @@
 #include <iostream>
 
 namespace component{
+
+    
 //include all components namespaces
     class Component
     {

@@ -10,13 +10,14 @@
 #define __Reflex__AmmoComponent__
 
 #include <iostream>
+#include "Component.h"
 
 namespace component
 {
     class AmmoComponent : public Component
     {
         public:
-            AmmoComponent(unsigned int max, unsigned int current);
+            AmmoComponent(int max, int current);
         
             ~AmmoComponent();
         
@@ -24,15 +25,17 @@ namespace component
         
             void recharge();
         
+            int getAmmo();
+        
         private:
             //max ammo the player can have
-            unsigned int _maxAmmo;
+            int _maxAmmo;
         
             //current ammo
-            unsigned int _currentAmmo;
+            int _currentAmmo;
         
             //show logs or not
-            bool showlogs;
+            bool showLogs;
     };
 }
 #endif /* defined(__Reflex__AmmoComponent__) */

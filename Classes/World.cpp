@@ -55,6 +55,7 @@ World::World(cocos2d::CCLayer* s)
     canon->setPos(this->worldSize.width * 0.5, this->worldSize.height * 0.5);
     
     canon->addComponentToEntity(new component::LifeComponent(this->life));
+    canon->addComponentToEntity(new component::AmmoComponent(3,3));
     
     this->scene->addChild(canon->sprite);
     
@@ -402,5 +403,14 @@ void World::onTouchesEnded(cocos2d::CCSet* touches)
     if (this->pause)
         return;
     this->rotateCanon = 0;
-    this->fireBullets(this->canon, 4 , 500);
+    
+    if (this->canon->getComponent<component::AmmoComponent>()->getAmmo()>0)
+    {
+        this->fireBullets(this->canon, 4 , 500);
+        this->canon->getComponent<component::AmmoComponent>()->shoot();
+    }
 }
+
+
+
+

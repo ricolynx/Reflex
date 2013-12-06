@@ -9,7 +9,7 @@
 #include "AmmoComponent.h"
 
 //COnstructor
-component::AmmoComponent::AmmoComponent(unsigned int max, unsigned int current)
+component::AmmoComponent::AmmoComponent(int max, int current)
 {
     this->showLogs = true;
     
@@ -27,6 +27,12 @@ component::AmmoComponent::~AmmoComponent()
         std::cout << "AmmoComponent destructor" << std::endl;
 }
 
+
+int component::AmmoComponent::getAmmo()
+{
+    return this->_currentAmmo;
+}
+
 //shoot (decrease ammo)
 void component::AmmoComponent::shoot()
 {
@@ -39,11 +45,3 @@ void component::AmmoComponent::recharge()
 {
     this->_currentAmmo = this->_maxAmmo;
 }
-
-/*
-
-
-;
-
-;
-*/

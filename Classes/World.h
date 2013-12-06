@@ -27,6 +27,7 @@
 #include "VelocityComponent.h"
 #include "TargetComponent.h"
 #include "LifeComponent.h"
+#include "AmmoComponent.h"
 
 class World
 {
