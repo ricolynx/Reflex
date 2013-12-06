@@ -96,7 +96,6 @@ void Entity::showCollisionZones(bool showZone){
 // add a component
 void Entity::addComponentToEntity(component::Component* component)
 {
-    //this->components[&typeid(*component)] = component;
     this->components[std::type_index(typeid(*component))] = component;
 }
 

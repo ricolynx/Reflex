@@ -7,8 +7,8 @@
 //
 
 #include "CollisionSystem.h"
-
-
+#include "LifeComponent.h"
+#include "AmmoComponent.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -95,7 +95,10 @@ void CollisionSystem::update(float dt)
         {
             enemy->getComponent<component::LifeComponent>()->life--;
             if (this->canon->getComponent<component::LifeComponent>()->life >0)
+            {
                 this->canon->getComponent<component::LifeComponent>()->life--;
+                this->canon->getComponent<component::AmmoComponent>()->recharge();
+            }
             continue;
         }
     }

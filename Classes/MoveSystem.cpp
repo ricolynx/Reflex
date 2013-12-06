@@ -8,6 +8,8 @@
 
 #include "MoveSystem.h"
 #include "VelocityComponent.h"
+#include "TargetComponent.h"
+#include "LifeComponent.h"
 
 MoveSystem::MoveSystem(float ww,float wh)
 {

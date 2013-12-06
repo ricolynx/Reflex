@@ -16,8 +16,6 @@
 //#include <memory>
 
 #include "component.h"
-#include "TargetComponent.h"
-#include "LifeComponent.h"
 #include "BoundingSprite.h"
 
 #include "cocos2d.h"
