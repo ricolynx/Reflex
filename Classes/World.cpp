@@ -80,6 +80,8 @@ World::~World()
     
     this->enemies.clear();
     
+    this->bonuses.clear();
+    
     this->batchNode = 0;
 }
 
@@ -106,6 +108,9 @@ void World::resetGame()
     //clean enemies
     this->cleanEnemies();
     
+    //clean bonuses
+    this->cleanBonuses();
+    
     //unpause the game
     this->pause = false;
 }
@@ -130,6 +135,8 @@ void World::addEnemy()
     enemy->addComponentToEntity(new component::VelocityComponent());
     
     enemy->addComponentToEntity(new component::LifeComponent(1));
+    
+    enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
     
     this->setInitialVelocity(enemy, 50);
     
@@ -176,6 +183,43 @@ void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed
         this->fireSingleBullet(this->canon, this->canon->angle() + i * angleDelta, 500);
     }
 }
+
+//add a bonus from an entity (when it's destroyed)
+void World::addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, std::shared_ptr<Entity> fromEntity)
+{
+    const char *imgName;
+    float speedCoef;
+    switch (bonusType) {
+        case component::BonusComponent::ammo :
+            imgName = "bonus_amo.png";
+            speedCoef = 20;
+            break;
+            
+        default:
+            break;
+    }
+    
+    std::shared_ptr<Entity> bonus = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bonus, imgName,speedCoef));
+    bonus->addComponentToEntity(new component::VelocityComponent);
+    bonus->addComponentToEntity(new component::LifeComponent(1));
+    bonus->addComponentToEntity(new component::BonusComponent(bonusType));
+    
+    bonus->setPos(fromEntity->posX(), fromEntity->posY());
+    
+    this->setInitialVelocity(bonus, 50);
+    
+    this->scene->addChild(bonus->sprite);
+    
+    this->bonuses.push_back(bonus);
+    
+    this->moveSys->addEntity(bonus);
+    
+    this->collisionSys->addEntity(bonus);
+    
+    if (this->showCollisionZones)
+        bonus->showCollisionZones(true);
+}
+
 
 //get a random point in the world
 cocos2d::CCPoint World::getRandomPoint()
@@ -292,6 +336,11 @@ void World::removeDeadEnemies()
 
         if (!lc || lc->life < 1 )
         {
+            //if there is a bonus --> addbonus
+            component::BonusComponent *bc =entity->getComponent<component::BonusComponent>();
+            if (bc!=0)
+                this->addBonusFromEntity(bc->getType(), entity);
+            
             if (showCollisionZones)
                 entity->showCollisionZones(false);
             this->scene->removeChild(entity->sprite);
@@ -299,6 +348,29 @@ void World::removeDeadEnemies()
             this->collisionSys->removeEntity(entity);
             this->enemies.remove(entity);
             //we remove only one enemiy per frame to avoid conflict in list iteration
+            break;
+        }
+    }
+}
+
+//remove bonuses that are "dead"
+void World::removeDeadBonuses()
+{
+    for (std::list<std::shared_ptr<Entity>>::iterator it = this->bonuses.begin();it != this->bonuses.end(); it++)
+    {
+        std::shared_ptr<Entity> entity = *it;
+        
+        component::LifeComponent* lc = entity->getComponent<component::LifeComponent>();
+        
+        if (!lc || lc->life < 1 )
+        {
+            if (showCollisionZones)
+                entity->showCollisionZones(false);
+            this->scene->removeChild(entity->sprite);
+            this->moveSys->removeEntity(entity);
+            this->collisionSys->removeEntity(entity);
+            this->bonuses.remove(entity);
+            //we remove only one bonus per frame to avoid conflict in list iteration
             break;
         }
     }
@@ -340,6 +412,23 @@ void World::cleanEnemies()
     this->enemies.clear();
 }
 
+//clean the bonuses
+void World::cleanBonuses()
+{
+    std::shared_ptr<Entity> entity;
+    while (this->bonuses.size() > 0)
+    {
+        entity = this->bonuses.back();
+        if (showCollisionZones)
+            entity->showCollisionZones(false);
+        this->scene->removeChild(entity->sprite);
+        this->moveSys->removeEntity(entity);
+        this->collisionSys->removeEntity(entity);
+        this->bonuses.pop_back();
+        entity = 0;
+    }
+    this->bonuses.clear();
+}
 
 //pause the game
 void World::pauseGame()
@@ -375,6 +464,7 @@ void World::update(float dt)
     this->collisionSys->update(dt);
     this->removeDeadBullets();
     this->removeDeadEnemies();
+    this->removeDeadBonuses();
     
     int nbLife = this->canon->getComponent<component::LifeComponent>()->life;
     if (this->life != nbLife)

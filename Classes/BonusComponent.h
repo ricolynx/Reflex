@@ -20,7 +20,8 @@ namespace component
         
         //enums the different types of entities
         enum BONUS_TYPE {
-            ammo
+            ammo,
+            life
         };
  
         

@@ -28,7 +28,8 @@ public:
     enum ENTITY_TYPE {
         canon,
         enemy,
-        bullet
+        bullet,
+        bonus
     };
     
 private :
@@ -119,6 +120,17 @@ public :
         else
         {
             return 0;
+        }
+    }
+    
+    //template to remove a component
+    template <typename T>
+    void removeComponent()
+    {
+        std::type_index index(typeid(T));
+        if(components.count(index) != 0)
+        {
+            components.erase(index);
         }
     }
     

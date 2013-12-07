@@ -9,6 +9,7 @@
 #include "CollisionSystem.h"
 #include "LifeComponent.h"
 #include "AmmoComponent.h"
+#include "BonusComponent.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -32,11 +33,12 @@ void CollisionSystem::addEntity(std::shared_ptr<Entity> entity)
     switch (entity->getType()) {
 
         case Entity::bullet:
-            bullets.push_back(entity);
+            this->bullets.push_back(entity);
             break;
-        
+            
+        case Entity::bonus:
         case Entity::enemy:
-            enemies.push_back(entity);
+            this->movingEntities.push_back(entity);
             break;
             
         //default canon
@@ -58,11 +60,12 @@ void CollisionSystem::removeEntity(std::shared_ptr<Entity> entity)
             this->bullets.remove(entity);
             break;
             
+        case Entity::bonus:
         case Entity::enemy:
-            this->enemies.remove(entity);
+            this->movingEntities.remove(entity);
             break;
-            
-            //default canon
+
+        //default canon
         default:
             this->canon = 0;
             break;
@@ -74,33 +77,51 @@ void CollisionSystem::removeEntity(std::shared_ptr<Entity> entity)
 //update the collision system
 void CollisionSystem::update(float dt)
 {
-    for (std::list<std::shared_ptr<Entity>>::iterator it = this->enemies.begin();it != this->enemies.end(); it++)
+    //collisions with enemy
+    for (std::list<std::shared_ptr<Entity>>::iterator it = this->movingEntities.begin();it != this->movingEntities.end(); it++)
     {
-        std::shared_ptr<Entity> enemy = *it;
-        if (enemy->getComponent<component::LifeComponent>()->life< 1)
+        std::shared_ptr<Entity> entity = *it;
+        if (entity->getComponent<component::LifeComponent>()->life< 1)
             continue;
         for (std::list<std::shared_ptr<Entity>>::iterator itb = this->bullets.begin();itb != this->bullets.end(); itb++)
         {
             std::shared_ptr<Entity> bullet = *itb;
             if (bullet->getComponent<component::LifeComponent>()->life<1)
                 continue;
-            if (this->checkCollision(bullet,enemy))
+            if (this->checkCollision(bullet,entity))
             {
-                enemy->getComponent<component::LifeComponent>()->life--;
+                entity->getComponent<component::LifeComponent>()->life--;
                 bullet->getComponent<component::LifeComponent>()->life--;
                 continue;
             }
         }
-        if (this->checkCollision(enemy, this->canon))
+        if (this->checkCollision(entity, this->canon))
         {
-            enemy->getComponent<component::LifeComponent>()->life--;
+            entity->getComponent<component::LifeComponent>()->life--;
             if (this->canon->getComponent<component::LifeComponent>()->life >0)
             {
-                this->canon->getComponent<component::LifeComponent>()->life--;
-                this->canon->getComponent<component::AmmoComponent>()->recharge();
+                if (entity->getType() == Entity::enemy)
+                {
+                    entity->removeComponent<component::BonusComponent>();
+                    this->canon->getComponent<component::LifeComponent>()->life--;
+                    this->canon->getComponent<component::AmmoComponent>()->recharge();
+                }
+                else if (entity->getType() == Entity::bonus)
+                {
+                    switch(entity->getComponent<component::BonusComponent>()->getType())
+                    {
+                        case component::BonusComponent::ammo:
+                            this->canon->getComponent<component::AmmoComponent>()->recharge();
+                            break;
+                        case component::BonusComponent::life:
+                            this->canon->getComponent<component::LifeComponent>()->life++;
+                            break;
+                    }
+                }
             }
             continue;
         }
     }
+    
 }
 

@@ -14,7 +14,7 @@ component::BonusComponent::BonusComponent(BONUS_TYPE newType)
     this->showLogs = true;
     
     if (this->showLogs)
-        std::cout << "Bonus component constructor " << type << std::endl;
+        std::cout << "Bonus component constructor " << newType << std::endl;
     
     this->type = newType;
 }
@@ -23,7 +23,7 @@ component::BonusComponent::BonusComponent(BONUS_TYPE newType)
 component::BonusComponent::~BonusComponent()
 {
     if (this->showLogs)
-        std::cout << "Bonus component destructor " << type << std::endl;
+        std::cout << "Bonus component destructor " << std::endl;
     
 }
 

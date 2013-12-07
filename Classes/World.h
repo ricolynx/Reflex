@@ -28,6 +28,7 @@
 #include "TargetComponent.h"
 #include "LifeComponent.h"
 #include "AmmoComponent.h"
+#include "BonusComponent.h"
 
 class World
 {
@@ -63,11 +64,13 @@ private :
     //get the number of lives
     int life;
     
-    //the list of entities of the workd
+    //the lists of entities of the workd
     
     std::list<std::shared_ptr<Entity>> enemies;
     
     std::list<std::shared_ptr<Entity>> bullets;
+    
+    std::list<std::shared_ptr<Entity>> bonuses;
 
     //get a random point
     cocos2d::CCPoint getRandomPoint();
@@ -87,12 +90,17 @@ private :
     //remove DeadEnemies
     void removeDeadEnemies();
     
+    //remove DeadBonuses
+    void removeDeadBonuses();
+    
     //clean the world of all bullets
     void cleanBullets();
     
     //clean the world of all enemies
     void cleanEnemies();
     
+    //clean the world of all bonuses
+    void cleanBonuses();
     
     //void removeDeadEntities(std::list<std::shared_ptr<Entity>> entities);
     
@@ -118,6 +126,9 @@ public :
     //add an enemy entity to the world
     void addEnemy();
     
+    //add a bonus from an entity (when it's destroyed)
+    void addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, std::shared_ptr<Entity> fromEntity);
+
     //update loop of the world
     void update(float dt);
     
