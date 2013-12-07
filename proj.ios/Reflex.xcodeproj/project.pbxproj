@@ -42,6 +42,7 @@
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
 		07D2B7CE1851B2A900E1C947 /* AmmoComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */; };
+		07D2B7D11853398600E1C947 /* BonusComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CF1853398600E1C947 /* BonusComponent.cpp */; };
 		07DD11B1184B41E00027F710 /* gameUIAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11AF184B41E00027F710 /* gameUIAtlas.plist */; };
 		07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11B0184B41E00027F710 /* gameUIAtlas.png */; };
 		07DD11B5184B43030027F710 /* UIGage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07DD11B3184B43030027F710 /* UIGage.cpp */; };
@@ -372,6 +373,8 @@
 		07B41272184DC00B00453B72 /* mainMenuAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuAtlas.png; sourceTree = "<group>"; };
 		07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AmmoComponent.cpp; path = ../Classes/AmmoComponent.cpp; sourceTree = "<group>"; };
 		07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmmoComponent.h; path = ../Classes/AmmoComponent.h; sourceTree = "<group>"; };
+		07D2B7CF1853398600E1C947 /* BonusComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BonusComponent.cpp; path = ../Classes/BonusComponent.cpp; sourceTree = "<group>"; };
+		07D2B7D01853398600E1C947 /* BonusComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonusComponent.h; path = ../Classes/BonusComponent.h; sourceTree = "<group>"; };
 		07DD11AF184B41E00027F710 /* gameUIAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameUIAtlas.plist; sourceTree = "<group>"; };
 		07DD11B0184B41E00027F710 /* gameUIAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameUIAtlas.png; sourceTree = "<group>"; };
 		07DD11B3184B43030027F710 /* UIGage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIGage.cpp; path = ../Classes/UIGage.cpp; sourceTree = "<group>"; };
@@ -1114,6 +1117,8 @@
 				076349AB18392CB100180D07 /* LifeComponent.h */,
 				07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */,
 				07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */,
+				07D2B7CF1853398600E1C947 /* BonusComponent.cpp */,
+				07D2B7D01853398600E1C947 /* BonusComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2312,6 +2317,7 @@
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
 				071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */,
+				07D2B7D11853398600E1C947 /* BonusComponent.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
