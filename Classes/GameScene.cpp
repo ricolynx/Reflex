@@ -8,6 +8,7 @@
 
 #include "GameScene.h"
 #include "UILayer.h"
+#include "PopupLayer.h"
 USING_NS_CC;
 
 CCScene* GameScene::scene()
@@ -20,13 +21,18 @@ CCScene* GameScene::scene()
     
     UILayer *uiLayer = UILayer::create();
     
+    PopupLayer *popupLayer = PopupLayer::create();
+    
     // add layer as a child to scene
     scene->addChild(layer);
     scene->addChild(uiLayer);
+    scene->addChild(popupLayer);
     
     layer->uilayer = uiLayer;
+    layer->popupLayer = popupLayer;
     
     layer->uilayer->initUI(layer->world);
+    layer->popupLayer->finishInit();
     
     // return the scene
     return scene;

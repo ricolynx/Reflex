@@ -43,6 +43,11 @@
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
 		07D2B7CE1851B2A900E1C947 /* AmmoComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */; };
 		07D2B7D11853398600E1C947 /* BonusComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CF1853398600E1C947 /* BonusComponent.cpp */; };
+		07D2B7D518538FDA00E1C947 /* PopupLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7D318538FDA00E1C947 /* PopupLayer.cpp */; };
+		07D2B7D9185392F200E1C947 /* Popup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7D7185392F200E1C947 /* Popup.cpp */; };
+		07D2B7DC1853930800E1C947 /* PopupFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7DA1853930800E1C947 /* PopupFactory.cpp */; };
+		07D2B7DF1854EB3000E1C947 /* SimpleDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7DD1854EB3000E1C947 /* SimpleDelegate.cpp */; };
+		07D2B7E21854F29C00E1C947 /* Delegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7E01854F29C00E1C947 /* Delegate.cpp */; };
 		07DD11B1184B41E00027F710 /* gameUIAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11AF184B41E00027F710 /* gameUIAtlas.plist */; };
 		07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DD11B0184B41E00027F710 /* gameUIAtlas.png */; };
 		07DD11B5184B43030027F710 /* UIGage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07DD11B3184B43030027F710 /* UIGage.cpp */; };
@@ -375,6 +380,16 @@
 		07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmmoComponent.h; path = ../Classes/AmmoComponent.h; sourceTree = "<group>"; };
 		07D2B7CF1853398600E1C947 /* BonusComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BonusComponent.cpp; path = ../Classes/BonusComponent.cpp; sourceTree = "<group>"; };
 		07D2B7D01853398600E1C947 /* BonusComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonusComponent.h; path = ../Classes/BonusComponent.h; sourceTree = "<group>"; };
+		07D2B7D318538FDA00E1C947 /* PopupLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopupLayer.cpp; path = ../Classes/PopupLayer.cpp; sourceTree = "<group>"; };
+		07D2B7D418538FDA00E1C947 /* PopupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopupLayer.h; path = ../Classes/PopupLayer.h; sourceTree = "<group>"; };
+		07D2B7D7185392F200E1C947 /* Popup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Popup.cpp; path = ../Classes/Popup.cpp; sourceTree = "<group>"; };
+		07D2B7D8185392F200E1C947 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Popup.h; path = ../Classes/Popup.h; sourceTree = "<group>"; };
+		07D2B7DA1853930800E1C947 /* PopupFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopupFactory.cpp; path = ../Classes/PopupFactory.cpp; sourceTree = "<group>"; };
+		07D2B7DB1853930800E1C947 /* PopupFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopupFactory.h; path = ../Classes/PopupFactory.h; sourceTree = "<group>"; };
+		07D2B7DD1854EB3000E1C947 /* SimpleDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpleDelegate.cpp; path = ../Classes/SimpleDelegate.cpp; sourceTree = "<group>"; };
+		07D2B7DE1854EB3000E1C947 /* SimpleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleDelegate.h; path = ../Classes/SimpleDelegate.h; sourceTree = "<group>"; };
+		07D2B7E01854F29C00E1C947 /* Delegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Delegate.cpp; path = ../Classes/Delegate.cpp; sourceTree = "<group>"; };
+		07D2B7E11854F29C00E1C947 /* Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Delegate.h; path = ../Classes/Delegate.h; sourceTree = "<group>"; };
 		07DD11AF184B41E00027F710 /* gameUIAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameUIAtlas.plist; sourceTree = "<group>"; };
 		07DD11B0184B41E00027F710 /* gameUIAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameUIAtlas.png; sourceTree = "<group>"; };
 		07DD11B3184B43030027F710 /* UIGage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIGage.cpp; path = ../Classes/UIGage.cpp; sourceTree = "<group>"; };
@@ -1042,6 +1057,10 @@
 			children = (
 				0740752C184A03E100FFB920 /* FlurryController.cpp */,
 				0740752D184A03E100FFB920 /* FlurryController.h */,
+				07D2B7DD1854EB3000E1C947 /* SimpleDelegate.cpp */,
+				07D2B7DE1854EB3000E1C947 /* SimpleDelegate.h */,
+				07D2B7E01854F29C00E1C947 /* Delegate.cpp */,
+				07D2B7E11854F29C00E1C947 /* Delegate.h */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1049,6 +1068,7 @@
 		07407533184A74A200FFB920 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				07D2B7D218538FC600E1C947 /* Popup */,
 				07DD11AE184B40CB0027F710 /* UIComponents */,
 				07407534184A74B100FFB920 /* GameUI */,
 			);
@@ -1073,6 +1093,19 @@
 				0705E95D18242D06000C8570 /* GameScene.h */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		07D2B7D218538FC600E1C947 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				07D2B7D318538FDA00E1C947 /* PopupLayer.cpp */,
+				07D2B7D418538FDA00E1C947 /* PopupLayer.h */,
+				07D2B7D7185392F200E1C947 /* Popup.cpp */,
+				07D2B7D8185392F200E1C947 /* Popup.h */,
+				07D2B7DA1853930800E1C947 /* PopupFactory.cpp */,
+				07D2B7DB1853930800E1C947 /* PopupFactory.h */,
+			);
+			name = Popup;
 			sourceTree = "<group>";
 		};
 		07DD11AE184B40CB0027F710 /* UIComponents */ = {
@@ -2218,6 +2251,8 @@
 				15A3D90B1682F7D5002FB0C5 /* b2BlockAllocator.cpp in Sources */,
 				15A3D90C1682F7D5002FB0C5 /* b2Draw.cpp in Sources */,
 				15A3D90D1682F7D5002FB0C5 /* b2Math.cpp in Sources */,
+				07D2B7D518538FDA00E1C947 /* PopupLayer.cpp in Sources */,
+				07D2B7DF1854EB3000E1C947 /* SimpleDelegate.cpp in Sources */,
 				15A3D90E1682F7D5002FB0C5 /* b2Settings.cpp in Sources */,
 				15A3D90F1682F7D5002FB0C5 /* b2StackAllocator.cpp in Sources */,
 				15A3D9101682F7D5002FB0C5 /* b2Timer.cpp in Sources */,
@@ -2316,6 +2351,7 @@
 				071AA50A1842742D00B32B8E /* PluginUtilsIOS.mm in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
+				07D2B7DC1853930800E1C947 /* PopupFactory.cpp in Sources */,
 				071A6EED1840BED400B32B8E /* BoundingSprite.cpp in Sources */,
 				07D2B7D11853398600E1C947 /* BonusComponent.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
@@ -2395,6 +2431,7 @@
 				0705E96118243681000C8570 /* SceneManager.cpp in Sources */,
 				379BB9A317F03F3700829B88 /* CCDisplayManager.cpp in Sources */,
 				0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */,
+				07D2B7E21854F29C00E1C947 /* Delegate.cpp in Sources */,
 				379BB9A417F03F3700829B88 /* CCSkin.cpp in Sources */,
 				379BB9A517F03F3700829B88 /* CCColliderDetector.cpp in Sources */,
 				379BB9A617F03F3700829B88 /* CCArmatureDataManager.cpp in Sources */,
@@ -2436,6 +2473,7 @@
 				379BB9CA17F03F3700829B88 /* CSContentJsonDictionary.cpp in Sources */,
 				379BB9CB17F03F3700829B88 /* DictionaryHelper.cpp in Sources */,
 				379BB9CE17F03F3700829B88 /* json_reader.cpp in Sources */,
+				07D2B7D9185392F200E1C947 /* Popup.cpp in Sources */,
 				07407537184A74CC00FFB920 /* UILayer.cpp in Sources */,
 				379BB9CF17F03F3700829B88 /* json_value.cpp in Sources */,
 				379BB9D117F03F3700829B88 /* json_writer.cpp in Sources */,

@@ -57,7 +57,7 @@ private :
     ENTITY_TYPE type;
 
     //components of the entity
-    std::map<std::type_index, component::Component*> components;
+    std::unordered_map<std::type_index, component::Component*> components;
     
     //collisioonZone of the sprite
     cocos2d::CCSprite *collisionZone;
@@ -130,6 +130,7 @@ public :
         std::type_index index(typeid(T));
         if(components.count(index) != 0)
         {
+            delete components[index];
             components.erase(index);
         }
     }

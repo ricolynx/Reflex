@@ -8,7 +8,8 @@
 
 
 #include "World.h"
-
+#include "PopupLayer.h"
+#include "GameScene.h"
 
 World::World(cocos2d::CCLayer* s)
 {
@@ -34,7 +35,7 @@ World::World(cocos2d::CCLayer* s)
     //init the seed of the 
     this->randomEngine.seed(time(0));
     
-    scene = s;
+    this->scene = s;
     
     this->worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
@@ -83,6 +84,9 @@ World::~World()
     this->bonuses.clear();
     
     this->batchNode = 0;
+    
+    this->scene = 0;
+
 }
 
 //reset the game
@@ -188,18 +192,16 @@ void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed
 void World::addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, std::shared_ptr<Entity> fromEntity)
 {
     const char *imgName;
-    float speedCoef;
     switch (bonusType) {
         case component::BonusComponent::ammo :
             imgName = "bonus_amo.png";
-            speedCoef = 20;
             break;
             
         default:
             break;
     }
     
-    std::shared_ptr<Entity> bonus = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bonus, imgName,speedCoef));
+    std::shared_ptr<Entity> bonus = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::bonus, imgName,20));
     bonus->addComponentToEntity(new component::VelocityComponent);
     bonus->addComponentToEntity(new component::LifeComponent(1));
     bonus->addComponentToEntity(new component::BonusComponent(bonusType));
@@ -435,6 +437,13 @@ void World::pauseGame()
 {
     this->rotateCanon = 0;
     this->pause = !this->pause;
+    
+    if (this->pause && dynamic_cast<GameScene*>(this->scene)->popupLayer!=0)
+    {
+        SimpleDelegate<World> *delegate = new SimpleDelegate<World>(this, &World::pauseGame);
+        dynamic_cast<GameScene*>(this->scene)->popupLayer->test(dynamic_cast<Delegate*>(delegate));
+    }
+    
 }
 
 //return if the game is paused or not
@@ -451,7 +460,7 @@ void World::update(float dt)
 
     count = (count + 1 ) % 60;
 
-    if (count == 0)
+    if (count == 1)
         this->addEnemy();
     
     if (this->rotateCanon!=0)

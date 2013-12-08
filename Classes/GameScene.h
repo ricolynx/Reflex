@@ -14,6 +14,7 @@
 #include "World.h"
 
 class UILayer;
+class PopupLayer;
 class GameScene : public cocos2d::CCLayer {
     
 public :
@@ -38,6 +39,8 @@ public :
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     
     UILayer * uilayer;
+    
+    PopupLayer *popupLayer;
     
     //the world model of the game (containing the different entities
     World *world;

@@ -30,6 +30,10 @@
 #include "AmmoComponent.h"
 #include "BonusComponent.h"
 
+#include "Delegate.h"
+#include "SimpleDelegate.h"
+
+class PopupLayer;
 class World
 {
 private :
@@ -37,7 +41,7 @@ private :
     bool showLogs;
     
     cocos2d::CCLayer* scene;
-    
+        
     cocos2d::CCSpriteBatchNode* batchNode;
     
     MoveSystem *moveSys;
