@@ -28,12 +28,12 @@ class UIGage : public cocos2d::CCSprite
     
         const char *_frontName;
     
-        //std::vector<cocos2d::CCSprite*> bgSprites;
         std::vector<cocos2d::CCSprite*> _frontSprites;
     
         void createBackground(const char* spriteName);
     
         void graphicIncrement();
+    
         void graphicDecrement();
     
         cocos2d::CCSprite* addSprite(const char* name , int index);

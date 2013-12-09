@@ -14,6 +14,9 @@ PopupLayer::PopupLayer()
     this->showLogs = true;
     if (this->showLogs)
         std::cout<< "PopupLayer CTOR" << std::endl;
+    
+    this->popupQuitDelegate = new SimpleDelegate<PopupLayer>(this, &PopupLayer::onPopupQuitCallback);
+    this->currentPopup = 0;
 }
 
 //Destructor
@@ -41,6 +44,15 @@ void PopupLayer::finishInit()
 
 }
 
+void PopupLayer::onPopupQuitCallback()
+{
+    if (this->currentPopup  !=0)
+    {
+        std::cout<< "on quit popup" << std::endl;
+        this->removeChild(this->currentPopup);
+    }
+}
+
 void PopupLayer::test(Delegate *d)
 {
     std::cout<<"test popup"<<std::endl;
@@ -48,15 +60,22 @@ void PopupLayer::test(Delegate *d)
     
     cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
-    std::vector<std::string>  buttonsImages = {"quitbig"};
-    std::vector<Delegate*> delegates = {d};
+    std::vector<std::string>  buttonsImages = {"quitbig","quitbig"};
+    std::vector<Delegate*> delegates = {d,d};
     
     Popup *p = Popup::create();
-    p->initPopup(worldSize.width - 300, worldSize.height - 200 ,buttonsImages , delegates, "the message", "");
+    p->initPopup(worldSize.width - 300,
+                 worldSize.height - 200 ,
+                 buttonsImages ,
+                 delegates,
+                 "the message",
+                 "",
+                 this->popupQuitDelegate
+                 );
+    
     p->setPosition(ccp(worldSize.width / 2.0f , worldSize.height / 2.0f ));
     this->addChild(p);
-    
-    //d->invoke();
+    this->currentPopup = p;
 }
 
 void PopupLayer::callback()

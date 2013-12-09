@@ -25,13 +25,17 @@ void Popup::initPopup(float w,
              std::vector<std::string>  buttonsImages,
              std::vector<Delegate*> callbacks,
              const std::string message,
-             const std::string images)
+             const std::string images,
+             Delegate *onClickCallback
+                      )
 {
     if (buttonsImages.size() != callbacks.size())
     {
         std::cout << "Error for popup initialisation : number of buttons not equal to number of callbacks" << std::endl;
         return;
     }
+    
+    this->onquitCallback = onClickCallback;
     
     this->nbButtons = buttonsImages.size();
     
@@ -46,9 +50,9 @@ void Popup::initPopup(float w,
     for (int i = 0; i< buttonsImages.size() ; i++)
     {
         if (i==0)
-            pMenu= CCMenu::create( this->createButton( buttonsImages[i], callbacks [i]) , NULL);
+            pMenu= CCMenu::create( this->createButton( buttonsImages[i], callbacks [i], i) , NULL);
         else
-            pMenu->addChild(this->createButton( buttonsImages[i], callbacks [i]));
+            pMenu->addChild(this->createButton( buttonsImages[i], callbacks [i], i));
         
     }
     pMenu->setPosition(CCPointZero);
@@ -68,7 +72,7 @@ void Popup::createBackGround()
     this->addChild(this->bg);
 }
 
-CCMenuItemSprite* Popup::createButton(const std::string image, Delegate *callback)
+CCMenuItemSprite* Popup::createButton(const std::string image, Delegate *callback, int index)
 {
     //-->create the button
     const std::string normal = image + ".png";
@@ -81,7 +85,12 @@ CCMenuItemSprite* Popup::createButton(const std::string image, Delegate *callbac
                                                       menu_selector(Popup::buttonCallBack)
                                                       );
     //-->set right position
+    std::cout<<(this->width / this->nbButtons) * (index)<<" " << index <<std::endl;
     
+    pItem->setPosition(ccp(
+                              - this->width/2 + (this->width / this->nbButtons) * (index) + (this->width / this->nbButtons) /2,
+                              - this->height/2 + pItem->getContentSize().height / 2 + 40
+                           ));
     
     //-->reference it in the buttons hashtable
     this->buttons.emplace(pItem,callback);
@@ -89,29 +98,12 @@ CCMenuItemSprite* Popup::createButton(const std::string image, Delegate *callbac
     return pItem;
 }
 
-/*
-CCMenuItemSprite *pQuitItem= CCMenuItemSprite::create(
-                                                      CCSprite::createWithSpriteFrameName("quit.png"),
-                                                      CCSprite::createWithSpriteFrameName("quit_selected.png"),
-                                                      this,
-                                                      menu_selector(UILayer::quitHandler)
-                                                      );
-
-pQuitItem->setPosition(ccp(origin.x + visibleSize.width - pQuitItem->getContentSize().width/2 - 10,
-                           origin.y + pQuitItem->getContentSize().height/2 + 10) );
-
- 
- // create menu, it's an autorelease object
- = CCMenu::create(pQuitItem, NULL);
- pMenu->addChild(pPauseItem);
- 
-
-*/
-
 void Popup::buttonCallBack(CCObject *pSender)
 {
     std::cout << "button callback" << std::endl;
 
     this->buttons[dynamic_cast<CCMenuItemSprite*>(pSender)]->invoke();
     
+    if (this->onquitCallback !=0)
+        onquitCallback->invoke();
 }

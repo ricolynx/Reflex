@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include "cocos2d.h"
 #include "CCScale9Sprite.h"
-#include "PopupLayer.h"
+
 #include "Delegate.h"
 
 class Popup : public cocos2d::CCSprite
@@ -37,9 +37,11 @@ class Popup : public cocos2d::CCSprite
     
         void createBackGround();
     
-        cocos2d::CCMenuItemSprite* createButton(const std::string image, Delegate *callback);
+        cocos2d::CCMenuItemSprite* createButton(const std::string image, Delegate *callback, int index);
     
         void buttonCallBack(CCObject *pSender);
+    
+        Delegate *onquitCallback;
     
     public:
     
@@ -47,12 +49,15 @@ class Popup : public cocos2d::CCSprite
     
         Popup();
     
-        void initPopup(float w,
-              float h,
-              std::vector<std::string> buttonsImages,
-              std::vector<Delegate*> callbacks,
-              const std::string message,
-              const std::string images);
+        void initPopup(
+                          float w,
+                          float h,
+                          std::vector<std::string> buttonsImages,
+                          std::vector<Delegate*> callbacks,
+                          const std::string message,
+                          const std::string images,
+                          Delegate *onClickCallback
+                       );
     
         ~Popup();
 };
