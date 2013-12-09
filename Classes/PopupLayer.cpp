@@ -48,7 +48,7 @@ void PopupLayer::test(Delegate *d)
     
     cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     
-    std::vector<std::string>  buttonsImages = {"pause.png"};
+    std::vector<std::string>  buttonsImages = {"quitbig"};
     std::vector<Delegate*> delegates = {d};
     
     Popup *p = Popup::create();

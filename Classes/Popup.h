@@ -37,7 +37,7 @@ class Popup : public cocos2d::CCSprite
     
         void createBackGround();
     
-        void addButon(const std::string image, Delegate *callback);
+        cocos2d::CCMenuItemSprite* createButton(const std::string image, Delegate *callback);
     
         void buttonCallBack(CCObject *pSender);
     

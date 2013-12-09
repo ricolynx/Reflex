@@ -1055,6 +1055,8 @@
 		0740752B184A03C200FFB920 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				0705E95F18243681000C8570 /* SceneManager.cpp */,
+				0705E96018243681000C8570 /* SceneManager.h */,
 				0740752C184A03E100FFB920 /* FlurryController.cpp */,
 				0740752D184A03E100FFB920 /* FlurryController.h */,
 				07D2B7DD1854EB3000E1C947 /* SimpleDelegate.cpp */,
@@ -1655,8 +1657,6 @@
 				0705E96318283B6A000C8570 /* Game */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				0705E95F18243681000C8570 /* SceneManager.cpp */,
-				0705E96018243681000C8570 /* SceneManager.h */,
 			);
 			name = Classes;
 			path = ../classes;

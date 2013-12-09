@@ -33,7 +33,7 @@
             <key>ammo_empty.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,84},{36,36}}</string>
+                <string>{{122,2},{36,36}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>life.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,84},{34,32}}</string>
+                <string>{{160,2},{34,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>life_empty.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{76,84},{34,32}}</string>
+                <string>{{196,2},{34,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>pause.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,122},{27,27}}</string>
+                <string>{{2,84},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>pause_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{31,122},{27,27}}</string>
+                <string>{{31,84},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>quit.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,122},{27,27}}</string>
+                <string>{{60,84},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>quit_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{89,122},{27,27}}</string>
+                <string>{{89,84},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -121,6 +121,32 @@
                 <key>sourceSize</key>
                 <string>{27,27}</string>
             </dict>
+            <key>quitbig.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,113},{231,100}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{231,100}}</string>
+                <key>sourceSize</key>
+                <string>{231,100}</string>
+            </dict>
+            <key>quitbig_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,215},{231,100}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{231,100}}</string>
+                <key>sourceSize</key>
+                <string>{231,100}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -129,9 +155,9 @@
             <key>realTextureFileName</key>
             <string>gameUIAtlas.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:429817bcb4fce793f126b5c1cb4d4f27:6a84a83e8e639d515d616b28487b76e8:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
+            <string>$TexturePacker:SmartUpdate:18b6c02e88cf9fd858db627348b485f7:7a93a90b4f00b95bf392d58dac99a6ad:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
             <key>textureFileName</key>
             <string>gameUIAtlas.png</string>
         </dict>
