@@ -57,6 +57,7 @@ class Popup : public cocos2d::CCSprite
                           std::vector<std::string> buttonsImages,
                           std::vector<std::shared_ptr<Delegate>> callbacks,
                           const std::string message,
+                          const int textSize,
                           const std::string images
                        );
     

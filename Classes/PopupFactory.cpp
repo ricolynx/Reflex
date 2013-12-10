@@ -22,7 +22,8 @@ Popup* PopupFactory::createPausePopup(std::shared_ptr<Delegate> continueDelegate
                  worldSize.height - 200 ,
                  buttonsImages ,
                  delegates,
-                 "the message",
+                 "PAUSE",
+                 100,
                  ""
                  );
 

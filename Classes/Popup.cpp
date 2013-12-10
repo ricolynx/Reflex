@@ -42,6 +42,7 @@ void Popup::initPopup(float w,
              std::vector<std::string>  buttonsImages,
              std::vector<std::shared_ptr<Delegate>> callbacks,
              const std::string message,
+             const int textSize,
              const std::string images
                       )
 {
@@ -75,6 +76,16 @@ void Popup::initPopup(float w,
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
     pMenu->setTouchPriority(-201);
+    
+    //-> add the text
+    CCLabelTTF* pLabel = CCLabelTTF::create(message.c_str(), "Arial", textSize);
+    
+    // position the label on the center of the screen
+    pLabel->setPosition(ccp(0,this->height/4));
+    
+    // add the label as a child to this layer
+    this->addChild(pLabel, 1);
+
 }
 
 void Popup::setClosePopupDelegate(Delegate *quitDelegate)
