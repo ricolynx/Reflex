@@ -45,16 +45,19 @@ bool PopupLayer::init()
     return true;
 }
 
+//finish init of PopupLayer
 void PopupLayer::finishInit()
 {
     this->batchNode = cocos2d::CCSpriteBatchNode::create("gameUIAtlas.png");
     this->addChild(batchNode);
-
 }
 
 
+//show a popup
 void PopupLayer::showPopup(Popup *popup)
 {
+    popup->setClosePopupDelegate(this->popupQuitDelegate);
+    
     //->lock the background
     this->blockingLayer = new BlockingLayer();
     this->addChild(this->blockingLayer);
@@ -66,6 +69,8 @@ void PopupLayer::showPopup(Popup *popup)
     this->currentPopup = popup;
 }
 
+
+//quit callback (when user quit a popup)
 void PopupLayer::onPopupQuitCallback()
 {
     if (this->currentPopup  !=0)
@@ -81,31 +86,3 @@ void PopupLayer::onPopupQuitCallback()
     }
 }
 
-void PopupLayer::test(std::shared_ptr<Delegate> d)
-{
-    std::cout<<"test popup"<<std::endl;
-    
-    
-    cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    
-    std::vector<std::string>  buttonsImages = {"quitbig","quitbig"};
-    std::vector<std::shared_ptr<Delegate>> delegates = {d,d};
-    
-    Popup *p = Popup::create();
-    p->initPopup(worldSize.width - 300,
-                 worldSize.height - 200 ,
-                 buttonsImages ,
-                 delegates,
-                 "the message",
-                 "",
-                 this->popupQuitDelegate
-                 );
-    
-    showPopup(p);
-    
-}
-
-void PopupLayer::callback()
-{
-    std::cout<< "test callback"<< std::endl;
-}

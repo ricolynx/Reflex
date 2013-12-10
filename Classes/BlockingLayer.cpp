@@ -10,7 +10,7 @@
 USING_NS_CC;
 BlockingLayer::BlockingLayer()
 {
-    cocos2d::CCLayerColor::initWithColor(ccc4(255,255,255,20));
+    cocos2d::CCLayerColor::initWithColor(ccc4(255,255,255,40));
     setTouchEnabled(true);
 }
 

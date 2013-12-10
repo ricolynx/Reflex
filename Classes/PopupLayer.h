@@ -31,6 +31,7 @@ class PopupLayer : public cocos2d::CCLayer
         BlockingLayer *blockingLayer;
     
     public :
+    
         CREATE_FUNC(PopupLayer);
     
         PopupLayer();
@@ -44,10 +45,6 @@ class PopupLayer : public cocos2d::CCLayer
         void showPopup(Popup *popup);
     
         void onPopupQuitCallback();
-    
-        void test(std::shared_ptr<Delegate> delegate);
-    
-        void callback();
 };
 
 #endif /* defined(__Reflex__PopupLayer__) */

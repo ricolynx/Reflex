@@ -11,12 +11,14 @@
 
 #include <iostream>
 #include "Popup.h"
+#include "cocos2d.h"
 
+class Delegate;
 class PopupFactory
 {
     public :
     
-        static Popup* createPopup();
+    static Popup* createPausePopup(std::shared_ptr<Delegate> continueDelegate, std::shared_ptr<Delegate> quitDelegate);
 };
 
 #endif /* defined(__Reflex__PopupFactory__) */

@@ -49,17 +49,18 @@ class Popup : public cocos2d::CCSprite
     
         Popup();
     
+        ~Popup();
+    
         void initPopup(
                           float w,
                           float h,
                           std::vector<std::string> buttonsImages,
                           std::vector<std::shared_ptr<Delegate>> callbacks,
                           const std::string message,
-                          const std::string images,
-                          Delegate *onClickCallback
+                          const std::string images
                        );
     
-        ~Popup();
+        void setClosePopupDelegate(Delegate *quitDelegate);
 };
 
 #endif /* defined(__Reflex__Popup__) */

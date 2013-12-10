@@ -22,13 +22,27 @@ Popup::Popup()
 }
 
 
+Popup::~Popup()
+{
+    if (this->showLogs)
+        std::cout << "Popup Destructor" << std::endl;
+    
+    //-> clean delegates
+    this->buttons.clear();
+    
+    //->clean ref to bg, text and img
+    this->bg = 0;
+    this->text = 0;
+    this->img = 0;
+    this->onquitCallback = 0;
+}
+
 void Popup::initPopup(float w,
              float h,
              std::vector<std::string>  buttonsImages,
              std::vector<std::shared_ptr<Delegate>> callbacks,
              const std::string message,
-             const std::string images,
-             Delegate *onClickCallback
+             const std::string images
                       )
 {
     if (buttonsImages.size() != callbacks.size())
@@ -37,7 +51,7 @@ void Popup::initPopup(float w,
         return;
     }
     
-    this->onquitCallback = onClickCallback;
+    this->onquitCallback = 0;
     
     this->nbButtons = buttonsImages.size();
     
@@ -48,6 +62,7 @@ void Popup::initPopup(float w,
     this->createBackGround();
 
     //->create the buttons
+    
     CCMenu* pMenu ;
     for (int i = 0; i< buttonsImages.size() ; i++)
     {
@@ -62,19 +77,9 @@ void Popup::initPopup(float w,
     pMenu->setTouchPriority(-201);
 }
 
-Popup::~Popup()
+void Popup::setClosePopupDelegate(Delegate *quitDelegate)
 {
-    if (this->showLogs)
-        std::cout << "Popup Destructor" << std::endl;
-    
-    //-> clean delegates
-    this->buttons.clear();
-    
-    //->clean ref to bg, text and img
-    this->bg = 0;
-    this->text = 0;
-    this->img = 0;
-    this->onquitCallback = 0;
+    this->onquitCallback = quitDelegate;
 }
 
 void Popup::createBackGround()
@@ -116,6 +121,6 @@ void Popup::buttonCallBack(CCObject *pSender)
 
     this->buttons[dynamic_cast<CCMenuItemSprite*>(pSender)]->invoke();
     
-    if (this->onquitCallback !=0)
+    if (this->onquitCallback != 0)
         onquitCallback->invoke();
 }

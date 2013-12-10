@@ -10,6 +10,7 @@
 #include "World.h"
 #include "PopupLayer.h"
 #include "GameScene.h"
+#include "PopupFactory.h"
 
 World::World(cocos2d::CCLayer* s)
 {
@@ -440,8 +441,10 @@ void World::pauseGame()
     
     if (this->pause && dynamic_cast<GameScene*>(this->scene)->popupLayer!=0)
     {
-        std::shared_ptr<SimpleDelegate<World>> delegate = std::make_shared<SimpleDelegate<World>>(this, &World::pauseGame);
-        dynamic_cast<GameScene*>(this->scene)->popupLayer->test(std::dynamic_pointer_cast<Delegate>(delegate));
+        std::shared_ptr<SimpleDelegate<World>> delegatePause = std::make_shared<SimpleDelegate<World>>(this, &World::pauseGame);
+        std::shared_ptr<SimpleDelegate<SceneManager>> delegateQuit = std::make_shared<SimpleDelegate<SceneManager>>(SceneManager::Instance(), &SceneManager::showMenu);
+        Popup *popup = PopupFactory::createPausePopup(delegatePause, delegateQuit );
+        dynamic_cast<GameScene*>(this->scene)->popupLayer->showPopup(popup);
     }
     
 }

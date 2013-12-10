@@ -8,10 +8,26 @@
 
 #include "PopupFactory.h"
 #include "Popup.h"
-Popup* PopupFactory::createPopup()
+Popup* PopupFactory::createPausePopup(std::shared_ptr<Delegate> continueDelegate, std::shared_ptr<Delegate> quitDelegate)
 {
-    std::cout << "Create popup"<< std::endl;
-    return 0;
+    std::cout << "Create popup pause"<< std::endl;
+    
+    cocos2d::CCSize worldSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    
+    std::vector<std::string>  buttonsImages = {"play","quitbig"};
+    std::vector<std::shared_ptr<Delegate>> delegates = {continueDelegate,quitDelegate};
+    
+    Popup *p = Popup::create();
+    p->initPopup(worldSize.width - 300,
+                 worldSize.height - 200 ,
+                 buttonsImages ,
+                 delegates,
+                 "the message",
+                 ""
+                 );
+
+    
+    return p;
 }
 
 //int width, int height, const char* buttonsImages[],const function buttonCallbacks[], const string message, const string images
