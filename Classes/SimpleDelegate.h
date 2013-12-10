@@ -20,12 +20,14 @@ class SimpleDelegate : public Delegate
     
         //constructor
         SimpleDelegate (T *o, void(T::*func)()){
+            std::cout << " SimpleDelegate constructor :" << o << std::endl;
             this->_object = o;
             this->_func = func;
         }
     
         //Destructor
         ~SimpleDelegate(){
+            std::cout << " SimpleDelegate destructor :" << this->_object << std::endl;
             this->_object = 0;
             this->_func = 0;
         }

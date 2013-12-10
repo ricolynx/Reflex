@@ -11,7 +11,7 @@
 //CTOR
 component::BonusComponent::BonusComponent(BONUS_TYPE newType)
 {
-    this->showLogs = true;
+    this->showLogs = false;
     
     if (this->showLogs)
         std::cout << "Bonus component constructor " << newType << std::endl;

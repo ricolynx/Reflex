@@ -7,3 +7,14 @@
 //
 
 #include "Delegate.h"
+
+
+Delegate::Delegate()
+{
+    //std::cout << "Delegate constructor" << std::endl;
+}
+
+Delegate::~Delegate()
+{
+    //std::cout << "Delegate destructor" << std::endl;
+}

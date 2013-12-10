@@ -15,9 +15,9 @@ class Delegate
 {
     public:
         virtual void invoke() = 0;
+        virtual ~Delegate();
     protected:
-        Delegate() {}
-        virtual ~Delegate() {}
+        Delegate();
 };
 
 

@@ -33,11 +33,11 @@ class Popup : public cocos2d::CCSprite
     
         cocos2d::CCSprite *img;
     
-        std::unordered_map<cocos2d::CCMenuItemSprite*, Delegate*> buttons;
+        std::map<cocos2d::CCMenuItemSprite*, std::shared_ptr<Delegate>> buttons;
     
         void createBackGround();
     
-        cocos2d::CCMenuItemSprite* createButton(const std::string image, Delegate *callback, int index);
+        cocos2d::CCMenuItemSprite* createButton(const std::string image, std::shared_ptr<Delegate>, int index);
     
         void buttonCallBack(CCObject *pSender);
     
@@ -53,7 +53,7 @@ class Popup : public cocos2d::CCSprite
                           float w,
                           float h,
                           std::vector<std::string> buttonsImages,
-                          std::vector<Delegate*> callbacks,
+                          std::vector<std::shared_ptr<Delegate>> callbacks,
                           const std::string message,
                           const std::string images,
                           Delegate *onClickCallback

@@ -11,7 +11,7 @@
 //COnstructor
 component::AmmoComponent::AmmoComponent(int max, int current)
 {
-    this->showLogs = true;
+    this->showLogs = false;
     
     if (showLogs)
         std::cout << "AmmoComponent constructor" << std::endl;

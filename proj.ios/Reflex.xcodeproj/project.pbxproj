@@ -41,6 +41,7 @@
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
+		07B41D5F18569B1A00CFD5B0 /* BlockingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07B41D5D18569B1A00CFD5B0 /* BlockingLayer.cpp */; };
 		07D2B7CE1851B2A900E1C947 /* AmmoComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */; };
 		07D2B7D11853398600E1C947 /* BonusComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7CF1853398600E1C947 /* BonusComponent.cpp */; };
 		07D2B7D518538FDA00E1C947 /* PopupLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07D2B7D318538FDA00E1C947 /* PopupLayer.cpp */; };
@@ -376,6 +377,8 @@
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
 		07B41272184DC00B00453B72 /* mainMenuAtlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuAtlas.png; sourceTree = "<group>"; };
+		07B41D5D18569B1A00CFD5B0 /* BlockingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockingLayer.cpp; path = ../Classes/BlockingLayer.cpp; sourceTree = "<group>"; };
+		07B41D5E18569B1A00CFD5B0 /* BlockingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockingLayer.h; path = ../Classes/BlockingLayer.h; sourceTree = "<group>"; };
 		07D2B7CC1851B2A900E1C947 /* AmmoComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AmmoComponent.cpp; path = ../Classes/AmmoComponent.cpp; sourceTree = "<group>"; };
 		07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmmoComponent.h; path = ../Classes/AmmoComponent.h; sourceTree = "<group>"; };
 		07D2B7CF1853398600E1C947 /* BonusComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BonusComponent.cpp; path = ../Classes/BonusComponent.cpp; sourceTree = "<group>"; };
@@ -922,6 +925,8 @@
 			children = (
 				071A6EEB1840BED400B32B8E /* BoundingSprite.cpp */,
 				071A6EEC1840BED400B32B8E /* BoundingSprite.h */,
+				07B41D5D18569B1A00CFD5B0 /* BlockingLayer.cpp */,
+				07B41D5E18569B1A00CFD5B0 /* BlockingLayer.h */,
 			);
 			name = cocosCustom;
 			sourceTree = "<group>";
@@ -2386,6 +2391,7 @@
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
 				071AA5091842742D00B32B8E /* PluginProtocol.mm in Sources */,
+				07B41D5F18569B1A00CFD5B0 /* BlockingLayer.cpp in Sources */,
 				1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */,
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,

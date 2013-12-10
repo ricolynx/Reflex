@@ -14,6 +14,7 @@
 #include "Popup.h"
 #include "SimpleDelegate.h"
 #include "Delegate.h"
+#include "BlockingLayer.h"
 
 class PopupLayer : public cocos2d::CCLayer
 {
@@ -27,6 +28,8 @@ class PopupLayer : public cocos2d::CCLayer
     
         Popup *currentPopup;
     
+        BlockingLayer *blockingLayer;
+    
     public :
         CREATE_FUNC(PopupLayer);
     
@@ -37,10 +40,13 @@ class PopupLayer : public cocos2d::CCLayer
         virtual bool init();
     
         void finishInit();
+
+        void showPopup(Popup *popup);
     
         void onPopupQuitCallback();
     
-        void test(Delegate *delegate);
+        void test(std::shared_ptr<Delegate> delegate);
+    
         void callback();
 };
 

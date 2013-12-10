@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Popup.cpp"
-            timestampString = "408286925.806003"
+            timestampString = "408331221.189609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "Popup::createButton(const std::string image, Delegate *callback, int index)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "Popup::createButton(const std::string image, std::shared_ptr&lt;Delegate&gt; callback, int index)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,13 +26,121 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Popup.cpp"
-            timestampString = "408286925.806003"
+            timestampString = "408331221.189609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "Popup::buttonCallBack(CCObject *pSender)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Delegate.cpp"
+            timestampString = "408327391.989373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Delegate::Delegate()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Delegate.cpp"
+            timestampString = "408327392.881525"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "Delegate::~Delegate()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Delegate::~Delegate()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/Delegate.cpp"
+                  timestampString = "408328034.755159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Delegate::~Delegate()"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/Delegate.cpp"
+                  timestampString = "408328034.75543"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/BlockingLayer.cpp"
+            timestampString = "408330211.786103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "BlockingLayer::ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlockingLayer::ccTouchesBegan(cocos2d::CCSet*, cocos2d::CCEvent*)"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/BlockingLayer.cpp"
+                  timestampString = "408330213.208529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "3">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "non-virtual thunk to BlockingLayer::ccTouchesBegan(cocos2d::CCSet*, cocos2d::CCEvent*)"
+                  moduleName = "Reflex"
+                  urlString = "file:///Users/eric/Projects/cocos2d-x-2.2/projects/Reflex/Classes/BlockingLayer.cpp"
+                  timestampString = "408330213.208881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "3">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

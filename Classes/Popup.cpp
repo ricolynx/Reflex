@@ -17,13 +17,15 @@ Popup::Popup()
     
     if (this->showLogs)
         std::cout << "Popup Constructor" << std::endl;
+    
+    
 }
 
 
 void Popup::initPopup(float w,
              float h,
              std::vector<std::string>  buttonsImages,
-             std::vector<Delegate*> callbacks,
+             std::vector<std::shared_ptr<Delegate>> callbacks,
              const std::string message,
              const std::string images,
              Delegate *onClickCallback
@@ -57,12 +59,22 @@ void Popup::initPopup(float w,
     }
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu);
+    pMenu->setTouchPriority(-201);
 }
 
 Popup::~Popup()
 {
     if (this->showLogs)
         std::cout << "Popup Destructor" << std::endl;
+    
+    //-> clean delegates
+    this->buttons.clear();
+    
+    //->clean ref to bg, text and img
+    this->bg = 0;
+    this->text = 0;
+    this->img = 0;
+    this->onquitCallback = 0;
 }
 
 void Popup::createBackGround()
@@ -72,7 +84,7 @@ void Popup::createBackGround()
     this->addChild(this->bg);
 }
 
-CCMenuItemSprite* Popup::createButton(const std::string image, Delegate *callback, int index)
+CCMenuItemSprite* Popup::createButton(const std::string image, std::shared_ptr<Delegate> callback, int index)
 {
     //-->create the button
     const std::string normal = image + ".png";

@@ -440,8 +440,8 @@ void World::pauseGame()
     
     if (this->pause && dynamic_cast<GameScene*>(this->scene)->popupLayer!=0)
     {
-        SimpleDelegate<World> *delegate = new SimpleDelegate<World>(this, &World::pauseGame);
-        dynamic_cast<GameScene*>(this->scene)->popupLayer->test(dynamic_cast<Delegate*>(delegate));
+        std::shared_ptr<SimpleDelegate<World>> delegate = std::make_shared<SimpleDelegate<World>>(this, &World::pauseGame);
+        dynamic_cast<GameScene*>(this->scene)->popupLayer->test(std::dynamic_pointer_cast<Delegate>(delegate));
     }
     
 }
