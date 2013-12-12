@@ -27,6 +27,8 @@ World::World(cocos2d::CCLayer* s)
     
     this->count = 0;
     
+    this->enemyCount = 0;
+    
     this->canonAngle = 0;
     
     this->rotateCanon = 0;
@@ -57,7 +59,7 @@ World::World(cocos2d::CCLayer* s)
     canon->setPos(this->worldSize.width * 0.5, this->worldSize.height * 0.5);
     
     canon->addComponentToEntity(new component::LifeComponent(this->life));
-    canon->addComponentToEntity(new component::AmmoComponent(3,3));
+    canon->addComponentToEntity(new component::AmmoComponent(10,10));
     
     this->scene->addChild(canon->sprite);
     
@@ -98,6 +100,7 @@ void World::resetGame()
     
     //reset game variables
     this->count = 0;
+    this->enemyCount = 0;
     this->rotateCanon = 0;
     this->canonAngle = 0;
     
@@ -130,6 +133,7 @@ int World::getLives()
 //add an enemy in the world
 void World::addEnemy()
 {
+    this->enemyCount++;
     std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi1.png", 43));
     cocos2d::CCPoint p = this->getRandomPoint();
     
@@ -141,7 +145,8 @@ void World::addEnemy()
     
     enemy->addComponentToEntity(new component::LifeComponent(1));
     
-    enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
+    if (this->enemyCount % 5 == 0)
+        enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
     
     this->setInitialVelocity(enemy, 50);
     
@@ -209,7 +214,7 @@ void World::addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, 
     
     bonus->setPos(fromEntity->posX(), fromEntity->posY());
     
-    this->setInitialVelocity(bonus, 50);
+    this->setInitialVelocity(bonus, 100);
     
     this->scene->addChild(bonus->sprite);
     

@@ -59,6 +59,9 @@ private :
     //a counter 
     int count;
     
+    //nb enemy spawned
+    int enemyCount;
+    
     //canon angle
     int canonAngle;
     

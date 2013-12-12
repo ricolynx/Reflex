@@ -74,8 +74,8 @@ void UILayer::initUI(World *w)
     this->lifeGage->initGage(3,3,"life_empty.png","life.png");
     
 
-    this->ammoGage->initGage(3,3,"ammo_empty.png","ammo.png");
-    this->ammoGage->setPosition(ccp( worldSize.width - 50 - 90 , worldSize.height - 50));
+    this->ammoGage->initGage(10,10,"ammo_empty.png","ammo.png");
+    this->ammoGage->setPosition(ccp( worldSize.width - 50 - 400 , worldSize.height - 50));
     
     this->createMenuButton();
     
