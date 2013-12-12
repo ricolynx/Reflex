@@ -114,6 +114,9 @@ private :
     // fire n bullets
     void fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed);
     
+    //when game over
+    void gameOver();
+    
 public :
     
     //constructor

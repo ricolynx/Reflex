@@ -433,6 +433,18 @@ void World::cleanBonuses()
     this->bonuses.clear();
 }
 
+
+void World::gameOver()
+{
+    this->pause = true;
+    std::shared_ptr<SimpleDelegate<World>> delegateReset = std::make_shared<SimpleDelegate<World>>(this, &World::resetGame);
+    std::shared_ptr<SimpleDelegate<SceneManager>> delegateQuit = std::make_shared<SimpleDelegate<SceneManager>>(SceneManager::Instance(), &SceneManager::showMenu);
+    Popup *popup = PopupFactory::createGameOverPopup(delegateReset, delegateQuit);
+    dynamic_cast<GameScene*>(this->scene)->popupLayer->showPopup(popup);
+}
+
+
+
 //pause the game
 void World::pauseGame()
 {
@@ -483,6 +495,8 @@ void World::update(float dt)
     {
         std::cout << "update life" << std::endl;
         this->life = nbLife;
+        if (this->life == 0)
+            this->gameOver();
     }
 }
 

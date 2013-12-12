@@ -19,6 +19,7 @@ class PopupFactory
     public :
     
     static Popup* createPausePopup(std::shared_ptr<Delegate> continueDelegate, std::shared_ptr<Delegate> quitDelegate);
+    static Popup* createGameOverPopup(std::shared_ptr<Delegate> resetDelegate, std::shared_ptr<Delegate> quitDelegate);
 };
 
 #endif /* defined(__Reflex__PopupFactory__) */

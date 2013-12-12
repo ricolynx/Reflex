@@ -72,7 +72,7 @@
             <key>pause.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,84},{27,27}}</string>
+                <string>{{232,2},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>pause_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{31,84},{27,27}}</string>
+                <string>{{261,2},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>quit.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,84},{27,27}}</string>
+                <string>{{290,2},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>quit_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{89,84},{27,27}}</string>
+                <string>{{319,2},{27,27}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>quitbig.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,113},{231,100}}</string>
+                <string>{{2,84},{231,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,33 @@
             <key>quitbig_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,215},{231,100}}</string>
+                <string>{{235,84},{231,100}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{231,100}}</string>
+                <key>sourceSize</key>
+                <string>{231,100}</string>
+            </dict>
+            <key>retry.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,186},{231,100}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{231,100}}</string>
+                <key>sourceSize</key>
+                <string>{231,100}</string>
+            </dict>
+            <key>retry_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{235,186},{231,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -155,9 +181,9 @@
             <key>realTextureFileName</key>
             <string>gameUIAtlas.png</string>
             <key>size</key>
-            <string>{256,512}</string>
+            <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:18b6c02e88cf9fd858db627348b485f7:7a93a90b4f00b95bf392d58dac99a6ad:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
+            <string>$TexturePacker:SmartUpdate:e8af07f97d03b02ae653488b2a329a3a:6d1cf4b689c8c316f2b0dfc7754647e8:7fb98ebc539db1bc77b03b3ec76cf70a$</string>
             <key>textureFileName</key>
             <string>gameUIAtlas.png</string>
         </dict>
