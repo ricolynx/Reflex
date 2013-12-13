@@ -133,29 +133,42 @@ int World::getLives()
 //add an enemy in the world
 void World::addEnemy()
 {
-    this->enemyCount++;
-    std::shared_ptr<Entity> enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi1.png", 43));
-    cocos2d::CCPoint p = this->getRandomPoint();
-    
-    enemy->setPos(p.x, p.y);
-    
+    std::shared_ptr<Entity> enemy;
+    if (this->enemyCount % 6 == 0)
+    {
+        enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi2.png", 43));
+        enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
+        enemy->addComponentToEntity(new component::LifeComponent(2));
+    }
+    else if (this->enemyCount % 11 == 0)
+    {
+        enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi3.png", 33));
+        enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::life));
+        enemy->addComponentToEntity(new component::LifeComponent(3));
+    }
+    else
+    {
+        enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi1.png", 43));
+        enemy->addComponentToEntity(new component::LifeComponent(1));
+    }
+
     enemy->addComponentToEntity(new component::TargetComponent(this->canon));
-    
     enemy->addComponentToEntity(new component::VelocityComponent());
     
-    enemy->addComponentToEntity(new component::LifeComponent(1));
+
     
-    if (this->enemyCount % 5 == 0)
-        enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
+    cocos2d::CCPoint p = this->getRandomPoint();
+    enemy->setPos(p.x, p.y);
     
     this->setInitialVelocity(enemy, 50);
-    
     this->enemies.push_back(enemy);
     this->moveSys->addEntity(enemy);
     this->collisionSys->addEntity(enemy);
     this->scene->addChild(enemy->sprite);
     if (this->showCollisionZones)
         enemy->showCollisionZones(true);
+    
+    this->enemyCount++;
 }
 
 void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float speed)
@@ -202,7 +215,9 @@ void World::addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, 
         case component::BonusComponent::ammo :
             imgName = "bonus_amo.png";
             break;
-            
+        case component::BonusComponent::life :
+            imgName = "bonus_life.png";
+            break;
         default:
             break;
     }
