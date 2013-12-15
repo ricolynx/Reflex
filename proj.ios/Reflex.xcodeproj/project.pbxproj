@@ -38,6 +38,7 @@
 		07407537184A74CC00FFB920 /* UILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07407535184A74CC00FFB920 /* UILayer.cpp */; };
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
+		07842362185E108600ACA05C /* ShieldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07842360185E108600ACA05C /* ShieldComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
@@ -373,6 +374,8 @@
 		076349A818380CE100180D07 /* CollisionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSystem.h; path = ../Classes/CollisionSystem.h; sourceTree = "<group>"; };
 		076349AA18392CB100180D07 /* LifeComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeComponent.cpp; path = ../Classes/LifeComponent.cpp; sourceTree = "<group>"; };
 		076349AB18392CB100180D07 /* LifeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeComponent.h; path = ../Classes/LifeComponent.h; sourceTree = "<group>"; };
+		07842360185E108600ACA05C /* ShieldComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShieldComponent.cpp; path = ../Classes/ShieldComponent.cpp; sourceTree = "<group>"; };
+		07842361185E108600ACA05C /* ShieldComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShieldComponent.h; path = ../Classes/ShieldComponent.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
@@ -1159,6 +1162,8 @@
 				07D2B7CD1851B2A900E1C947 /* AmmoComponent.h */,
 				07D2B7CF1853398600E1C947 /* BonusComponent.cpp */,
 				07D2B7D01853398600E1C947 /* BonusComponent.h */,
+				07842360185E108600ACA05C /* ShieldComponent.cpp */,
+				07842361185E108600ACA05C /* ShieldComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2286,6 +2291,7 @@
 				15A3D9241682F7D5002FB0C5 /* b2MouseJoint.cpp in Sources */,
 				15A3D9251682F7D5002FB0C5 /* b2PrismaticJoint.cpp in Sources */,
 				15A3D9261682F7D5002FB0C5 /* b2PulleyJoint.cpp in Sources */,
+				07842362185E108600ACA05C /* ShieldComponent.cpp in Sources */,
 				15A3D9271682F7D5002FB0C5 /* b2RevoluteJoint.cpp in Sources */,
 				15A3D9281682F7D5002FB0C5 /* b2RopeJoint.cpp in Sources */,
 				076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */,

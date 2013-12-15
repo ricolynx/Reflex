@@ -10,6 +10,7 @@
 #include "LifeComponent.h"
 #include "AmmoComponent.h"
 #include "BonusComponent.h"
+#include "ShieldComponent.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -97,14 +98,17 @@ void CollisionSystem::update(float dt)
         }
         if (this->checkCollision(entity, this->canon))
         {
-            entity->getComponent<component::LifeComponent>()->life--;
+            entity->getComponent<component::LifeComponent>()->life = 0;
             if (this->canon->getComponent<component::LifeComponent>()->life >0)
             {
                 if (entity->getType() == Entity::enemy)
                 {
                     entity->removeComponent<component::BonusComponent>();
-                    this->canon->getComponent<component::LifeComponent>()->life--;
-                    this->canon->getComponent<component::AmmoComponent>()->recharge();
+                    if (this->canon->getComponent<component::ShieldComponent>() == NULL)
+                    {
+                        this->canon->getComponent<component::LifeComponent>()->life--;
+                        this->canon->getComponent<component::AmmoComponent>()->recharge();
+                    }
                 }
                 else if (entity->getType() == Entity::bonus)
                 {

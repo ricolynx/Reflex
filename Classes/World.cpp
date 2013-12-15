@@ -74,6 +74,8 @@ World::~World()
     if (showLogs)
         std::cout<< "World destructor"<<std::endl;
     
+    this->canon->sprite->stopAllActions();
+    
     this->canon = 0;
     
     delete moveSys;
@@ -493,9 +495,9 @@ void World::update(float dt)
     if (this->pause)
         return;
 
-    count = (count + 1 ) % 60;
+    count = (count + 1 ) % 600;
 
-    if (count == 1)
+    if (count == 1 || count == 2)
         this->addEnemy();
     
     if (this->rotateCanon!=0)
@@ -513,12 +515,33 @@ void World::update(float dt)
     int nbLife = this->canon->getComponent<component::LifeComponent>()->life;
     if (this->life != nbLife)
     {
-        std::cout << "update life" << std::endl;
         this->life = nbLife;
         if (this->life == 0)
             this->gameOver();
+        else
+            this->addShield();
     }
 }
+
+
+void World::addShield()
+{
+    this->canon->addComponentToEntity(new component::ShieldComponent);
+    this->canon->sprite->stopAllActions();
+    
+    cocos2d::CCFiniteTimeAction *seq = cocos2d::CCSequence::create(cocos2d::CCBlink::create(5, 15),
+                                                                   cocos2d::CCCallFuncO::create(this,cocos2d::SEL_CallFuncO(&World::onEndShieldCallback),NULL),
+                                                                   NULL);
+    this->canon->sprite->runAction(seq);
+}
+
+
+
+void World::onEndShieldCallback(cocos2d::CCObject *pSender)
+{
+    this->canon->removeComponent<component::ShieldComponent>();
+}
+
 
 //when touch starts
 void World::onTouchesBegan(cocos2d::CCSet* touches)

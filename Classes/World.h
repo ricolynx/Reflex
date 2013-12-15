@@ -29,12 +29,13 @@
 #include "LifeComponent.h"
 #include "AmmoComponent.h"
 #include "BonusComponent.h"
+#include "ShieldComponent.h"
 
 #include "Delegate.h"
 #include "SimpleDelegate.h"
 
 class PopupLayer;
-class World
+class World : public cocos2d::CCObject
 {
 private :
     
@@ -119,6 +120,13 @@ private :
     
     //when game over
     void gameOver();
+    
+    //add a shield to canon
+    void addShield();
+    
+    //callback called at the end of a shield animation
+    void onEndShieldCallback(cocos2d::CCObject *pSender);
+    
     
 public :
     
