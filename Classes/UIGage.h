@@ -36,6 +36,8 @@ class UIGage : public cocos2d::CCSprite
     
         void graphicDecrement();
     
+        float gageWidth;
+    
         cocos2d::CCSprite* addSprite(const char* name , int index);
     
     public:
@@ -49,6 +51,8 @@ class UIGage : public cocos2d::CCSprite
         unsigned int getValue();
     
         void initGage(int max, int current, const char* bgName, const char* frontName);
+    
+        float getWidth();
     
         UIGage& operator++ ();
         UIGage& operator-- ();

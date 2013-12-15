@@ -515,11 +515,12 @@ void World::update(float dt)
     int nbLife = this->canon->getComponent<component::LifeComponent>()->life;
     if (this->life != nbLife)
     {
-        this->life = nbLife;
-        if (this->life == 0)
+        if (nbLife == 0)
             this->gameOver();
-        else
+        else if (this->life > nbLife)
             this->addShield();
+        
+        this->life = nbLife;
     }
 }
 
@@ -566,7 +567,8 @@ void World::onTouchesEnded(cocos2d::CCSet* touches)
     if (this->canon->getComponent<component::AmmoComponent>()->getAmmo()>0)
     {
         this->fireBullets(this->canon, 4 , 500);
-        this->canon->getComponent<component::AmmoComponent>()->shoot();
+        if (this->canon->getComponent<component::ShieldComponent>() == 0)
+            this->canon->getComponent<component::AmmoComponent>()->shoot();
     }
 }
 

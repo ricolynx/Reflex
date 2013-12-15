@@ -91,8 +91,9 @@ void CollisionSystem::update(float dt)
                 continue;
             if (this->checkCollision(bullet,entity))
             {
-                entity->getComponent<component::LifeComponent>()->life--;
-                bullet->getComponent<component::LifeComponent>()->life--;
+                --(*entity->getComponent<component::LifeComponent>());
+                entity->sprite->setOpacity(255.0f * ((float)entity->getComponent<component::LifeComponent>()->life / (float)entity->getComponent<component::LifeComponent>()->getMaxLife()));
+                --(*bullet->getComponent<component::LifeComponent>());
                 continue;
             }
         }
@@ -106,7 +107,7 @@ void CollisionSystem::update(float dt)
                     entity->removeComponent<component::BonusComponent>();
                     if (this->canon->getComponent<component::ShieldComponent>() == NULL)
                     {
-                        this->canon->getComponent<component::LifeComponent>()->life--;
+                        --(*this->canon->getComponent<component::LifeComponent>());
                         this->canon->getComponent<component::AmmoComponent>()->recharge();
                     }
                 }
@@ -118,7 +119,7 @@ void CollisionSystem::update(float dt)
                             this->canon->getComponent<component::AmmoComponent>()->recharge();
                             break;
                         case component::BonusComponent::life:
-                            this->canon->getComponent<component::LifeComponent>()->life++;
+                            ++(*this->canon->getComponent<component::LifeComponent>());
                             break;
                     }
                 }

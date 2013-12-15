@@ -18,10 +18,15 @@ namespace component
     {
         private:
             bool showLogs;
+            int maxLife;
         public:
             int life;
             LifeComponent(int l);
             ~LifeComponent();
+            int getMaxLife();
+        
+            LifeComponent& operator++ ();
+            LifeComponent& operator-- ();
     };
 }
 

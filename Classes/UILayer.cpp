@@ -69,13 +69,12 @@ void UILayer::initUI(World *w)
     
     this->ammoGage = UIGage::create();
     this->addChild(ammoGage);
-    
-    this->lifeGage->setPosition(ccp( 50, worldSize.height - 50));
+
     this->lifeGage->initGage(3,3,"life_empty.png","life.png");
-    
+    this->lifeGage->setPosition(ccp( worldSize.width /2 - this->lifeGage->getWidth()/ 2 , worldSize.height - 30));
 
     this->ammoGage->initGage(10,10,"ammo_empty.png","ammo.png");
-    this->ammoGage->setPosition(ccp( worldSize.width - 50 - 400 , worldSize.height - 50));
+    this->ammoGage->setPosition(ccp( worldSize.width /2 - this->ammoGage->getWidth() / 2 , 30));
     
     this->createMenuButton();
     
@@ -95,7 +94,7 @@ void UILayer::createMenuButton()
                                                           );
     
     pQuitItem->setPosition(ccp(origin.x + visibleSize.width - pQuitItem->getContentSize().width/2 - 10,
-                               origin.y + pQuitItem->getContentSize().height/2 + 10) );
+                               origin.y + visibleSize.height - pQuitItem->getContentSize().height/2 - 10) );
     
     
     CCMenuItemSprite *pPauseItem= CCMenuItemSprite::create(
@@ -106,7 +105,7 @@ void UILayer::createMenuButton()
                                                           );
     
     pPauseItem->setPosition(ccp(pQuitItem->getPosition().x - pPauseItem->getContentSize().width -10,
-                               origin.y + pPauseItem->getContentSize().height/2 + 10) );
+                               origin.y + visibleSize.height - pPauseItem->getContentSize().height/2 - 10) );
     
     // create menu, it's an autorelease object
     CCMenu* pMenu = CCMenu::create(pQuitItem, NULL);
@@ -138,7 +137,7 @@ void UILayer::update(float dt)
         }
         else if (this->lifeGage->getValue() < this->world->getLives())
         {
-            std::cout << "decrease life " << std::endl;
+            std::cout << "increase life " << std::endl;
             ++(*(this->lifeGage));
         }
         

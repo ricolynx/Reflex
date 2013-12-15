@@ -16,6 +16,8 @@ UIGage::UIGage()
         std::cout << "UIGage Constructor " << this << std::endl;
     
     this->_isInitialized = false;
+    
+    this->gageWidth = 0;
 }
 
 //destructor
@@ -87,7 +89,7 @@ void UIGage::createBackground(const char* spriteName)
 {
     for (int i = 0; i < this->_maxValue; i++)
     {
-        this->addSprite(spriteName, i);
+        this->gageWidth += this->addSprite(spriteName, i)->getContentSize().width + DELTA;
     }
 }
 
@@ -119,8 +121,14 @@ cocos2d::CCSprite* UIGage::addSprite(const char* name , int index)
     float posy = 0;
     sprite->setPosition(ccp(posx,posy));
     this->addChild(sprite);
-
+    
     return sprite;
+}
+
+//get the width of the gage
+float UIGage::getWidth()
+{
+    return this->gageWidth;
 }
 
 //get the current value of the gage
