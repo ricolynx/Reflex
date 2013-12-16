@@ -39,6 +39,10 @@
 		076349A918380CE100180D07 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349A718380CE100180D07 /* CollisionSystem.cpp */; };
 		076349AC18392CB100180D07 /* LifeComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076349AA18392CB100180D07 /* LifeComponent.cpp */; };
 		07842362185E108600ACA05C /* ShieldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07842360185E108600ACA05C /* ShieldComponent.cpp */; };
+		0784236B185EFFEF00ACA05C /* enemi1_part.png in Resources */ = {isa = PBXBuildFile; fileRef = 07842368185EFFEF00ACA05C /* enemi1_part.png */; };
+		0784236C185EFFEF00ACA05C /* enemi2_part.png in Resources */ = {isa = PBXBuildFile; fileRef = 07842369185EFFEF00ACA05C /* enemi2_part.png */; };
+		0784236D185EFFEF00ACA05C /* enemi3_part.png in Resources */ = {isa = PBXBuildFile; fileRef = 0784236A185EFFEF00ACA05C /* enemi3_part.png */; };
+		07842370185F237E00ACA05C /* ParticleComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0784236E185F237E00ACA05C /* ParticleComponent.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
@@ -376,6 +380,11 @@
 		076349AB18392CB100180D07 /* LifeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeComponent.h; path = ../Classes/LifeComponent.h; sourceTree = "<group>"; };
 		07842360185E108600ACA05C /* ShieldComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShieldComponent.cpp; path = ../Classes/ShieldComponent.cpp; sourceTree = "<group>"; };
 		07842361185E108600ACA05C /* ShieldComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShieldComponent.h; path = ../Classes/ShieldComponent.h; sourceTree = "<group>"; };
+		07842368185EFFEF00ACA05C /* enemi1_part.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemi1_part.png; sourceTree = "<group>"; };
+		07842369185EFFEF00ACA05C /* enemi2_part.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemi2_part.png; sourceTree = "<group>"; };
+		0784236A185EFFEF00ACA05C /* enemi3_part.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemi3_part.png; sourceTree = "<group>"; };
+		0784236E185F237E00ACA05C /* ParticleComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleComponent.cpp; path = ../Classes/ParticleComponent.cpp; sourceTree = "<group>"; };
+		0784236F185F237E00ACA05C /* ParticleComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleComponent.h; path = ../Classes/ParticleComponent.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
@@ -1164,6 +1173,8 @@
 				07D2B7D01853398600E1C947 /* BonusComponent.h */,
 				07842360185E108600ACA05C /* ShieldComponent.cpp */,
 				07842361185E108600ACA05C /* ShieldComponent.h */,
+				0784236E185F237E00ACA05C /* ParticleComponent.cpp */,
+				0784236F185F237E00ACA05C /* ParticleComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2114,6 +2125,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07842368185EFFEF00ACA05C /* enemi1_part.png */,
+				07842369185EFFEF00ACA05C /* enemi2_part.png */,
+				0784236A185EFFEF00ACA05C /* enemi3_part.png */,
 				07B41271184DC00B00453B72 /* mainMenuAtlas.plist */,
 				07B41272184DC00B00453B72 /* mainMenuAtlas.png */,
 				07DD11AF184B41E00027F710 /* gameUIAtlas.plist */,
@@ -2214,6 +2228,7 @@
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				0784236B185EFFEF00ACA05C /* enemi1_part.png in Resources */,
 				07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */,
 				07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */,
 				07DD11B2184B41E00027F710 /* gameUIAtlas.png in Resources */,
@@ -2228,8 +2243,10 @@
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				070DC727182E14FD00592C1E /* TestNormal.png in Resources */,
+				0784236C185EFFEF00ACA05C /* enemi2_part.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				07407532184A167000FFB920 /* gameAtlas.png in Resources */,
+				0784236D185EFFEF00ACA05C /* enemi3_part.png in Resources */,
 				379BB9CC17F03F3700829B88 /* json_internalarray.inl in Resources */,
 				379BB9CD17F03F3700829B88 /* json_internalmap.inl in Resources */,
 				07407531184A167000FFB920 /* gameAtlas.plist in Resources */,
@@ -2419,6 +2436,7 @@
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
+				07842370185F237E00ACA05C /* ParticleComponent.cpp in Sources */,
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,

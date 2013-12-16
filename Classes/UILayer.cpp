@@ -132,12 +132,12 @@ void UILayer::update(float dt)
     {
         if (this->lifeGage->getValue() > this->world->getLives())
         {
-            std::cout << "decrease life " << std::endl;
+            //std::cout << "decrease life " << std::endl;
             --(*(this->lifeGage));
         }
         else if (this->lifeGage->getValue() < this->world->getLives())
         {
-            std::cout << "increase life " << std::endl;
+            //std::cout << "increase life " << std::endl;
             ++(*(this->lifeGage));
         }
         

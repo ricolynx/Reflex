@@ -30,6 +30,7 @@
 #include "AmmoComponent.h"
 #include "BonusComponent.h"
 #include "ShieldComponent.h"
+#include "ParticleComponent.h"
 
 #include "Delegate.h"
 #include "SimpleDelegate.h"
@@ -44,6 +45,8 @@ private :
     cocos2d::CCLayer* scene;
         
     cocos2d::CCSpriteBatchNode* batchNode;
+    
+    cocos2d::CCParticleBatchNode *particleBatchNode;
     
     MoveSystem *moveSys;
     
@@ -167,6 +170,9 @@ public :
     
     //reset the game
     void resetGame();
+    
+    //show an explosion
+    void showExplosion(std::shared_ptr<Entity>  entity);
 };
 
 #endif /* defined(__Reflex__World__) */

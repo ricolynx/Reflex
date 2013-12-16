@@ -48,7 +48,6 @@ World::World(cocos2d::CCLayer* s)
     
     //initialise batchnode and sharesprite
     batchNode = cocos2d::CCSpriteBatchNode::create("gameAtlas.png");
-    
     scene->addChild(batchNode);
     
     cocos2d::CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("gameAtlas.plist");
@@ -141,17 +140,20 @@ void World::addEnemy()
         enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi2.png", 43));
         enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::ammo));
         enemy->addComponentToEntity(new component::LifeComponent(2));
+        enemy->addComponentToEntity(new component::ParticleComponent("enemi2_part.png"));
     }
     else if (this->enemyCount % 11 == 0)
     {
         enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi3.png", 33));
         enemy->addComponentToEntity(new component::BonusComponent(component::BonusComponent::life));
         enemy->addComponentToEntity(new component::LifeComponent(3));
+        enemy->addComponentToEntity(new component::ParticleComponent("enemi3_part.png"));
     }
     else
     {
         enemy = std::shared_ptr<Entity>(new Entity(this->nextEntityId++, Entity::enemy, "enemi1.png", 43));
         enemy->addComponentToEntity(new component::LifeComponent(1));
+        enemy->addComponentToEntity(new component::ParticleComponent("enemi1_part.png"));
     }
 
     enemy->addComponentToEntity(new component::TargetComponent(this->canon));
@@ -361,6 +363,7 @@ void World::removeDeadEnemies()
 
         if (!lc || lc->life < 1 )
         {
+            this->showExplosion(entity);
             //if there is a bonus --> addbonus
             component::BonusComponent *bc =entity->getComponent<component::BonusComponent>();
             if (bc!=0)
@@ -495,9 +498,9 @@ void World::update(float dt)
     if (this->pause)
         return;
 
-    count = (count + 1 ) % 600;
+    count = (count + 1 ) % 60;
 
-    if (count == 1 || count == 2)
+    if (count == 1 )
         this->addEnemy();
     
     if (this->rotateCanon!=0)
@@ -571,6 +574,37 @@ void World::onTouchesEnded(cocos2d::CCSet* touches)
             this->canon->getComponent<component::AmmoComponent>()->shoot();
     }
 }
+
+//show an explosion
+void World::showExplosion(std::shared_ptr<Entity>  entity)
+{
+    //try get the ParticleComponent
+    component::ParticleComponent *pc = entity->getComponent<component::ParticleComponent>();
+    
+    //return if not exists
+    if (pc ==0)
+        return;
+    
+    cocos2d::CCTexture2D *texture = cocos2d::CCTextureCache::sharedTextureCache()->addImage(pc->particleName.c_str()) ;
+    
+    cocos2d::CCParticleSystemQuad* m_emitter = cocos2d::CCParticleSmoke::create();
+    m_emitter->setAutoRemoveOnFinish(true);
+    
+    m_emitter->setTexture(texture);
+    //m_emitter->retain();//do not retain to avoid memory leak
+    m_emitter->setDuration(0.2f);
+    m_emitter->setLife(1.5);
+    m_emitter->setSpeed(50.0f);
+    m_emitter->setTotalParticles(10);
+    m_emitter->setStartSize(10);
+    m_emitter->setAngleVar(360);
+    m_emitter->setPosVar(ccp(5,5));
+    
+    m_emitter->setPosition(entity->posX(), entity->posY());
+    
+    this->scene->addChild(m_emitter);
+}
+
 
 
 
