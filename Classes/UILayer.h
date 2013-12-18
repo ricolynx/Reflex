@@ -14,9 +14,10 @@
 #include "UIGage.h"
 #include "World.h"
 #include "SceneManager.h"
+#include "ScoreObserver.h"
 
 
-class UILayer : public cocos2d::CCLayer
+class UILayer : public cocos2d::CCLayer, public ScoreObserver
 {
     private:
         bool showLogs;
@@ -54,6 +55,8 @@ class UILayer : public cocos2d::CCLayer
         void initUI(World *w);
     
         virtual bool init();
+    
+        void update (ScoreAction action, int newScore);
 };
 
 #endif /* defined(__Reflex__UILayer__) */

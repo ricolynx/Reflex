@@ -11,6 +11,9 @@
 #include "AmmoComponent.h"
 #include "BonusComponent.h"
 #include "ShieldComponent.h"
+#include "ShotGroupComponent.h"
+#include "ScoreController.h"
+#include "ScoreAction.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -94,6 +97,11 @@ void CollisionSystem::update(float dt)
                 --(*entity->getComponent<component::LifeComponent>());
                 entity->sprite->setOpacity(255.0f * ((float)entity->getComponent<component::LifeComponent>()->life / (float)entity->getComponent<component::LifeComponent>()->getMaxLife()));
                 --(*bullet->getComponent<component::LifeComponent>());
+                
+                if (entity->getComponent<component::LifeComponent>() == 0)
+                    ScoreController::Instance()->addAction( ScoreAction( ScoreAction::destroyPlanet, bullet->getComponent<component::ShotGroupComponent>()->groupId));
+                else
+                    ScoreController::Instance()->addAction( ScoreAction( ScoreAction::shootPlanet, bullet->getComponent<component::ShotGroupComponent>()->groupId));
                 continue;
             }
         }

@@ -7,9 +7,10 @@
 //
 
 #include "UILayer.h"
+#include "ScoreController.h"
 USING_NS_CC;
 
-UILayer::UILayer()
+UILayer::UILayer():ScoreObserver()
 {
     showLogs = true;
     
@@ -34,6 +35,8 @@ UILayer::~UILayer()
     
     this->removeChild(this->ammoGage,true);
     this->ammoGage = 0;
+    
+    ScoreController::Instance()->detach(dynamic_cast<ScoreObserver*>(this));
 }
 
 bool UILayer::init()
@@ -78,6 +81,7 @@ void UILayer::initUI(World *w)
     
     this->createMenuButton();
     
+    ScoreController::Instance()->attach(dynamic_cast<ScoreObserver*>(this));
 }
 
 // create the menu buttons
@@ -151,4 +155,10 @@ void UILayer::update(float dt)
         
     }
 }
+
+void UILayer::update (ScoreAction action, int newScore)
+{
+    std::cout << "update score : "<< newScore << std::endl;
+}
+
 

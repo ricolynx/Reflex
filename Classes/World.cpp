@@ -11,6 +11,7 @@
 #include "PopupLayer.h"
 #include "GameScene.h"
 #include "PopupFactory.h"
+#include "ScoreController.h"
 
 World::World(cocos2d::CCLayer* s)
 {
@@ -22,6 +23,8 @@ World::World(cocos2d::CCLayer* s)
     this->showCollisionZones = false;
     
     this->pause = false;
+    
+    ScoreController::Instance()->resetScore();
     
     this->nextEntityId = 0;
     
@@ -100,6 +103,8 @@ void World::resetGame()
 {
     //pause game
     this->pause = true;
+    
+    ScoreController::Instance()->resetScore();
     
     //reset game variables
     this->count = 0;

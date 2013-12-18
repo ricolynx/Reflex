@@ -15,6 +15,7 @@ struct ScoreAction
 {
     enum ACTION_TYPE {
         destroyPlanet,
+        shootPlanet,
         destroyBonus,
         getBonus
     };

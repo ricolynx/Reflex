@@ -51,6 +51,44 @@ void ScoreController::resetScore()
 long ScoreController::addAction(ScoreAction scoreAction)
 {
     this->_currentScore ++;
+    std::cout<< "new score : " << this->_currentScore << std::endl;
+    
+    //notify observers
+    this->notify(scoreAction);
     
     return this->_currentScore;
 }
+
+//attach an observer. Observers can be attached only once
+void ScoreController::attach(ScoreObserver* scoreObs)
+{
+    //check if the observer is not already attached
+    if (std::find(this->_observers.begin(),this->_observers.end(),scoreObs) ==this->_observers.end())
+    {
+        this->_observers.push_back(scoreObs);
+    }
+}
+
+//detach an observer
+void ScoreController::detach(ScoreObserver* scoreObs)
+{
+    for (auto it = this->_observers.begin() ; it!= this->_observers.end(); ++it)
+    {
+        if ((*it) == scoreObs)
+        {
+            this->_observers.erase(it);
+            break;
+        }
+    }
+}
+
+//notify all observers of an aciton
+void ScoreController::notify(ScoreAction action)
+{
+    for (auto it = this->_observers.begin() ; it!= this->_observers.end(); ++it)
+    {
+        (*it)->update(action, this->_currentScore);
+    }
+}
+
+

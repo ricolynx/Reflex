@@ -32,6 +32,7 @@
 		071AA53C184277CF00B32B8E /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53A184276FD00B32B8E /* libwebsockets.a */; };
 		071AA53D184277E100B32B8E /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA535184276E200B32B8E /* libcurl.a */; };
 		071AA53F1842798C00B32B8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071AA53E1842798C00B32B8E /* SystemConfiguration.framework */; };
+		073E1C80186244C300493192 /* ScoreObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 073E1C7E186244C300493192 /* ScoreObserver.cpp */; };
 		0740752E184A03E100FFB920 /* FlurryController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0740752C184A03E100FFB920 /* FlurryController.cpp */; };
 		07407531184A167000FFB920 /* gameAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0740752F184A167000FFB920 /* gameAtlas.plist */; };
 		07407532184A167000FFB920 /* gameAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07407530184A167000FFB920 /* gameAtlas.png */; };
@@ -371,6 +372,8 @@
 		071AA536184276E200B32B8E /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		071AA53A184276FD00B32B8E /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
 		071AA53E1842798C00B32B8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		073E1C7E186244C300493192 /* ScoreObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreObserver.cpp; path = ../Classes/ScoreObserver.cpp; sourceTree = "<group>"; };
+		073E1C7F186244C300493192 /* ScoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreObserver.h; path = ../Classes/ScoreObserver.h; sourceTree = "<group>"; };
 		0740752C184A03E100FFB920 /* FlurryController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlurryController.cpp; path = ../Classes/FlurryController.cpp; sourceTree = "<group>"; };
 		0740752D184A03E100FFB920 /* FlurryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryController.h; path = ../Classes/FlurryController.h; sourceTree = "<group>"; };
 		0740752F184A167000FFB920 /* gameAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameAtlas.plist; sourceTree = "<group>"; };
@@ -1130,6 +1133,8 @@
 				0784237618618A7500ACA05C /* ScoreController.h */,
 				0792614D1861CC5000B7B3CD /* ScoreAction.cpp */,
 				0792614E1861CC5000B7B3CD /* ScoreAction.h */,
+				073E1C7E186244C300493192 /* ScoreObserver.cpp */,
+				073E1C7F186244C300493192 /* ScoreObserver.h */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -2301,6 +2306,7 @@
 				15A3D90B1682F7D5002FB0C5 /* b2BlockAllocator.cpp in Sources */,
 				15A3D90C1682F7D5002FB0C5 /* b2Draw.cpp in Sources */,
 				15A3D90D1682F7D5002FB0C5 /* b2Math.cpp in Sources */,
+				073E1C80186244C300493192 /* ScoreObserver.cpp in Sources */,
 				07D2B7D518538FDA00E1C947 /* PopupLayer.cpp in Sources */,
 				07D2B7DF1854EB3000E1C947 /* SimpleDelegate.cpp in Sources */,
 				15A3D90E1682F7D5002FB0C5 /* b2Settings.cpp in Sources */,
