@@ -27,6 +27,8 @@ World::World(cocos2d::CCLayer* s)
     
     this->count = 0;
     
+    this->shotCounter = 0;
+    
     this->enemyCount = 0;
     
     this->canonAngle = 0;
@@ -104,6 +106,7 @@ void World::resetGame()
     this->enemyCount = 0;
     this->rotateCanon = 0;
     this->canonAngle = 0;
+    this->shotCounter = 0;
     
     //reset canon position
     this->canon->setRotation(0);
@@ -189,6 +192,8 @@ void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float spee
     
     bullet->addComponentToEntity(new component::LifeComponent(1));
     
+    bullet->addComponentToEntity(new component::ShotGroupComponent(this->shotCounter));
+    
     this->setInitialBulletVelocity(bullet, angle, speed);
     
     this->bullets.push_back(bullet);
@@ -209,6 +214,8 @@ void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed
     {
         this->fireSingleBullet(this->canon, this->canon->angle() + i * angleDelta, 500);
     }
+    
+    ++(this->shotCounter);
 }
 
 //add a bonus from an entity (when it's destroyed)

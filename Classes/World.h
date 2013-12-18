@@ -31,6 +31,7 @@
 #include "BonusComponent.h"
 #include "ShieldComponent.h"
 #include "ParticleComponent.h"
+#include "ShotGroupComponent.h"
 
 #include "Delegate.h"
 #include "SimpleDelegate.h"
@@ -62,6 +63,8 @@ private :
     
     //a counter 
     int count;
+    
+    int shotCounter;
     
     //nb enemy spawned
     int enemyCount;

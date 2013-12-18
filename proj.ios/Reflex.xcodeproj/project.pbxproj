@@ -43,6 +43,8 @@
 		0784236C185EFFEF00ACA05C /* enemi2_part.png in Resources */ = {isa = PBXBuildFile; fileRef = 07842369185EFFEF00ACA05C /* enemi2_part.png */; };
 		0784236D185EFFEF00ACA05C /* enemi3_part.png in Resources */ = {isa = PBXBuildFile; fileRef = 0784236A185EFFEF00ACA05C /* enemi3_part.png */; };
 		07842370185F237E00ACA05C /* ParticleComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0784236E185F237E00ACA05C /* ParticleComponent.cpp */; };
+		078423731861860600ACA05C /* ShotGroupComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078423711861860600ACA05C /* ShotGroupComponent.cpp */; };
+		0784237718618A7500ACA05C /* ScoreController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0784237518618A7500ACA05C /* ScoreController.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
@@ -385,6 +387,10 @@
 		0784236A185EFFEF00ACA05C /* enemi3_part.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemi3_part.png; sourceTree = "<group>"; };
 		0784236E185F237E00ACA05C /* ParticleComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleComponent.cpp; path = ../Classes/ParticleComponent.cpp; sourceTree = "<group>"; };
 		0784236F185F237E00ACA05C /* ParticleComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleComponent.h; path = ../Classes/ParticleComponent.h; sourceTree = "<group>"; };
+		078423711861860600ACA05C /* ShotGroupComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShotGroupComponent.cpp; path = ../Classes/ShotGroupComponent.cpp; sourceTree = "<group>"; };
+		078423721861860600ACA05C /* ShotGroupComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShotGroupComponent.h; path = ../Classes/ShotGroupComponent.h; sourceTree = "<group>"; };
+		0784237518618A7500ACA05C /* ScoreController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreController.cpp; path = ../Classes/ScoreController.cpp; sourceTree = "<group>"; };
+		0784237618618A7500ACA05C /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreController.h; path = ../Classes/ScoreController.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
@@ -1114,6 +1120,15 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		0784237418618A5B00ACA05C /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				0784237518618A7500ACA05C /* ScoreController.cpp */,
+				0784237618618A7500ACA05C /* ScoreController.h */,
+			);
+			name = Scores;
+			sourceTree = "<group>";
+		};
 		07D2B7D218538FC600E1C947 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,6 +1190,8 @@
 				07842361185E108600ACA05C /* ShieldComponent.h */,
 				0784236E185F237E00ACA05C /* ParticleComponent.cpp */,
 				0784236F185F237E00ACA05C /* ParticleComponent.h */,
+				078423711861860600ACA05C /* ShotGroupComponent.cpp */,
+				078423721861860600ACA05C /* ShotGroupComponent.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1671,6 +1688,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0784237418618A5B00ACA05C /* Scores */,
 				07407533184A74A200FFB920 /* UI */,
 				0740752B184A03C200FFB920 /* utils */,
 				071A6EEA1840BEA500B32B8E /* cocosCustom */,
@@ -2419,6 +2437,7 @@
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
+				078423731861860600ACA05C /* ShotGroupComponent.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
@@ -2430,6 +2449,7 @@
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				071AA5111842742D00B32B8E /* PluginParam.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
+				0784237718618A7500ACA05C /* ScoreController.cpp in Sources */,
 				1A8F3B7B175E05DA00049216 /* RegionAttachment.cpp in Sources */,
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
