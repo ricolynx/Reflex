@@ -62,7 +62,7 @@ World::World(cocos2d::CCLayer* s)
     canon->addComponentToEntity(new component::LifeComponent(this->life));
     canon->addComponentToEntity(new component::AmmoComponent(10,10));
     
-    this->scene->addChild(canon->sprite);
+    this->batchNode->addChild(canon->sprite);
     
     this->collisionSys->addEntity(canon);
     
@@ -171,7 +171,7 @@ void World::addEnemy()
     this->enemies.push_back(enemy);
     this->moveSys->addEntity(enemy);
     this->collisionSys->addEntity(enemy);
-    this->scene->addChild(enemy->sprite);
+    this->batchNode->addChild(enemy->sprite);
     if (this->showCollisionZones)
         enemy->showCollisionZones(true);
     
@@ -186,7 +186,7 @@ void World::fireSingleBullet(std::shared_ptr<Entity> from, int angle, float spee
     
     bullet->setRotation(angle);
 
-    this->scene->addChild(bullet->sprite,-1);
+    this->batchNode->addChild(bullet->sprite,-1);
     
     bullet->addComponentToEntity(new component::VelocityComponent);
     
@@ -242,7 +242,7 @@ void World::addBonusFromEntity(component::BonusComponent::BONUS_TYPE bonusType, 
     
     this->setInitialVelocity(bonus, 100);
     
-    this->scene->addChild(bonus->sprite);
+    this->batchNode->addChild(bonus->sprite);
     
     this->bonuses.push_back(bonus);
     
@@ -349,7 +349,7 @@ void World::removeDeadBullets()
         {
             if (showCollisionZones)
                 entity->showCollisionZones(false);
-            this->scene->removeChild(entity->sprite,true);
+            this->batchNode->removeChild(entity->sprite,true);
             this->moveSys->removeEntity(entity);
             this->collisionSys->removeEntity(entity);
             this->bullets.remove(entity);
@@ -378,7 +378,7 @@ void World::removeDeadEnemies()
             
             if (showCollisionZones)
                 entity->showCollisionZones(false);
-            this->scene->removeChild(entity->sprite);
+            this->batchNode->removeChild(entity->sprite, true);
             this->moveSys->removeEntity(entity);
             this->collisionSys->removeEntity(entity);
             this->enemies.remove(entity);
@@ -401,7 +401,7 @@ void World::removeDeadBonuses()
         {
             if (showCollisionZones)
                 entity->showCollisionZones(false);
-            this->scene->removeChild(entity->sprite);
+            this->batchNode->removeChild(entity->sprite, true);
             this->moveSys->removeEntity(entity);
             this->collisionSys->removeEntity(entity);
             this->bonuses.remove(entity);
@@ -438,7 +438,7 @@ void World::cleanEnemies()
         entity = this->enemies.back();
         if (showCollisionZones)
             entity->showCollisionZones(false);
-        this->scene->removeChild(entity->sprite);
+        this->batchNode->removeChild(entity->sprite,true);
         this->moveSys->removeEntity(entity);
         this->collisionSys->removeEntity(entity);
         this->enemies.pop_back();
@@ -456,7 +456,7 @@ void World::cleanBonuses()
         entity = this->bonuses.back();
         if (showCollisionZones)
             entity->showCollisionZones(false);
-        this->scene->removeChild(entity->sprite);
+        this->batchNode->removeChild(entity->sprite, true);
         this->moveSys->removeEntity(entity);
         this->collisionSys->removeEntity(entity);
         this->bonuses.pop_back();

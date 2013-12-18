@@ -10,16 +10,30 @@
 #define __Reflex__ScoreController__
 
 #include <iostream>
+#include "ScoreAction.h"
+
 
 //class used to manage scores - Singleton -
 class ScoreController
 {
     private :
+    
+        static ScoreController* _instance;
+    
         ScoreController();
         virtual ~ScoreController();
-        static ScoreController *_instance;
+    
+        long _currentScore;
+    
     public :
-        static ScoreController *Instance();
+    
+        static ScoreController* Instance();
+    
+        long currentScore();
+    
+        void resetScore();
+    
+        long addAction(ScoreAction scoreAction);
 };
 
 #endif /* defined(__Reflex__ScoreController__) */

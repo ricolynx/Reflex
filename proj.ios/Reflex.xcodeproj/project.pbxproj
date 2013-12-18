@@ -45,6 +45,7 @@
 		07842370185F237E00ACA05C /* ParticleComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0784236E185F237E00ACA05C /* ParticleComponent.cpp */; };
 		078423731861860600ACA05C /* ShotGroupComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078423711861860600ACA05C /* ShotGroupComponent.cpp */; };
 		0784237718618A7500ACA05C /* ScoreController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0784237518618A7500ACA05C /* ScoreController.cpp */; };
+		0792614F1861CC5000B7B3CD /* ScoreAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0792614D1861CC5000B7B3CD /* ScoreAction.cpp */; };
 		07AD955B1823E79B00D4F0AF /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07AD95591823E79B00D4F0AF /* MainMenu.cpp */; };
 		07B41273184DC00B00453B72 /* mainMenuAtlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B41271184DC00B00453B72 /* mainMenuAtlas.plist */; };
 		07B41274184DC00B00453B72 /* mainMenuAtlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B41272184DC00B00453B72 /* mainMenuAtlas.png */; };
@@ -391,6 +392,8 @@
 		078423721861860600ACA05C /* ShotGroupComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShotGroupComponent.h; path = ../Classes/ShotGroupComponent.h; sourceTree = "<group>"; };
 		0784237518618A7500ACA05C /* ScoreController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreController.cpp; path = ../Classes/ScoreController.cpp; sourceTree = "<group>"; };
 		0784237618618A7500ACA05C /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreController.h; path = ../Classes/ScoreController.h; sourceTree = "<group>"; };
+		0792614D1861CC5000B7B3CD /* ScoreAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreAction.cpp; path = ../Classes/ScoreAction.cpp; sourceTree = "<group>"; };
+		0792614E1861CC5000B7B3CD /* ScoreAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreAction.h; path = ../Classes/ScoreAction.h; sourceTree = "<group>"; };
 		07AD95591823E79B00D4F0AF /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		07AD955A1823E79B00D4F0AF /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu.h; path = ../Classes/MainMenu.h; sourceTree = "<group>"; };
 		07B41271184DC00B00453B72 /* mainMenuAtlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainMenuAtlas.plist; sourceTree = "<group>"; };
@@ -1125,6 +1128,8 @@
 			children = (
 				0784237518618A7500ACA05C /* ScoreController.cpp */,
 				0784237618618A7500ACA05C /* ScoreController.h */,
+				0792614D1861CC5000B7B3CD /* ScoreAction.cpp */,
+				0792614E1861CC5000B7B3CD /* ScoreAction.h */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -2486,6 +2491,7 @@
 				379BB9A517F03F3700829B88 /* CCColliderDetector.cpp in Sources */,
 				379BB9A617F03F3700829B88 /* CCArmatureDataManager.cpp in Sources */,
 				379BB9A717F03F3700829B88 /* CCArmatureDefine.cpp in Sources */,
+				0792614F1861CC5000B7B3CD /* ScoreAction.cpp in Sources */,
 				379BB9A817F03F3700829B88 /* CCDataReaderHelper.cpp in Sources */,
 				379BB9A917F03F3700829B88 /* CCSpriteFrameCacheHelper.cpp in Sources */,
 				379BB9AA17F03F3700829B88 /* CCTransformHelp.cpp in Sources */,
