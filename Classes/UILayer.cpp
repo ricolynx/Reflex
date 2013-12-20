@@ -81,6 +81,10 @@ void UILayer::initUI(World *w)
     
     this->createMenuButton();
     
+    this->score = CCLabelTTF::create("0", "Arial", 24);
+    this->score->setPosition(ccp( this->score->getContentSize().width/2 + 30, worldSize.height - 30));
+    this->addChild(this->score);
+    
     ScoreController::Instance()->attach(dynamic_cast<ScoreObserver*>(this));
 }
 
@@ -158,7 +162,12 @@ void UILayer::update(float dt)
 
 void UILayer::update (ScoreAction action, int newScore)
 {
-    std::cout << "update score : "<< newScore << std::endl;
+    std::string sc;
+    std:std::ostringstream convert;
+    convert<<newScore;
+    
+    
+    this->score->setString(convert.str().c_str());
 }
 
 

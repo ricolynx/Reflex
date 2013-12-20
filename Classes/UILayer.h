@@ -32,6 +32,8 @@ class UILayer : public cocos2d::CCLayer, public ScoreObserver
         //ammo gage
         UIGage *ammoGage;
     
+        cocos2d::CCLabelTTF* score;
+    
         //create the menu buttons
         void createMenuButton();
     
