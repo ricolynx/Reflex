@@ -15,7 +15,8 @@ ScoreController* ScoreController::_instance = NULL;
 //constructor
 ScoreController::ScoreController()
 {
-    
+    this->bulletCounters = std::vector<int> (100,0);
+    this->scoreCounter = std::vector<int> (100,0);
 }
 
 //destructor
@@ -50,14 +51,54 @@ void ScoreController::resetScore()
 //add an action to the score
 long ScoreController::addAction(ScoreAction scoreAction)
 {
-    this->_currentScore ++;
-    std::cout<< "new score : " << this->_currentScore << std::endl;
+    /*
+    std::string t;
+    
+    if (scoreAction.type == ScoreAction::destroyPlanet)
+        t = "destroy planet";
+    if (scoreAction.type == ScoreAction::getBonus)
+        t = "get Bonus";
+    if (scoreAction.type == ScoreAction::shootBonus)
+        t = "shoot Bonus";
+    if (scoreAction.type == ScoreAction::shootPlanet)
+        t = "shoot Planet";
+    
+    std::cout<< "currscore :" << this->_currentScore << " - type (base score) : " << t <<" "<<scoreAction.type<< " - shootId : " << scoreAction.shootId << std::endl;
+    */
+    
+    //-> calculate the score of the action
+    if (scoreAction.shootId != -1)
+    {
+        ++(this->scoreCounter[scoreAction.shootId]);
+        scoreAction.score = scoreAction.type * this->scoreCounter[scoreAction.shootId];
+    }
+    else
+        scoreAction.score = scoreAction.type;
+    
+    //->update the currentScore
+    this->_currentScore += scoreAction.score;
+    
+    //std::cout<< "new score : " << this->_currentScore <<" (+" << scoreAction.score << ")" << std::endl;
     
     //notify observers
     this->notify(scoreAction);
     
+    //return the score
     return this->_currentScore;
 }
+
+// add a count to the bullet counters. This is called every time a bullet is destroyed and allow to add bonus on multiple shots
+void ScoreController::addBulletCount(int salveId)
+{
+    ++(this->bulletCounters[salveId]);
+    
+    if (this->bulletCounters[salveId] == 4)
+    {
+        this->bulletCounters[salveId] = 0;
+        this->scoreCounter[salveId] = 0;
+    }
+}
+
 
 //attach an observer. Observers can be attached only once
 void ScoreController::attach(ScoreObserver* scoreObs)

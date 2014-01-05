@@ -64,6 +64,7 @@ private :
     //a counter 
     int count;
     
+    //count the number of shots (this is used to identify salves) and it is modulo 100
     int shotCounter;
     
     //nb enemy spawned

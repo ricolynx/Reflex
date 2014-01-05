@@ -15,14 +15,20 @@
 #include "ScoreObserver.h"
 
 
-
 //class used to manage scores - Singleton -
 class ScoreController
 {
     private :
     
+        static const int NB_BULLETS = 4;
+    
         static ScoreController* _instance;
     
+        //int bulletCounters [100] = { };
+        //int v [100] = { };
+        std::vector<int> bulletCounters;
+        std::vector<int> scoreCounter;
+
         ScoreController();
         virtual ~ScoreController();
     
@@ -39,6 +45,8 @@ class ScoreController
         void resetScore();
     
         long addAction(ScoreAction scoreAction);
+    
+        void addBulletCount(int salveId);
     
         void attach(ScoreObserver* scoreObs);
     

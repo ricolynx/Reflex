@@ -220,7 +220,8 @@ void World::fireBullets(std::shared_ptr<Entity> from, int nbBullets, float speed
         this->fireSingleBullet(this->canon, this->canon->angle() + i * angleDelta, 500);
     }
     
-    ++(this->shotCounter);
+    //this counter is used to identify salves. We use a modulus because this is used to identify current bullets on screen.
+    this->shotCounter = (++(this->shotCounter)) % 100;
 }
 
 //add a bonus from an entity (when it's destroyed)
@@ -352,6 +353,7 @@ void World::removeDeadBullets()
         //std::cout<< lc << std::endl;
         if (!lc || lc->life < 1 )
         {
+            ScoreController::Instance()->addBulletCount(entity->getComponent<component::ShotGroupComponent>()->groupId);
             if (showCollisionZones)
                 entity->showCollisionZones(false);
             this->batchNode->removeChild(entity->sprite,true);

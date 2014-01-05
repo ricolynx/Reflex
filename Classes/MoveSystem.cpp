@@ -68,7 +68,7 @@ void MoveSystem::move(std::shared_ptr<Entity> entity, float dt)
         {
             component::LifeComponent *lc = entity->getComponent<component::LifeComponent>();
             if (lc){
-                lc->life--;
+                lc->life = 0;
                 if (showLogs)
                     std::cout<<"remove life of entity "<<entity->getId() << std::endl;
             }

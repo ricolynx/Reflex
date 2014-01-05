@@ -14,10 +14,10 @@
 struct ScoreAction
 {
     enum ACTION_TYPE {
-        destroyPlanet,
-        shootPlanet,
-        destroyBonus,
-        getBonus
+        destroyPlanet = 100,
+        shootPlanet = 50,
+        shootBonus = 50,
+        getBonus = 100
     };
     
     //type of the action
@@ -26,9 +26,10 @@ struct ScoreAction
     //shoot id if the action is related to a shoot Id
     int shootId;
     
+    int score;
+    
     ScoreAction(ACTION_TYPE t, int sId = -1);
     ~ScoreAction();
-    
 };
 
 #endif /* defined(__Reflex__ScoreAction__) */

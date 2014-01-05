@@ -98,8 +98,13 @@ void CollisionSystem::update(float dt)
                 entity->sprite->setOpacity(255.0f * ((float)entity->getComponent<component::LifeComponent>()->life / (float)entity->getComponent<component::LifeComponent>()->getMaxLife()));
                 --(*bullet->getComponent<component::LifeComponent>());
                 
-                if (entity->getComponent<component::LifeComponent>() == 0)
-                    ScoreController::Instance()->addAction( ScoreAction( ScoreAction::destroyPlanet, bullet->getComponent<component::ShotGroupComponent>()->groupId));
+                if (entity->getComponent<component::LifeComponent>()->life == 0)
+                {
+                    if (entity->getType() == Entity::enemy)
+                        ScoreController::Instance()->addAction( ScoreAction( ScoreAction::destroyPlanet, bullet->getComponent<component::ShotGroupComponent>()->groupId));
+                    else
+                        ScoreController::Instance()->addAction( ScoreAction( ScoreAction::shootBonus, bullet->getComponent<component::ShotGroupComponent>()->groupId));
+                }
                 else
                     ScoreController::Instance()->addAction( ScoreAction( ScoreAction::shootPlanet, bullet->getComponent<component::ShotGroupComponent>()->groupId));
                 continue;
@@ -113,6 +118,7 @@ void CollisionSystem::update(float dt)
                 if (entity->getType() == Entity::enemy)
                 {
                     entity->removeComponent<component::BonusComponent>();
+                    ScoreController::Instance()->addAction( ScoreAction( ScoreAction::destroyPlanet ));
                     if (this->canon->getComponent<component::ShieldComponent>() == NULL)
                     {
                         --(*this->canon->getComponent<component::LifeComponent>());
@@ -121,6 +127,7 @@ void CollisionSystem::update(float dt)
                 }
                 else if (entity->getType() == Entity::bonus)
                 {
+                    ScoreController::Instance()->addAction( ScoreAction( ScoreAction::getBonus ));
                     switch(entity->getComponent<component::BonusComponent>()->getType())
                     {
                         case component::BonusComponent::ammo:
